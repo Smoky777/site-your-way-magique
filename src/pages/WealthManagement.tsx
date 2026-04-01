@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, useInView, animate } from "framer-moti
 import { Link } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import heroWealthImg from "@/assets/hero-wealth.avif";
 
 function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: number; suffix?: string; prefix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
