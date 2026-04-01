@@ -13,7 +13,7 @@ const About = () => {
 
             <div className="space-y-8 text-muted-foreground leading-relaxed">
               <p className="text-lg animate-on-scroll">
-                Founded in <span className="text-foreground font-semibold">2023</span> by the Aponte family, Multi Investment carries forward a tradition of entrepreneurial vision rooted in the legacy of <span className="text-foreground font-semibold">Gianluigi Aponte</span>, founder of the Mediterranean Shipping Company (MSC) — one of the world's largest shipping and logistics conglomerates.
+                Founded in <span className="text-foreground font-semibold">2024</span> by the Aponte family, Multi Investment carries forward a tradition of entrepreneurial vision rooted in the legacy of <span className="text-foreground font-semibold">Gianluigi Aponte</span>, founder of the Mediterranean Shipping Company (MSC) — one of the world's largest shipping and logistics conglomerates.
               </p>
 
               <p className="animate-on-scroll">
