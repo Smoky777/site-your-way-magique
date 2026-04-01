@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, useInView, animate } from "framer-moti
 import { Link } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import heroWealthImg from "@/assets/hero-wealth.avif";
 
 function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: number; suffix?: string; prefix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -57,7 +58,7 @@ const WealthManagement = () => {
         <div className="relative min-h-[85vh] flex items-end pb-24">
           <motion.div className="absolute inset-0" style={{ scale: heroScale, opacity: heroOpacity }}>
             <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1920&h=1080&fit=crop"
+              src={heroWealthImg}
               alt="Wealth Management"
               className="w-full h-full object-cover"
             />
