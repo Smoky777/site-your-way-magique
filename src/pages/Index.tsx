@@ -4,6 +4,7 @@ import StatsSection from "@/components/StatsSection";
 import { Link } from "react-router-dom";
 import { ArrowRight, Building2, TrendingUp, Shield, Landmark } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -42,29 +43,50 @@ const Index = () => {
       <section className="py-24 bg-warm-section">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-primary text-sm tracking-[0.2em] uppercase mb-3 animate-on-scroll">What We Do</p>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground animate-on-scroll">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-primary text-sm tracking-[0.2em] uppercase mb-3"
+            >
+              What We Do
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl md:text-4xl font-serif font-bold text-foreground"
+            >
               Our Core Services
-            </h2>
+            </motion.h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {services.map((s, i) => (
-              <Link to={s.path} key={s.title}>
-                <Card className={`animate-on-scroll delay-${i + 1} bg-card border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 group cursor-pointer h-full rounded-2xl`}>
-                  <CardContent className="p-8">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                      <s.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-serif font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                      {s.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">{s.desc}</p>
-                    <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Learn More <ArrowRight className="h-3 w-3" />
-                    </span>
-                  </CardContent>
-                </Card>
-              </Link>
+              <motion.div
+                key={s.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <Link to={s.path}>
+                  <Card className="bg-card border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 group cursor-pointer h-full rounded-2xl">
+                    <CardContent className="p-8">
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+                        <s.icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-serif font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                        {s.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">{s.desc}</p>
+                      <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn More <ArrowRight className="h-3 w-3" />
+                      </span>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -75,18 +97,48 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-primary text-sm tracking-[0.2em] uppercase mb-3 animate-on-scroll">Our Philosophy</p>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6 animate-on-scroll">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-primary text-sm tracking-[0.2em] uppercase mb-3"
+              >
+                Our Philosophy
+              </motion.p>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6"
+              >
                 Investing with Purpose & Impact
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4 animate-on-scroll">
-                At Multi Investment, we believe that sustainable growth comes from aligning financial returns with positive societal impact. Our ESG-integrated approach guides every investment decision.
-              </p>
-              <p className="text-muted-foreground leading-relaxed animate-on-scroll">
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-muted-foreground leading-relaxed mb-4"
+              >
+                At Multi Investment, we believe that sustainable growth comes from aligning financial returns with positive societal impact.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="text-muted-foreground leading-relaxed"
+              >
                 From supporting innovative startups at seed stage to developing premier real estate across Europe, we build lasting value for our investors and communities.
-              </p>
+              </motion.p>
             </div>
-            <div className="animate-on-scroll">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="bg-muted rounded-2xl p-8 border border-border">
                 <div className="space-y-6">
                   {[
@@ -101,7 +153,7 @@ const Index = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -109,17 +161,35 @@ const Index = () => {
       {/* CTA */}
       <section className="py-24 bg-warm-section">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6 animate-on-scroll">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6"
+          >
             Ready to Explore Opportunities?
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-8 animate-on-scroll">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-muted-foreground max-w-xl mx-auto mb-8"
+          >
             Connect with our team to discuss how Multi Investment can help achieve your financial goals.
-          </p>
-          <Link to="/contact" className="animate-on-scroll inline-block">
-            <button className="bg-gradient-gold text-primary-foreground px-8 py-3 rounded-full font-medium hover:opacity-90 transition-opacity">
-              Schedule a Consultation
-            </button>
-          </Link>
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <Link to="/contact">
+              <button className="bg-gradient-gold text-primary-foreground px-8 py-3 rounded-full font-medium hover:opacity-90 transition-opacity">
+                Schedule a Consultation
+              </button>
+            </Link>
+          </motion.div>
         </div>
       </section>
     </PageLayout>
