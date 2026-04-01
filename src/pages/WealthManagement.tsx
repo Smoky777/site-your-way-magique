@@ -57,7 +57,7 @@ const WealthManagement = () => {
         <div className="relative min-h-[85vh] flex items-end pb-24">
           <motion.div className="absolute inset-0" style={{ scale: heroScale, opacity: heroOpacity }}>
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&h=1080&fit=crop"
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1920&h=1080&fit=crop"
               alt="Wealth Management"
               className="w-full h-full object-cover"
             />
