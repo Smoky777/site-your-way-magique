@@ -71,9 +71,9 @@ const AssetManagement = () => {
             <video
               autoPlay muted loop playsInline
               className="w-full h-full object-cover"
-              poster="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1920&h=1080&fit=crop"
+              poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop"
             >
-              <source src="https://videos.pexels.com/video-files/7579954/7579954-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+              <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
             </video>
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,25%,4%)] via-[hsl(220,25%,4%)]/50 to-transparent" />
