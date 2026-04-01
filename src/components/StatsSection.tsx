@@ -11,11 +11,13 @@ const StatsSection = () => {
   return (
     <section className="py-20 bg-card border-y border-border">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
           {stats.map((stat, i) => (
             <div key={stat.label} className={`animate-on-scroll delay-${i + 1} text-center`}>
-              <stat.icon className="h-8 w-8 text-primary mx-auto mb-4" />
-              <p className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-2">{stat.value}</p>
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <stat.icon className="h-6 w-6 text-primary" />
+              </div>
+              <p className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-1">{stat.value}</p>
               <p className="text-sm text-muted-foreground">{stat.label}</p>
             </div>
           ))}

@@ -5,10 +5,9 @@ const Footer = () => {
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-gold rounded-sm flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-gold rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-serif font-bold text-sm">M</span>
               </div>
               <span className="text-foreground font-serif text-lg font-semibold">Multi Investment</span>
@@ -18,10 +17,9 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Services */}
           <div>
-            <h4 className="text-foreground font-semibold text-sm uppercase tracking-widest mb-4">Services</h4>
-            <div className="flex flex-col gap-2">
+            <h4 className="text-foreground font-semibold text-sm mb-4">Services</h4>
+            <div className="flex flex-col gap-2.5">
               <Link to="/asset-management" className="text-muted-foreground hover:text-primary text-sm transition-colors">Asset Management</Link>
               <Link to="/wealth-management" className="text-muted-foreground hover:text-primary text-sm transition-colors">Wealth Management</Link>
               <Link to="/investment-strategies" className="text-muted-foreground hover:text-primary text-sm transition-colors">Investment Strategies</Link>
@@ -29,10 +27,9 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Company */}
           <div>
-            <h4 className="text-foreground font-semibold text-sm uppercase tracking-widest mb-4">Company</h4>
-            <div className="flex flex-col gap-2">
+            <h4 className="text-foreground font-semibold text-sm mb-4">Company</h4>
+            <div className="flex flex-col gap-2.5">
               <Link to="/about" className="text-muted-foreground hover:text-primary text-sm transition-colors">About Us</Link>
               <Link to="/team" className="text-muted-foreground hover:text-primary text-sm transition-colors">Our Team</Link>
               <Link to="/blog" className="text-muted-foreground hover:text-primary text-sm transition-colors">Blog & Insights</Link>
@@ -41,9 +38,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 className="text-foreground font-semibold text-sm uppercase tracking-widest mb-4">Offices</h4>
+            <h4 className="text-foreground font-semibold text-sm mb-4">Offices</h4>
             <div className="flex flex-col gap-3 text-sm text-muted-foreground">
               <div>
                 <p className="text-foreground font-medium">Geneva</p>
