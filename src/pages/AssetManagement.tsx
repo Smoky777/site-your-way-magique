@@ -419,7 +419,7 @@ const AssetManagement = () => {
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
               className="relative">
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop"
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop"
                 alt="Team collaboration"
                 className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
               />
