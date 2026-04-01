@@ -52,7 +52,7 @@ const HeroSection = () => {
                 className="inline-flex items-center gap-2 bg-white/[0.07] border border-white/[0.08] rounded-full px-5 py-2 mb-8"
               >
                 <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-white/70 text-xs tracking-wider uppercase">Managing $3B+ in assets</span>
+                <span className="text-white/70 text-xs tracking-wider uppercase">Managing CHF 3B+ in assets</span>
               </motion.div>
 
               <motion.h1
