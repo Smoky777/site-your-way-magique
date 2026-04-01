@@ -57,21 +57,20 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: -0.01em;
+    font-family: 'Lora', serif;
   }
 }
 
 @layer utilities {
   .font-serif {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Lora', serif;
   }
   .font-sans {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
   }
   .text-gradient-gold {
     @apply bg-clip-text text-transparent;
