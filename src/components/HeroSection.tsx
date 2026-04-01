@@ -52,7 +52,7 @@ const HeroSection = () => {
                 className="inline-flex items-center gap-2 bg-white/[0.07] border border-white/[0.08] rounded-full px-5 py-2 mb-8"
               >
                 <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-white/70 text-xs tracking-wider uppercase">Managing $3B+ in assets</span>
+                <span className="text-white/70 text-xs tracking-wider uppercase">Managing CHF 3B+ in assets</span>
               </motion.div>
 
               <motion.h1
@@ -100,9 +100,9 @@ const HeroSection = () => {
             <div className="hidden lg:block relative">
               <div className="relative h-[420px]">
                 {[
-                  { value: "$3B+", label: "AUM", delay: 0.3, x: 0, y: 0 },
+                  { value: "CHF 3B+", label: "AUM", delay: 0.3, x: 0, y: 0 },
                   { value: "50+", label: "Real Estate Projects", delay: 0.45, x: 140, y: 120 },
-                  { value: "2023", label: "Founded", delay: 0.6, x: 20, y: 260 },
+                  { value: "2024", label: "Founded", delay: 0.6, x: 20, y: 260 },
                 ].map((card) => (
                   <motion.div
                     key={card.label}

@@ -41,7 +41,7 @@ const Index = () => {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="absolute -bottom-6 -right-6 bg-card border border-border rounded-xl p-5 shadow-lg"
               >
-                <p className="text-2xl font-serif font-bold text-foreground">2023</p>
+                <p className="text-2xl font-serif font-bold text-foreground">2024</p>
                 <p className="text-xs text-muted-foreground">Year Founded</p>
               </motion.div>
             </motion.div>
@@ -74,7 +74,7 @@ const Index = () => {
                 transition={{ delay: 0.16 }}
                 className="text-muted-foreground leading-relaxed mb-5 text-[15px]"
               >
-                Founded by the Aponte family — heirs to the MSC shipping legacy — Multi Investment brings a unique blend of entrepreneurial heritage and institutional rigour to every opportunity.
+                Founded by the Aponte family — heirs to the MSC shipping legacy — Multi Investment brings a unique blend of entrepreneurial heritage and institutional rigour.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
@@ -95,7 +95,7 @@ const Index = () => {
                 className="flex gap-10 mb-8 pb-8 border-b border-border"
               >
                 {[
-                  { val: "$3B+", label: "AUM" },
+                  { val: "CHF 3B+", label: "AUM" },
                   { val: "50+", label: "Projects" },
                   { val: "100+", label: "Partners" },
                 ].map((s) => (

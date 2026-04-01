@@ -13,11 +13,11 @@ const About = () => {
 
             <div className="space-y-8 text-muted-foreground leading-relaxed">
               <p className="text-lg animate-on-scroll">
-                Founded in <span className="text-foreground font-semibold">2023</span> by the Aponte family, Multi Investment carries forward a tradition of entrepreneurial vision rooted in the legacy of <span className="text-foreground font-semibold">Gianluigi Aponte</span>, founder of the Mediterranean Shipping Company (MSC) — one of the world's largest shipping and logistics conglomerates.
+                Founded in <span className="text-foreground font-semibold">2024</span> by the Aponte family, Multi Investment carries forward a tradition of entrepreneurial vision rooted in the legacy of <span className="text-foreground font-semibold">Gianluigi Aponte</span>, founder of the Mediterranean Shipping Company (MSC) — one of the world's largest shipping and logistics conglomerates.
               </p>
 
               <p className="animate-on-scroll">
-                With over <span className="text-primary font-semibold">$3 billion in assets under management</span>, Multi Investment is a global private investment firm focused on creating lasting value through strategic capital deployment across real estate, private equity, and venture capital.
+                With over <span className="text-primary font-semibold">CHF 3 billion in assets under management</span>, Multi Investment is a global private investment firm focused on creating lasting value through strategic capital deployment across real estate, private equity, and venture capital.
               </p>
 
               <div className="animate-on-scroll bg-card border border-border rounded-lg p-8 my-12">
