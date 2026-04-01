@@ -95,7 +95,7 @@ const Index = () => {
                 className="flex gap-10 mb-8 pb-8 border-b border-border"
               >
                 {[
-                  { val: "$3B+", label: "AUM" },
+                  { val: "CHF 3B+", label: "AUM" },
                   { val: "50+", label: "Projects" },
                   { val: "100+", label: "Partners" },
                 ].map((s) => (
