@@ -67,10 +67,10 @@
 
 @layer utilities {
   .font-serif {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Lora', serif;
   }
   .font-sans {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
   }
   .text-gradient-gold {
     @apply bg-clip-text text-transparent;
