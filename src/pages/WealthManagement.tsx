@@ -106,11 +106,10 @@ const WealthManagement = () => {
 
             {/* Floating stats */}
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-16">
+              className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-16">
               {[
                 { val: "CHF 3B+", label: "Assets Under Advisory", icon: TrendingUp },
-                { val: "150+", label: "Family Clients", icon: Users },
-                { val: "4", label: "Jurisdictions", icon: Globe },
+                { val: "10+", label: "Family Clients", icon: Users },
                 { val: "USD 10M", label: "Minimum Engagement", icon: Lock },
               ].map((s, i) => (
                 <motion.div key={s.label} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
