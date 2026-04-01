@@ -74,7 +74,7 @@ const Index = () => {
                 transition={{ delay: 0.16 }}
                 className="text-muted-foreground leading-relaxed mb-5 text-[15px]"
               >
-                Founded by the Aponte family — heirs to the MSC shipping legacy — Multi Investment brings a unique blend of entrepreneurial heritage and institutional rigour to every opportunity.
+                Founded by the Aponte family — heirs to the MSC shipping legacy — Multi Investment brings a unique blend of entrepreneurial heritage and institutional rigour.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}

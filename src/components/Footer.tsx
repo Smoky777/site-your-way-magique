@@ -13,7 +13,7 @@ const Footer = () => {
               <span className="text-foreground font-serif text-lg font-semibold">Multi Investment</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Global private equity and real estate investment firm. Founded in 2023 by the Aponte family.
+              Global private equity and real estate investment firm. Founded in 2024 by the Aponte family.
             </p>
           </div>
 

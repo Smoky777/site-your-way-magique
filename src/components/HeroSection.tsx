@@ -100,9 +100,9 @@ const HeroSection = () => {
             <div className="hidden lg:block relative">
               <div className="relative h-[420px]">
                 {[
-                  { value: "$3B+", label: "AUM", delay: 0.3, x: 0, y: 0 },
+                  { value: "CHF 3B+", label: "AUM", delay: 0.3, x: 0, y: 0 },
                   { value: "50+", label: "Real Estate Projects", delay: 0.45, x: 140, y: 120 },
-                  { value: "2023", label: "Founded", delay: 0.6, x: 20, y: 260 },
+                  { value: "2024", label: "Founded", delay: 0.6, x: 20, y: 260 },
                 ].map((card) => (
                   <motion.div
                     key={card.label}

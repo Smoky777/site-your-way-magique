@@ -2,7 +2,7 @@ import PageLayout from "@/components/PageLayout";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "What is Multi Investment?", a: "Multi Investment is a global private investment firm founded in 2023 by the Aponte family. We manage over $3 billion in assets across real estate, private equity, and venture capital." },
+  { q: "What is Multi Investment?", a: "Multi Investment is a global private investment firm founded in 2024 by the Aponte family. We manage over CHF 3 billion in assets across real estate, private equity, and venture capital." },
   { q: "What is the minimum investment?", a: "Minimum investment thresholds vary by product and strategy. Please contact your relationship manager or our team for specific details." },
   { q: "How do I become a client?", a: "You can reach out through our Contact page or request a consultation. Our team will guide you through the onboarding process, including KYC and suitability assessments." },
   { q: "What geographies do you invest in?", a: "Our primary focus is Europe, with a strong emphasis on Switzerland, Italy, France, and Monaco. We also selectively invest in opportunities globally." },

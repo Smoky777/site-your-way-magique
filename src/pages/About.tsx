@@ -17,7 +17,7 @@ const About = () => {
               </p>
 
               <p className="animate-on-scroll">
-                With over <span className="text-primary font-semibold">$3 billion in assets under management</span>, Multi Investment is a global private investment firm focused on creating lasting value through strategic capital deployment across real estate, private equity, and venture capital.
+                With over <span className="text-primary font-semibold">CHF 3 billion in assets under management</span>, Multi Investment is a global private investment firm focused on creating lasting value through strategic capital deployment across real estate, private equity, and venture capital.
               </p>
 
               <div className="animate-on-scroll bg-card border border-border rounded-lg p-8 my-12">

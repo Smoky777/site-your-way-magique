@@ -2,7 +2,7 @@ import { TrendingUp, Building, Globe, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
 const stats = [
-  { icon: TrendingUp, value: "$3B+", label: "Assets Under Management" },
+  { icon: TrendingUp, value: "CHF 3B+", label: "Assets Under Management" },
   { icon: Building, value: "50+", label: "Real Estate Projects" },
   { icon: Globe, value: "3", label: "Global Offices" },
   { icon: Users, value: "100+", label: "Institutional Partners" },
