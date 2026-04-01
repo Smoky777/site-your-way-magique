@@ -1,91 +1,87 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import { motion } from "framer-motion";
-import Hero3DScene from "@/components/Hero3DScene";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[hsl(220,25%,8%)]">
-      {/* 3D Scene */}
-      <Hero3DScene />
-
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 z-[1] pointer-events-none" style={{
-        background: "radial-gradient(ellipse at 50% 50%, transparent 30%, hsl(220 25% 8% / 0.7) 70%)"
-      }} />
-      <div className="absolute bottom-0 left-0 right-0 h-40 z-[1] bg-gradient-to-t from-background to-transparent" />
-
-      <div className="container mx-auto px-6 relative z-10 pt-20">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[hsl(43,50%,60%)] font-medium tracking-[0.3em] uppercase text-sm mb-6"
-          >
-            Private Equity & Real Estate
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-8"
-          >
-            Building Legacy Through
-            <span className="block mt-2" style={{
-              backgroundImage: "linear-gradient(135deg, hsl(43 55% 65%), hsl(43 45% 45%))",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}>
-              Strategic Investment
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-lg text-[hsl(220,10%,65%)] max-w-xl mx-auto mb-10 leading-relaxed"
-          >
-            Founded by the Aponte family, Multi Investment manages over $3 billion in assets across global real estate, private equity, and venture capital.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Link to="/about">
-              <Button size="lg" className="bg-gradient-gold text-primary-foreground hover:opacity-90 px-8 rounded-full text-base">
-                Discover Our Vision <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-[hsl(43,45%,42%)]/40 text-white hover:bg-[hsl(43,45%,42%)]/10 px-8 rounded-full text-base">
-                Get in Touch
-              </Button>
-            </Link>
-          </motion.div>
+    <section className="relative overflow-hidden">
+      {/* Main hero with image */}
+      <div className="relative min-h-[85vh] flex items-center">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop"
+            alt="Modern building"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,25%,8%)]/90 via-[hsl(220,25%,8%)]/70 to-[hsl(220,25%,8%)]/40" />
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-6 h-10 border-2 border-[hsl(43,45%,42%)]/30 rounded-full flex justify-center pt-2"
-          >
-            <div className="w-1 h-2 bg-[hsl(43,45%,42%)]/60 rounded-full" />
-          </motion.div>
-        </motion.div>
+        <div className="container mx-auto px-6 relative z-10 py-32">
+          <div className="max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-8"
+            >
+              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <span className="text-white/80 text-xs tracking-wide">Now managing $3B+ in assets</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="text-4xl md:text-5xl lg:text-[3.5rem] font-serif font-bold text-white leading-[1.15] mb-6"
+            >
+              We help families build
+              <br />
+              <span className="text-gradient-gold">lasting wealth.</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-lg text-white/70 max-w-lg mb-10 leading-relaxed"
+            >
+              Multi Investment is a family-founded firm dedicated to private equity, real estate, and venture capital — with a human approach to global finance.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.45 }}
+              className="flex flex-wrap gap-4"
+            >
+              <Link to="/about">
+                <Button size="lg" className="bg-gradient-gold text-primary-foreground hover:opacity-90 rounded-full px-7 h-12 text-[15px]">
+                  Learn About Us <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button size="lg" variant="ghost" className="text-white hover:bg-white/10 rounded-full px-7 h-12 text-[15px] border border-white/20">
+                  Contact Us
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Trust bar */}
+      <div className="bg-card border-b border-border">
+        <div className="container mx-auto px-6 py-5 flex flex-wrap items-center justify-between gap-6">
+          <p className="text-xs text-muted-foreground uppercase tracking-widest">Trusted by institutional investors across</p>
+          <div className="flex items-center gap-8 text-sm text-muted-foreground">
+            <span className="flex items-center gap-2">🇨🇭 Switzerland</span>
+            <span className="flex items-center gap-2">🇲🇨 Monaco</span>
+            <span className="flex items-center gap-2">🇮🇹 Italy</span>
+            <span className="flex items-center gap-2">🇫🇷 France</span>
+          </div>
+        </div>
       </div>
     </section>
   );
