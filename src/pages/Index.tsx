@@ -1,66 +1,58 @@
 import PageLayout from "@/components/PageLayout";
 import HeroSection from "@/components/HeroSection";
-import StatsSection from "@/components/StatsSection";
 import { Link } from "react-router-dom";
-import { ArrowRight, Building2, TrendingUp, Shield, Landmark, ChevronRight } from "lucide-react";
+import { ArrowRight, Building2, TrendingUp, Shield, Landmark, ChevronRight, ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
 const services = [
-  {
-    icon: TrendingUp,
-    title: "Asset Management",
-    desc: "Diversified portfolio strategies across global markets with a focus on long-term capital appreciation.",
-    path: "/asset-management",
-  },
-  {
-    icon: Shield,
-    title: "Wealth Management",
-    desc: "Bespoke wealth planning for UHNW individuals and family offices with holistic advisory.",
-    path: "/wealth-management",
-  },
-  {
-    icon: Landmark,
-    title: "Investment Strategies",
-    desc: "Private Equity, Seed to Growth stage investments using innovative financial structures.",
-    path: "/investment-strategies",
-  },
-  {
-    icon: Building2,
-    title: "Real Estate",
-    desc: "Prime real estate acquisitions across Europe — residential, commercial, and hospitality.",
-    path: "/real-estate",
-  },
+  { icon: TrendingUp, title: "Asset Management", desc: "Diversified portfolio strategies across global markets.", path: "/asset-management" },
+  { icon: Shield, title: "Wealth Management", desc: "Bespoke planning for UHNW individuals and family offices.", path: "/wealth-management" },
+  { icon: Landmark, title: "Investment Strategies", desc: "Private Equity, Seed to Growth stage investments.", path: "/investment-strategies" },
+  { icon: Building2, title: "Real Estate", desc: "Prime acquisitions across Europe's top locations.", path: "/real-estate" },
 ];
 
 const Index = () => {
   return (
     <PageLayout>
       <HeroSection />
-      <StatsSection />
 
-      {/* About intro */}
-      <section className="py-24 bg-warm-section">
+      {/* About section - editorial style */}
+      <section className="py-28">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-16 items-center">
+            {/* Image stack */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.7 }}
+              className="lg:col-span-2 relative"
             >
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop"
-                alt="Team meeting"
-                className="rounded-2xl shadow-lg w-full h-auto object-cover"
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=750&fit=crop"
+                alt="Team collaboration"
+                className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
               />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="absolute -bottom-6 -right-6 bg-card border border-border rounded-xl p-5 shadow-lg"
+              >
+                <p className="text-2xl font-serif font-bold text-foreground">2023</p>
+                <p className="text-xs text-muted-foreground">Year Founded</p>
+              </motion.div>
             </motion.div>
-            <div>
+
+            {/* Content */}
+            <div className="lg:col-span-3">
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-primary text-sm font-semibold tracking-wide uppercase mb-3"
+                className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-4"
               >
                 Who We Are
               </motion.p>
@@ -69,36 +61,59 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.08 }}
-                className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5 leading-tight"
+                className="text-3xl md:text-[2.5rem] font-serif font-bold text-foreground mb-6 leading-tight"
               >
-                A family-founded firm with a global vision
+                A family-founded firm
+                <br />
+                with a global vision
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.16 }}
-                className="text-muted-foreground leading-relaxed mb-4"
+                className="text-muted-foreground leading-relaxed mb-5 text-[15px]"
               >
-                Founded in 2023 by the Aponte family — heirs to the MSC shipping legacy — Multi Investment brings a unique blend of entrepreneurial heritage and institutional rigour to every opportunity.
+                Founded by the Aponte family — heirs to the MSC shipping legacy — Multi Investment brings a unique blend of entrepreneurial heritage and institutional rigour to every opportunity.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.24 }}
-                className="text-muted-foreground leading-relaxed mb-6"
+                className="text-muted-foreground leading-relaxed mb-8 text-[15px]"
               >
                 We believe in long-term relationships, sustainable growth, and creating real impact through thoughtful capital deployment.
               </motion.p>
+
+              {/* Mini stats row */}
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.32 }}
+                className="flex gap-10 mb-8 pb-8 border-b border-border"
               >
-                <Link to="/about" className="text-primary font-medium text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
-                  Read our story <ChevronRight className="h-4 w-4" />
+                {[
+                  { val: "$3B+", label: "AUM" },
+                  { val: "50+", label: "Projects" },
+                  { val: "100+", label: "Partners" },
+                ].map((s) => (
+                  <div key={s.label}>
+                    <p className="text-2xl font-serif font-bold text-foreground">{s.val}</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider">{s.label}</p>
+                  </div>
+                ))}
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                <Link to="/about" className="text-primary font-medium text-sm inline-flex items-center gap-1.5 hover:gap-3 transition-all group">
+                  Read our full story <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </motion.div>
             </div>
@@ -106,50 +121,65 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-24">
+      {/* Services - big cards with hover */}
+      <section className="py-28 bg-warm-section">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-14">
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+            <div>
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3"
+              >
+                Our Services
+              </motion.p>
+              <motion.h2
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.08 }}
+                className="text-3xl md:text-[2.5rem] font-serif font-bold text-foreground leading-tight"
+              >
+                How we create value
+              </motion.h2>
+            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-primary text-sm font-semibold tracking-wide uppercase mb-3"
+              transition={{ delay: 0.2 }}
             >
-              Our Services
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.08 }}
-              className="text-3xl md:text-4xl font-serif font-bold text-foreground"
-            >
-              How we create value
-            </motion.h2>
+              <Link to="/asset-management" className="text-primary text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all">
+                View all services <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </motion.div>
           </div>
-          <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+
+          <div className="grid md:grid-cols-2 gap-5">
             {services.map((s, i) => (
               <motion.div
                 key={s.title}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.45, delay: i * 0.08 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
               >
                 <Link to={s.path}>
-                  <Card className="bg-card border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 group cursor-pointer h-full rounded-2xl">
-                    <CardContent className="p-7">
-                      <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
-                        <s.icon className="h-5 w-5 text-primary" />
+                  <Card className="bg-card border-border hover:border-primary/25 transition-all duration-300 group cursor-pointer h-full rounded-2xl overflow-hidden">
+                    <CardContent className="p-8 flex items-start gap-5">
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                        <s.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                       </div>
-                      <h3 className="text-lg font-serif font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                        {s.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-3">{s.desc}</p>
-                      <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Learn More <ArrowRight className="h-3 w-3" />
-                      </span>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-lg font-serif font-semibold text-foreground group-hover:text-primary transition-colors">
+                            {s.title}
+                          </h3>
+                          <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all -translate-x-2 group-hover:translate-x-0" />
+                        </div>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+                      </div>
                     </CardContent>
                   </Card>
                 </Link>
@@ -159,15 +189,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Values / Philosophy */}
-      <section className="py-24 bg-warm-section">
+      {/* Values */}
+      <section className="py-28">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-14">
+          <div className="text-center mb-16">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-primary text-sm font-semibold tracking-wide uppercase mb-3"
+              className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3"
             >
               Our Values
             </motion.p>
@@ -176,16 +206,16 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.08 }}
-              className="text-3xl md:text-4xl font-serif font-bold text-foreground"
+              className="text-3xl md:text-[2.5rem] font-serif font-bold text-foreground"
             >
-              What guides us every day
+              What guides us
             </motion.h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              { title: "Integrity", desc: "Transparency and honesty are at the core of every client relationship and business decision we make.", emoji: "🤝" },
-              { title: "Sustainability", desc: "ESG principles are woven into our investment process — because responsible investing is smart investing.", emoji: "🌱" },
-              { title: "Family Legacy", desc: "We think in generations, not quarters. Our approach is rooted in the Aponte family's long-term vision.", emoji: "🏛️" },
+              { title: "Integrity", desc: "Transparency and honesty are at the core of every client relationship.", emoji: "🤝" },
+              { title: "Sustainability", desc: "ESG principles woven into our process — responsible investing is smart investing.", emoji: "🌱" },
+              { title: "Legacy", desc: "We think in generations, not quarters. Rooted in the Aponte family's long-term vision.", emoji: "🏛️" },
             ].map((v, i) => (
               <motion.div
                 key={v.title}
@@ -193,10 +223,10 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: i * 0.1 }}
-                className="text-center p-6"
+                className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-md transition-shadow"
               >
-                <span className="text-4xl mb-4 block">{v.emoji}</span>
-                <h3 className="text-lg font-serif font-semibold text-foreground mb-2">{v.title}</h3>
+                <span className="text-4xl mb-5 block">{v.emoji}</span>
+                <h3 className="text-lg font-serif font-semibold text-foreground mb-3">{v.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
@@ -204,33 +234,55 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA with image */}
-      <section className="py-24">
+      {/* CTA with video */}
+      <section className="py-16">
         <div className="container mx-auto px-6">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="relative rounded-3xl overflow-hidden"
           >
-            <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&h=500&fit=crop"
-              alt="Office"
-              className="w-full h-72 md:h-80 object-cover"
-            />
-            <div className="absolute inset-0 bg-[hsl(220,25%,8%)]/75 flex items-center justify-center">
-              <div className="text-center px-6">
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-80 md:h-96 object-cover"
+            >
+              <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-[hsl(220,25%,6%)]/70 flex items-center justify-center">
+              <div className="text-center px-6 max-w-lg">
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-3xl md:text-4xl font-serif font-bold text-white mb-4"
+                >
                   Ready to start a conversation?
-                </h2>
-                <p className="text-white/70 max-w-md mx-auto mb-8">
-                  Let's discuss how Multi Investment can help you achieve your financial goals.
-                </p>
-                <Link to="/contact">
-                  <button className="bg-gradient-gold text-primary-foreground px-8 py-3 rounded-full font-medium hover:opacity-90 transition-opacity">
-                    Get in Touch
-                  </button>
-                </Link>
+                </motion.h2>
+                <motion.p
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                  className="text-white/60 mb-8 text-[15px]"
+                >
+                  Let's discuss how we can help you achieve your financial goals.
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <Link to="/contact">
+                    <button className="bg-gradient-gold text-primary-foreground px-8 py-3.5 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity">
+                      Schedule a Consultation
+                    </button>
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </motion.div>
