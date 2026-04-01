@@ -71,8 +71,8 @@ function ParticleField() {
 function ConnectionLines() {
   const linesRef = useRef<THREE.Group>(null);
   
-  const lines = useMemo(() => {
-    const result: { start: THREE.Vector3; end: THREE.Vector3 }[] = [];
+  const lineData = useMemo(() => {
+    const result: THREE.BufferGeometry[] = [];
     for (let i = 0; i < 20; i++) {
       const start = new THREE.Vector3(
         (Math.random() - 0.5) * 10,
@@ -84,7 +84,8 @@ function ConnectionLines() {
         start.y + (Math.random() - 0.5) * 4,
         start.z + (Math.random() - 0.5) * 4
       );
-      result.push({ start, end });
+      const geo = new THREE.BufferGeometry().setFromPoints([start, end]);
+      result.push(geo);
     }
     return result;
   }, []);
@@ -97,15 +98,11 @@ function ConnectionLines() {
 
   return (
     <group ref={linesRef}>
-      {lines.map((line, i) => {
-        const points = [line.start, line.end];
-        const geometry = new THREE.BufferGeometry().setFromPoints(points);
-        return (
-          <line key={i} geometry={geometry}>
-            <lineBasicMaterial color="#b8943e" transparent opacity={0.15} />
-          </line>
-        );
-      })}
+      {lineData.map((geo, i) => (
+        <lineSegments key={i} geometry={geo}>
+          <lineBasicMaterial color="#b8943e" transparent opacity={0.15} />
+        </lineSegments>
+      ))}
     </group>
   );
 }
