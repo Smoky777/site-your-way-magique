@@ -41,7 +41,7 @@ const Index = () => {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="absolute -bottom-6 -right-6 bg-card border border-border rounded-xl p-5 shadow-lg"
               >
-                <p className="text-2xl font-serif font-bold text-foreground">2023</p>
+                <p className="text-2xl font-serif font-bold text-foreground">2024</p>
                 <p className="text-xs text-muted-foreground">Year Founded</p>
               </motion.div>
             </motion.div>
