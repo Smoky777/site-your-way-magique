@@ -1,21 +1,27 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden">
-      {/* Main hero with image */}
-      <div className="relative min-h-[85vh] flex items-center">
-        {/* Background image */}
+      {/* Main hero with video */}
+      <div className="relative min-h-[90vh] flex items-center">
+        {/* Video background */}
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop"
-            alt="Modern building"
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
             className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,25%,8%)]/90 via-[hsl(220,25%,8%)]/70 to-[hsl(220,25%,8%)]/40" />
+            poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop"
+          >
+            <source src="https://videos.pexels.com/video-files/2325093/2325093-hd_1920_1080_30fps.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,25%,6%)]/90 via-[hsl(220,25%,6%)]/65 to-[hsl(220,25%,6%)]/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,25%,6%)]/60 via-transparent to-[hsl(220,25%,6%)]/20" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10 py-32">
@@ -69,6 +75,22 @@ const HeroSection = () => {
             </motion.div>
           </div>
         </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center pt-2"
+          >
+            <div className="w-1 h-2 bg-white/40 rounded-full" />
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Trust bar */}
