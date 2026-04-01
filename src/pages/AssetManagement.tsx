@@ -23,10 +23,10 @@ const allocationData = [
 ];
 
 const strategies = [
-  { icon: TrendingUp, title: "Equity Portfolios", desc: "Concentrated equity strategies targeting high-growth sectors across developed and emerging markets.", returns: "12-18%", risk: "Medium-High", minInvestment: "CHF 1M" },
-  { icon: BarChart3, title: "Fixed Income", desc: "Investment-grade and high-yield bond portfolios optimized for risk-adjusted returns.", returns: "4-7%", risk: "Low-Medium", minInvestment: "CHF 500K" },
-  { icon: PieChart, title: "Multi-Asset", desc: "Balanced allocation strategies combining equities, bonds, alternatives, and real assets.", returns: "8-12%", risk: "Medium", minInvestment: "CHF 1M" },
-  { icon: Shield, title: "Capital Preservation", desc: "Conservative strategies designed to protect wealth while generating steady income.", returns: "3-5%", risk: "Low", minInvestment: "CHF 250K" },
+  { icon: TrendingUp, title: "Equity Portfolios", desc: "Concentrated equity strategies targeting high-growth sectors across developed and emerging markets.", returns: "12-18%", risk: "Medium-High", minInvestment: "USD 10M" },
+  { icon: BarChart3, title: "Fixed Income", desc: "Investment-grade and high-yield bond portfolios optimized for risk-adjusted returns.", returns: "4-7%", risk: "Low-Medium", minInvestment: "USD 10M" },
+  { icon: PieChart, title: "Multi-Asset", desc: "Balanced allocation strategies combining equities, bonds, alternatives, and real assets.", returns: "8-12%", risk: "Medium", minInvestment: "USD 10M" },
+  { icon: Shield, title: "Capital Preservation", desc: "Conservative strategies designed to protect wealth while generating steady income.", returns: "3-5%", risk: "Low", minInvestment: "USD 10M" },
 ];
 
 const processSteps = [
