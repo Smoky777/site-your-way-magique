@@ -5,11 +5,16 @@ import { Input } from "@/components/ui/input";
 import { MapPin, Briefcase, ArrowRight } from "lucide-react";
 
 const positions = [
-  { title: "Investment Analyst — Private Equity", location: "Geneva", type: "Full-time", desc: "Support deal sourcing, due diligence, and portfolio monitoring across our PE investment pipeline." },
-  { title: "Real Estate Development Manager", location: "Naples", type: "Full-time", desc: "Oversee development projects from acquisition through completion across our Italian portfolio." },
-  { title: "Senior Wealth Advisor", location: "Monaco", type: "Full-time", desc: "Advise UHNW clients on comprehensive financial planning and investment strategy." },
-  { title: "ESG & Impact Analyst", location: "Geneva", type: "Full-time", desc: "Integrate ESG criteria into investment analysis and develop sustainability reporting frameworks." },
-  { title: "Junior Associate — Venture Capital", location: "Geneva", type: "Full-time", desc: "Research early-stage companies, prepare investment memos, and support portfolio operations." },
+  { title: "Chief Executive Officer", location: "Geneva", type: "Full-time", desc: "Lead the firm's vision, global strategy, and overall operations at the highest level." },
+  { title: "Chief Operating Officer", location: "Geneva", type: "Full-time", desc: "Oversee day-to-day operations, process optimization, and organizational efficiency across all divisions." },
+  { title: "Chief Financial Officer", location: "Geneva", type: "Full-time", desc: "Manage financial planning, reporting, capital allocation, and fiscal strategy for the firm." },
+  { title: "Chief Strategy Officer", location: "Geneva", type: "Full-time", desc: "Drive long-term strategic initiatives, market expansion, and corporate development across Europe." },
+  { title: "Chief Investment Officer", location: "Geneva", type: "Full-time", desc: "Define portfolio strategy, asset allocation, and investment thesis across all verticals." },
+  { title: "Portfolio Manager", location: "Geneva", type: "Full-time", desc: "Manage diversified portfolios, monitor performance, and execute investment decisions aligned with client objectives." },
+  { title: "Relationship Manager", location: "Monaco", type: "Full-time", desc: "Cultivate and maintain UHNW client relationships, ensuring personalized service and satisfaction." },
+  { title: "Head of Real Estate", location: "Naples", type: "Full-time", desc: "Lead the real estate division, oversee acquisitions, development projects, and portfolio management." },
+  { title: "Head of Venture Capital", location: "Geneva", type: "Full-time", desc: "Lead seed and early-stage investments in technology, fintech, and deep tech across Europe." },
+  { title: "Compliance Officer", location: "Geneva", type: "Full-time", desc: "Ensure regulatory compliance, risk management, and adherence to legal standards across all jurisdictions." },
 ];
 
 const Careers = () => {
