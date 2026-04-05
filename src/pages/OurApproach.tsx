@@ -454,9 +454,7 @@ const OurApproach = () => {
                 </div>
                 <div className="grid grid-cols-3 divide-x divide-border">
                   {[
-                    { val: "Geneva", label: "HQ" },
-                    { val: "Monaco", label: "Wealth" },
-                    { val: "Naples", label: "Real Estate" },
+                    { val: "Geneva", label: "Headquarters" },
                   ].map((o) => (
                     <div key={o.label} className="p-5 text-center">
                       <p className="text-base font-serif font-bold text-foreground">{o.val}</p>
