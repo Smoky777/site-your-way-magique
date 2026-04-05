@@ -5,6 +5,7 @@ import {
   Crown, BarChart3, Building, Briefcase, Target, Award, ArrowRight
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import gianluigiPhoto from "@/assets/gianluigi-aponte.jpg";
 
 const milestones = [
   { year: "1940", text: "Gianluigi Aponte is born in Sant'Agnello, on Italy's stunning Amalfi Coast — a region steeped in maritime tradition.", icon: Anchor },
@@ -138,35 +139,47 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-card border border-border rounded-2xl p-8 md:p-10 mb-6"
+              className="bg-card border border-border rounded-2xl overflow-hidden mb-6"
             >
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <Ship className="h-7 w-7 text-primary" />
+              {/* Photo + Header */}
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-72 lg:w-80 shrink-0">
+                  <img
+                    src={gianluigiPhoto}
+                    alt="Gianluigi Aponte, Founder of MSC Group"
+                    className="w-full h-64 md:h-full object-cover object-top"
+                  />
                 </div>
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">Gianluigi Aponte</h2>
-                  <p className="text-primary text-sm font-medium">Founder & Chairman, MSC Group</p>
-                  <p className="text-muted-foreground text-xs mt-1">Born 1940, Sant'Agnello, Italy</p>
+                <div className="p-8 md:p-10 flex-1">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                      <Ship className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">Gianluigi Aponte</h2>
+                      <p className="text-primary text-sm font-medium">Founder & Chairman, MSC Group</p>
+                      <p className="text-muted-foreground text-xs mt-1">Born 1940, Sant'Agnello, Italy</p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-3">
+                    <div className="bg-muted/50 rounded-xl p-4 text-center">
+                      <p className="text-lg font-serif font-bold text-foreground">$30B+</p>
+                      <p className="text-xs text-muted-foreground">Personal Fortune (Forbes)</p>
+                    </div>
+                    <div className="bg-muted/50 rounded-xl p-4 text-center">
+                      <p className="text-lg font-serif font-bold text-foreground">$80B</p>
+                      <p className="text-xs text-muted-foreground">Peak Annual Revenue (MSC)</p>
+                    </div>
+                    <div className="bg-muted/50 rounded-xl p-4 text-center">
+                      <p className="text-lg font-serif font-bold text-foreground">#1</p>
+                      <p className="text-xs text-muted-foreground">World's Largest Shipping Line</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-4 mb-6">
-                <div className="bg-muted/50 rounded-xl p-4 text-center">
-                  <p className="text-lg font-serif font-bold text-foreground">$30B+</p>
-                  <p className="text-xs text-muted-foreground">Personal Fortune (Forbes)</p>
-                </div>
-                <div className="bg-muted/50 rounded-xl p-4 text-center">
-                  <p className="text-lg font-serif font-bold text-foreground">$80B</p>
-                  <p className="text-xs text-muted-foreground">Peak Annual Revenue (MSC)</p>
-                </div>
-                <div className="bg-muted/50 rounded-xl p-4 text-center">
-                  <p className="text-lg font-serif font-bold text-foreground">#1</p>
-                  <p className="text-xs text-muted-foreground">World's Largest Shipping Line</p>
-                </div>
-              </div>
-
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="p-8 md:p-10 pt-0 md:pt-0 space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   Gianluigi Aponte's story is one of the most remarkable entrepreneurial journeys of the 20th century. Born into a modest family on Italy's Amalfi Coast, he trained as a <span className="text-foreground font-semibold">maritime captain</span> before making a fateful decision in 1970: to charter a single cargo vessel and launch the <span className="text-foreground font-semibold">Mediterranean Shipping Company (MSC)</span> from a small office in Naples.
                 </p>
