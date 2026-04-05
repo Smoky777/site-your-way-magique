@@ -302,40 +302,98 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-20 bg-muted/30">
+      {/* Interactive Timeline */}
+      <section className="py-20 bg-muted/30 overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl">
+          <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-14"
+              className="mb-16 text-center"
             >
               <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3">Milestones</p>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
                 From One Ship to a Global Empire
               </h2>
+              <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
+                Five decades of bold decisions that shaped the world's largest shipping company — and beyond.
+              </p>
             </motion.div>
-            <div className="space-y-0">
+
+            {/* Desktop: alternating timeline */}
+            <div className="hidden md:block relative">
+              {/* Center line */}
+              <motion.div
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+                className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent origin-top"
+              />
+
+              {milestones.map((m, i) => {
+                const isLeft = i % 2 === 0;
+                return (
+                  <motion.div
+                    key={m.year}
+                    initial={{ opacity: 0, x: isLeft ? -60 : 60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.6, delay: i * 0.08 }}
+                    className={`relative flex items-center mb-12 last:mb-0 ${isLeft ? "justify-start" : "justify-end"}`}
+                  >
+                    {/* Card */}
+                    <div className={`w-[45%] ${isLeft ? "pr-10 text-right" : "pl-10 text-left"}`}>
+                      <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group cursor-default">
+                        <div className={`flex items-center gap-3 mb-3 ${isLeft ? "justify-end" : "justify-start"}`}>
+                          <div className={`flex items-center gap-3 ${isLeft ? "flex-row-reverse" : ""}`}>
+                            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                              <m.icon className="h-4 w-4 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                            </div>
+                            <span className="text-primary font-serif font-bold text-2xl">{m.year}</span>
+                          </div>
+                        </div>
+                        <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground/80 transition-colors">
+                          {m.text}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Center dot */}
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: i * 0.08 + 0.2 }}
+                      className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-[0_0_12px_hsl(var(--primary)/0.4)] z-10"
+                    />
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Mobile: vertical timeline */}
+            <div className="md:hidden relative">
+              <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
+
               {milestones.map((m, i) => (
                 <motion.div
                   key={m.year}
-                  initial={{ opacity: 0, x: -24 }}
+                  initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.06 }}
-                  className="flex gap-5 pb-8 last:pb-0 group"
+                  className="flex gap-5 pb-8 last:pb-0 group relative"
                 >
-                  <div className="flex flex-col items-center">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                      <m.icon className="h-4 w-4 text-primary" />
+                  <div className="flex flex-col items-center z-10">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-300">
+                      <m.icon className="h-4 w-4 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                     </div>
-                    {i < milestones.length - 1 && <div className="w-px flex-1 bg-border mt-2" />}
                   </div>
-                  <div className="pb-2 pt-1.5">
-                    <span className="text-primary font-serif font-bold text-lg">{m.year}</span>
-                    <p className="text-muted-foreground mt-1 leading-relaxed">{m.text}</p>
+                  <div className="bg-card border border-border rounded-xl p-5 flex-1 group-hover:border-primary/30 group-hover:shadow-md transition-all duration-300">
+                    <span className="text-primary font-serif font-bold text-xl">{m.year}</span>
+                    <p className="text-muted-foreground mt-1.5 text-sm leading-relaxed">{m.text}</p>
                   </div>
                 </motion.div>
               ))}
