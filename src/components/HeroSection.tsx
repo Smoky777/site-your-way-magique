@@ -151,6 +151,7 @@ const HeroSection = () => {
             <span>🇨🇭 Switzerland</span>
           </div>
         </div>
+      </div>
     </section>
   );
 };
