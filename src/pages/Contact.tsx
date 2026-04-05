@@ -6,8 +6,6 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 const offices = [
   { city: "Geneva", address: "Rue du Rhône 14, 1204 Geneva, Switzerland", phone: "+41 22 000 0000", lat: 46.2044, lng: 6.1432 },
-  { city: "Monaco", address: "Boulevard des Moulins 6, MC 98000 Monaco", phone: "+377 00 00 00 00", lat: 43.7384, lng: 7.4246 },
-  { city: "Naples", address: "Via Partenope 45, 80121 Naples, Italy", phone: "+39 081 000 0000", lat: 40.8358, lng: 14.2488 },
 ];
 
 const Contact = () => {

@@ -42,14 +42,9 @@ const Footer = () => {
               <div>
                 <p className="text-foreground font-medium">Geneva</p>
                 <p>Rue du Rhône, 1204 Geneva</p>
-              </div>
               <div>
-                <p className="text-foreground font-medium">Monaco</p>
-                <p>Boulevard des Moulins, MC 98000</p>
-              </div>
-              <div>
-                <p className="text-foreground font-medium">Naples</p>
-                <p>Via Partenope, 80121 Naples</p>
+                <p className="text-foreground font-medium">Geneva</p>
+                <p>Rue du Rhône, 1204 Geneva</p>
               </div>
             </div>
           </div>
