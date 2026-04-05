@@ -29,7 +29,8 @@ const Blog = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.map((article, i) => (
-              <Card key={article.slug} className={`animate-on-scroll delay-${(i % 4) + 1} bg-card border-border group cursor-pointer hover:border-primary/50 transition-colors`}>
+              <a href={article.url} target="_blank" rel="noopener noreferrer" key={article.slug} className={`animate-on-scroll delay-${(i % 4) + 1}`}>
+                <Card className="bg-card border-border group cursor-pointer hover:border-primary/50 transition-colors h-full">
                 <CardContent className="p-6 flex flex-col h-full">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-xs text-primary font-medium bg-primary/10 px-2.5 py-1 rounded-full">{article.category}</span>
@@ -38,10 +39,11 @@ const Blog = () => {
                   <h3 className="text-lg font-serif font-semibold text-foreground mb-3 group-hover:text-primary transition-colors leading-snug">{article.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-4">{article.excerpt}</p>
                   <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Read More <ArrowRight className="h-3 w-3" />
+                    Read on MSC.com <ArrowRight className="h-3 w-3" />
                   </span>
                 </CardContent>
-              </Card>
+                </Card>
+              </a>
             ))}
           </div>
         </div>
