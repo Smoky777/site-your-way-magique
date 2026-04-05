@@ -177,9 +177,9 @@ const RealEstate = () => {
                   alt="Luxury property interior"
                   className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
                 />
-                <div className="absolute -bottom-5 -left-5 bg-card border border-border rounded-xl p-5 shadow-lg">
-                  <p className="text-2xl font-serif font-bold text-foreground"><AnimatedCounter value={26} suffix="k" /></p>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider">m² managed</p>
+                 <div className="absolute -bottom-5 -left-5 bg-card border border-border rounded-xl p-5 shadow-lg">
+                   <p className="text-2xl font-serif font-bold text-foreground">Pan-European</p>
+                   <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Coverage</p>
                 </div>
                 <div className="absolute -top-4 -right-4 bg-primary/10 border border-primary/20 rounded-xl px-4 py-2">
                   <p className="text-xs font-semibold text-primary">5 Countries</p>
