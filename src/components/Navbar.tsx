@@ -18,8 +18,6 @@ const navLinks = [
   { label: "About", path: "/about" },
   { label: "Team", path: "/team" },
   { label: "Blog", path: "/blog" },
-  { label: "Careers", path: "/careers" },
-  { label: "FAQ", path: "/faq" },
   { label: "Contact", path: "/contact" },
 ];
 
