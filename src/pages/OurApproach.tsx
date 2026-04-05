@@ -417,7 +417,7 @@ const OurApproach = () => {
                   "Co-investment model ensuring full alignment of interests",
                   "No external LP pressure — decisions driven by conviction, not fundraising cycles",
                   "Multi-generational perspective with permanent capital base",
-                  "Boutique team of 13 senior professionals across 3 offices",
+                  "Boutique team of 13 senior professionals based in Geneva",
                 ].map((item, i) => (
                   <motion.div
                     key={i}
