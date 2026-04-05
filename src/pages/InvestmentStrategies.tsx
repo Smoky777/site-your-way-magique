@@ -283,9 +283,12 @@ const InvestmentStrategies = () => {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="max-w-4xl mx-auto relative rounded-3xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=500&fit=crop" alt="Partnership" className="w-full h-72 md:h-80 object-cover" />
-            <div className="absolute inset-0 bg-[hsl(220,25%,6%)]/75 flex items-center justify-center">
+            className="max-w-4xl mx-auto relative rounded-3xl overflow-hidden bg-gradient-navy py-16 md:py-20">
+            <div className="absolute inset-0 opacity-[0.04]" style={{
+              backgroundImage: `linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)`,
+              backgroundSize: "60px 60px",
+            }} />
+            <div className="relative flex items-center justify-center">
               <div className="text-center px-6">
                 <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Let's build together</h2>
                 <p className="text-white/60 text-sm mb-8 max-w-md mx-auto">Whether you're a founder seeking capital or an investor exploring co-investment opportunities, we'd love to connect.</p>
