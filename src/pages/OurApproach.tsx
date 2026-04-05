@@ -2,7 +2,7 @@ import PageLayout from "@/components/PageLayout";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Shield, Target, Compass, TrendingUp, Eye, Heart, Gem, ArrowRight, Building2, Rocket, Wallet, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 const principles = [
   { icon: Target, title: "Long-Term Value Creation", desc: "We invest with a generational perspective. Every decision is evaluated for its ability to create sustainable value over decades, not quarters.", number: "01" },
@@ -29,12 +29,12 @@ const process = [
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] } },
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
 
 const OurApproach = () => {
@@ -45,39 +45,50 @@ const OurApproach = () => {
 
   return (
     <PageLayout>
-      {/* Hero with parallax */}
-      <section ref={heroRef} className="relative pt-28 pb-36 overflow-hidden bg-[hsl(var(--navy))]">
-        <div className="absolute inset-0 opacity-[0.06]" style={{
+      {/* Hero */}
+      <section ref={heroRef} className="relative pt-28 pb-40 overflow-hidden bg-[hsl(var(--navy))]">
+        <div className="absolute inset-0 opacity-[0.04]" style={{
           backgroundImage: "radial-gradient(hsl(43 45% 42%) 1px, transparent 1px)",
           backgroundSize: "32px 32px"
         }} />
-        <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[700px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/[0.02] blur-[80px] pointer-events-none" />
+        <div className="absolute top-1/3 left-1/4 w-[800px] h-[600px] rounded-full bg-primary/[0.04] blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div style={{ opacity: heroOpacity, y: heroY }}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium">Our Approach</p>
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-8 h-px bg-primary" />
+                  <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">Our Approach</p>
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[hsl(0_0%_95%)] mb-6 leading-[1.1]">
-                  Investment Philosophy<br />
-                  <span className="bg-gradient-to-r from-primary to-[hsl(var(--gold-light))] bg-clip-text text-transparent">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[hsl(0_0%_95%)] mb-7 leading-[1.08]">
+                  Investment Philosophy
+                  <br />
+                  <span className="bg-gradient-to-r from-primary to-[hsl(var(--gold-light))] bg-clip-text text-transparent italic">
                     Built on Conviction
                   </span>
                 </h1>
-                <p className="text-[hsl(220_10%_65%)] text-lg leading-relaxed max-w-xl">
+                <p className="text-[hsl(220_10%_62%)] text-lg leading-relaxed max-w-xl mb-10">
                   We believe in the power of patience, discipline, and deep expertise. Our philosophy is rooted in the Aponte family's multi-generational approach to building enduring value.
                 </p>
+                <div className="flex gap-4">
+                  <Link to="/contact">
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-primary to-[hsl(var(--gold-light))] text-primary-foreground font-semibold text-sm hover:shadow-xl hover:shadow-primary/20 transition-shadow"
+                    >
+                      Start a Conversation <ArrowRight className="h-4 w-4" />
+                    </motion.button>
+                  </Link>
+                </div>
               </motion.div>
 
-              {/* Key metrics in hero */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -86,20 +97,27 @@ const OurApproach = () => {
               >
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { val: "CHF 3B+", label: "Assets Under Management" },
-                    { val: "2024", label: "Year Founded" },
-                    { val: "50+", label: "Real Estate Projects" },
-                    { val: "Geneva", label: "Headquarters" },
+                    { val: "CHF 3B+", label: "Assets Under Management", accent: true },
+                    { val: "2024", label: "Year Founded", accent: false },
+                    { val: "50+", label: "Real Estate Projects", accent: false },
+                    { val: "Geneva", label: "Headquarters", accent: false },
                   ].map((s, i) => (
                     <motion.div
                       key={s.label}
-                      initial={{ opacity: 0, y: 15 }}
+                      initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4 + i * 0.1 }}
-                      className="rounded-xl border border-[hsl(0_0%_100%/0.08)] bg-[hsl(0_0%_100%/0.03)] backdrop-blur-sm p-6 text-center hover:border-primary/30 transition-colors group"
+                      className={`relative rounded-2xl border backdrop-blur-sm p-7 text-center group overflow-hidden transition-all duration-500 ${
+                        s.accent
+                          ? "border-primary/30 bg-primary/[0.06] hover:border-primary/50"
+                          : "border-[hsl(0_0%_100%/0.08)] bg-[hsl(0_0%_100%/0.03)] hover:border-primary/30"
+                      }`}
                     >
-                      <p className="text-2xl md:text-3xl font-serif font-bold text-[hsl(0_0%_95%)] group-hover:text-primary transition-colors">{s.val}</p>
-                      <p className="text-[hsl(220_10%_55%)] text-xs mt-1.5 uppercase tracking-wider">{s.label}</p>
+                      {s.accent && (
+                        <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent" />
+                      )}
+                      <p className="text-3xl font-serif font-bold text-[hsl(0_0%_95%)] group-hover:text-primary transition-colors">{s.val}</p>
+                      <p className="text-[hsl(220_10%_50%)] text-[10px] mt-2 uppercase tracking-[0.15em]">{s.label}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -108,11 +126,11 @@ const OurApproach = () => {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* Quote - elevated design */}
-      <section className="py-24">
+      {/* Quote */}
+      <section className="py-28">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
@@ -120,39 +138,42 @@ const OurApproach = () => {
             viewport={{ once: true }}
             className="relative max-w-4xl mx-auto"
           >
-            {/* Large decorative quote mark */}
-            <div className="absolute -top-6 -left-4 text-[120px] font-serif text-primary/[0.07] leading-none select-none pointer-events-none">"</div>
+            <div className="absolute -top-8 -left-6 text-[140px] font-serif text-primary/[0.06] leading-none select-none pointer-events-none">"</div>
             
-            <div className="relative bg-card border border-border rounded-2xl p-10 md:p-14">
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-              <blockquote className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed italic mb-6 text-center">
+            <div className="relative bg-card border border-border rounded-3xl p-12 md:p-16">
+              <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+              <blockquote className="text-xl md:text-2xl lg:text-[1.75rem] font-serif text-foreground leading-relaxed italic mb-8 text-center">
                 "True wealth is not built in a day. It is the result of careful stewardship, unwavering discipline, and the courage to think in generations."
               </blockquote>
-              <div className="flex items-center justify-center gap-3">
-                <div className="w-8 h-px bg-primary" />
-                <p className="text-primary font-medium text-sm tracking-wide">Multi Investment Founding Principle</p>
-                <div className="w-8 h-px bg-primary" />
+              <div className="flex items-center justify-center gap-4">
+                <div className="w-10 h-px bg-primary/50" />
+                <p className="text-primary font-medium text-xs tracking-[0.2em] uppercase">Multi Investment Founding Principle</p>
+                <div className="w-10 h-px bg-primary/50" />
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Principles - alternating layout */}
-      <section className="py-20 bg-secondary/20 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute top-20 right-0 w-[300px] h-[300px] rounded-full bg-primary/[0.02] blur-[80px] pointer-events-none" />
+      {/* Principles */}
+      <section className="py-24 bg-secondary/30 relative overflow-hidden">
+        <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-primary/[0.02] blur-[80px] pointer-events-none" />
 
         <div className="container mx-auto px-6">
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-3">Core Principles</p>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">What Guides Every Decision</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">Six foundational principles that define how we evaluate, execute, and manage investments.</p>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-8 h-px bg-primary/50" />
+              <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">Core Principles</p>
+              <div className="w-8 h-px bg-primary/50" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">What Guides Every Decision</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">Six foundational principles that define how we evaluate, execute, and manage investments.</p>
           </motion.div>
 
           <motion.div
@@ -160,20 +181,20 @@ const OurApproach = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
           >
             {principles.map((p) => {
               const Icon = p.icon;
               return (
                 <motion.div key={p.title} variants={cardVariants}>
-                  <div className="relative bg-card border border-border rounded-xl p-7 h-full hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 group overflow-hidden">
-                    {/* Number watermark */}
-                    <span className="absolute top-4 right-5 text-5xl font-serif font-bold text-primary/[0.05] group-hover:text-primary/[0.1] transition-colors select-none">
+                  <div className="relative bg-card border border-border rounded-2xl p-8 h-full hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/[0.06] transition-all duration-500 group overflow-hidden hover:-translate-y-1">
+                    <span className="absolute top-5 right-6 text-6xl font-serif font-bold text-primary/[0.04] group-hover:text-primary/[0.1] transition-colors duration-500 select-none">
                       {p.number}
                     </span>
+                    <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/0 group-hover:via-primary/60 group-hover:to-primary/0 transition-all duration-700" />
 
                     <div className="relative z-10">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center mb-5 border border-primary/10 group-hover:from-primary group-hover:to-primary group-hover:border-primary/50 transition-all duration-500">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-6 border border-primary/10 group-hover:from-primary group-hover:to-primary group-hover:border-primary/50 transition-all duration-500">
                         <Icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
                       </div>
                       <h3 className="text-lg font-serif font-semibold text-foreground mb-3">{p.title}</h3>
@@ -187,24 +208,54 @@ const OurApproach = () => {
         </div>
       </section>
 
-      {/* Investment Process - timeline style */}
-      <section className="py-24">
+      {/* Investment Process - horizontal on desktop */}
+      <section className="py-28">
         <div className="container mx-auto px-6">
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-3">Our Process</p>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">From Opportunity to Value</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">A disciplined four-stage process ensures every investment meets our rigorous standards.</p>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-8 h-px bg-primary/50" />
+              <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">Our Process</p>
+              <div className="w-8 h-px bg-primary/50" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">From Opportunity to Value</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">A disciplined four-stage process ensures every investment meets our rigorous standards.</p>
           </motion.div>
 
-          <div className="max-w-3xl mx-auto relative">
-            {/* Vertical line */}
-            <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
+          {/* Desktop: horizontal timeline */}
+          <div className="hidden md:block">
+            <div className="relative">
+              <div className="absolute top-[2.25rem] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+              <div className="grid grid-cols-4 gap-6">
+                {process.map((p, i) => (
+                  <motion.div
+                    key={p.step}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.12, duration: 0.5 }}
+                    className="relative group"
+                  >
+                    <div className="flex flex-col items-center text-center">
+                      <div className="w-[4.5rem] h-[4.5rem] rounded-2xl bg-card border-2 border-primary/20 flex items-center justify-center mb-7 relative z-10 group-hover:border-primary group-hover:bg-primary transition-all duration-500 shadow-lg shadow-background">
+                        <span className="text-xl font-serif font-bold text-primary group-hover:text-primary-foreground transition-colors">{i + 1}</span>
+                      </div>
+                      <h3 className="text-lg font-serif font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{p.step}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
 
+          {/* Mobile: vertical timeline */}
+          <div className="md:hidden relative">
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
             <div className="space-y-8">
               {process.map((p, i) => (
                 <motion.div
@@ -212,19 +263,17 @@ const OurApproach = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.12, duration: 0.5 }}
-                  className="flex gap-6 md:gap-8 group"
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  className="flex gap-6 group"
                 >
-                  {/* Step indicator */}
                   <div className="relative shrink-0">
-                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-card border-2 border-primary/20 flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all duration-400 z-10 relative">
-                      <span className="text-lg md:text-xl font-serif font-bold text-primary group-hover:text-primary-foreground transition-colors">{i + 1}</span>
+                    <div className="w-12 h-12 rounded-xl bg-card border-2 border-primary/20 flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all duration-400 z-10 relative">
+                      <span className="text-lg font-serif font-bold text-primary group-hover:text-primary-foreground transition-colors">{i + 1}</span>
                     </div>
                   </div>
-
-                  <div className="pb-8 pt-1 flex-1">
-                    <h3 className="text-xl font-serif font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{p.step}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{p.desc}</p>
+                  <div className="pb-6 pt-1 flex-1">
+                    <h3 className="text-lg font-serif font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{p.step}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -233,52 +282,57 @@ const OurApproach = () => {
         </div>
       </section>
 
-      {/* Investment Structures - premium dark section */}
-      <section className="py-24 relative overflow-hidden bg-[hsl(var(--navy))]">
-        <div className="absolute inset-0 opacity-[0.04]" style={{
+      {/* Investment Structures */}
+      <section className="py-28 relative overflow-hidden bg-[hsl(var(--navy))]">
+        <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: "radial-gradient(hsl(43 45% 42%) 1px, transparent 1px)",
           backgroundSize: "28px 28px"
         }} />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-primary/[0.04] blur-[100px] pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-primary/[0.05] blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-3">Investment Structures</p>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[hsl(0_0%_95%)] mb-4">Flexible Capital Deployment</h2>
-            <p className="text-[hsl(220_10%_60%)] max-w-2xl mx-auto">
-              We deploy capital through a range of structures tailored to each opportunity's stage, risk profile, and strategic objectives.
-            </p>
-          </motion.div>
-
-          {/* Featured: Private Equity - full width */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-8 h-px bg-primary/50" />
+              <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">Investment Structures</p>
+              <div className="w-8 h-px bg-primary/50" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[hsl(0_0%_95%)] mb-5">Flexible Capital Deployment</h2>
+            <p className="text-[hsl(220_10%_58%)] max-w-2xl mx-auto leading-relaxed">
+              We deploy capital through a range of structures tailored to each opportunity's stage, risk profile, and strategic objectives.
+            </p>
+          </motion.div>
+
+          {/* Featured: Private Equity */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="mb-6"
           >
-            <div className="relative rounded-2xl border border-[hsl(0_0%_100%/0.1)] bg-[hsl(0_0%_100%/0.03)] backdrop-blur-sm p-8 md:p-10 hover:border-primary/40 transition-all duration-500 group overflow-hidden">
+            <div className="relative rounded-2xl border border-primary/20 bg-primary/[0.04] backdrop-blur-sm p-9 md:p-12 hover:border-primary/40 transition-all duration-500 group overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary via-[hsl(var(--gold-light))] to-primary" />
-              <div className="absolute top-6 right-8 text-7xl font-serif font-bold text-primary/[0.04] group-hover:text-primary/[0.08] transition-colors select-none">PE</div>
+              <div className="absolute -top-4 -right-4 text-[8rem] font-serif font-bold text-primary/[0.03] group-hover:text-primary/[0.06] transition-colors select-none leading-none">PE</div>
               
-              <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center relative z-10">
+              <div className="grid md:grid-cols-[1fr_auto] gap-10 items-center relative z-10">
                 <div>
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs text-primary font-semibold tracking-wider uppercase bg-primary/10 px-3 py-1 rounded-full border border-primary/20">Core Strategy</span>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-[10px] text-primary font-bold tracking-[0.15em] uppercase bg-primary/10 px-3.5 py-1.5 rounded-full border border-primary/20">Core Strategy</span>
                   </div>
-                  <h3 className="text-2xl font-serif font-bold text-[hsl(0_0%_95%)] mb-3 group-hover:text-primary transition-colors">Private Equity</h3>
-                  <p className="text-[hsl(220_10%_60%)] leading-relaxed max-w-2xl">
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-[hsl(0_0%_95%)] mb-4 group-hover:text-primary transition-colors">Private Equity</h3>
+                  <p className="text-[hsl(220_10%_58%)] leading-relaxed max-w-2xl">
                     Direct equity investments in established companies through buyouts, growth capital, and co-investments. We take active board positions and work alongside management to drive operational improvements and long-term value creation.
                   </p>
                 </div>
-                <div className="hidden md:flex flex-col items-center gap-1 text-center px-6 border-l border-[hsl(0_0%_100%/0.08)]">
-                  <p className="text-3xl font-serif font-bold text-primary">CHF 1.2B+</p>
-                  <p className="text-[hsl(220_10%_50%)] text-xs uppercase tracking-wider">Deployed</p>
+                <div className="hidden md:flex flex-col items-center gap-2 text-center px-8 py-4 border-l border-[hsl(0_0%_100%/0.08)]">
+                  <p className="text-4xl font-serif font-bold text-primary">CHF 1.2B+</p>
+                  <p className="text-[hsl(220_10%_48%)] text-[10px] uppercase tracking-[0.15em]">Deployed Capital</p>
                 </div>
               </div>
             </div>
@@ -323,17 +377,17 @@ const OurApproach = () => {
               },
             ].map((s) => (
               <motion.div key={s.title} variants={cardVariants}>
-                <div className="relative rounded-xl border border-[hsl(0_0%_100%/0.08)] bg-[hsl(0_0%_100%/0.03)] backdrop-blur-sm p-7 h-full hover:border-primary/40 transition-all duration-500 group overflow-hidden">
-                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 group-hover:via-primary transition-all duration-500" />
-                  <div className="absolute top-4 right-5 text-4xl font-serif font-bold text-primary/[0.05] group-hover:text-primary/[0.1] transition-colors select-none">{s.abbr}</div>
+                <div className="relative rounded-2xl border border-[hsl(0_0%_100%/0.07)] bg-[hsl(0_0%_100%/0.02)] backdrop-blur-sm p-8 h-full hover:border-primary/40 transition-all duration-500 group overflow-hidden hover:bg-[hsl(0_0%_100%/0.04)]">
+                  <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/0 group-hover:via-primary/50 group-hover:to-primary/0 transition-all duration-700" />
+                  <div className="absolute top-4 right-6 text-5xl font-serif font-bold text-primary/[0.04] group-hover:text-primary/[0.1] transition-colors duration-500 select-none">{s.abbr}</div>
                   
                   <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-[10px] text-primary/80 font-semibold tracking-widest uppercase bg-primary/10 px-2.5 py-1 rounded-full border border-primary/15">{s.tag}</span>
-                      <span className="text-[10px] text-[hsl(220_10%_50%)] tracking-wider uppercase">• {s.detail}</span>
+                    <div className="flex flex-wrap items-center gap-2.5 mb-5">
+                      <span className="text-[10px] text-primary/90 font-bold tracking-[0.12em] uppercase bg-primary/10 px-3 py-1 rounded-full border border-primary/15">{s.tag}</span>
+                      <span className="text-[10px] text-[hsl(220_10%_48%)] tracking-wider">• {s.detail}</span>
                     </div>
-                    <h3 className="text-lg font-serif font-bold text-[hsl(0_0%_95%)] mb-3 group-hover:text-primary transition-colors">{s.title}</h3>
-                    <p className="text-[hsl(220_10%_58%)] text-sm leading-relaxed">{s.desc}</p>
+                    <h3 className="text-xl font-serif font-bold text-[hsl(0_0%_95%)] mb-3 group-hover:text-primary transition-colors">{s.title}</h3>
+                    <p className="text-[hsl(220_10%_56%)] text-sm leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
               </motion.div>
@@ -342,18 +396,22 @@ const OurApproach = () => {
         </div>
       </section>
 
-
-      <section className="py-20 bg-secondary/20">
+      {/* Investment Pillars */}
+      <section className="py-28 bg-secondary/20">
         <div className="container mx-auto px-6">
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-20"
           >
-            <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-3">Investment Pillars</p>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Four Pillars of Excellence</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">Our expertise spans four complementary verticals, each managed by dedicated specialists.</p>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-8 h-px bg-primary/50" />
+              <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">Investment Pillars</p>
+              <div className="w-8 h-px bg-primary/50" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">Four Pillars of Excellence</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">Our expertise spans four complementary verticals, each managed by dedicated specialists.</p>
           </motion.div>
 
           <motion.div
@@ -367,23 +425,17 @@ const OurApproach = () => {
               const Icon = pillar.icon;
               return (
                 <motion.div key={pillar.title} variants={cardVariants}>
-                  <div className="relative bg-card border border-border rounded-xl p-8 h-full hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 group overflow-hidden">
-                    {/* Subtle corner decoration */}
-                    <div className="absolute top-0 right-0 w-32 h-32 opacity-[0.03] pointer-events-none">
-                      <svg viewBox="0 0 100 100" className="w-full h-full text-primary">
-                        <circle cx="80" cy="20" r="25" fill="none" stroke="currentColor" strokeWidth="0.5" />
-                        <circle cx="80" cy="20" r="15" fill="none" stroke="currentColor" strokeWidth="0.5" />
-                      </svg>
-                    </div>
+                  <div className="relative bg-card border border-border rounded-2xl p-9 h-full hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/[0.06] transition-all duration-500 group overflow-hidden hover:-translate-y-1">
+                    <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/0 group-hover:via-primary/50 group-hover:to-primary/0 transition-all duration-700" />
 
-                    <div className="flex items-start gap-5 relative z-10">
-                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center shrink-0 border border-primary/10 group-hover:from-primary group-hover:to-primary group-hover:border-primary transition-all duration-500">
+                    <div className="flex items-start gap-6 relative z-10">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center shrink-0 border border-primary/10 group-hover:from-primary group-hover:to-primary group-hover:border-primary transition-all duration-500">
                         <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center justify-between mb-3">
                           <h3 className="text-lg font-serif font-bold text-foreground">{pillar.title}</h3>
-                          <span className="text-xs text-primary/60 font-semibold tracking-wider uppercase bg-primary/5 px-2.5 py-1 rounded-full border border-primary/10">{pillar.stats}</span>
+                          <span className="text-[10px] text-primary/70 font-bold tracking-[0.1em] uppercase bg-primary/5 px-3 py-1 rounded-full border border-primary/10">{pillar.stats}</span>
                         </div>
                         <p className="text-muted-foreground text-sm leading-relaxed">{pillar.desc}</p>
                       </div>
@@ -397,15 +449,18 @@ const OurApproach = () => {
       </section>
 
       {/* Differentiators */}
-      <section className="py-24">
+      <section className="py-28">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -25 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-3">Why Multi Investment</p>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-px bg-primary/50" />
+                <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">Why Multi Investment</p>
+              </div>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">What Sets Us Apart</h2>
               <p className="text-muted-foreground leading-relaxed mb-10">
                 As a family-founded firm, we combine institutional-grade capabilities with the agility and long-term vision that only a private, independent structure can provide.
@@ -415,50 +470,54 @@ const OurApproach = () => {
                 {[
                   "Direct access to Aponte family deal flow and network",
                   "Co-investment model ensuring full alignment of interests",
-                  "No external LP pressure — decisions driven by conviction, not fundraising cycles",
+                  "No external LP pressure — decisions driven by conviction",
                   "Multi-generational perspective with permanent capital base",
-                  "Boutique team of 13 senior professionals based in Geneva",
+                  "Boutique team of senior professionals based in Geneva",
                 ].map((item, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, x: -10 }}
+                    initial={{ opacity: 0, x: -15 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08 }}
-                    className="flex items-start gap-3"
+                    className="flex items-start gap-4 group"
                   >
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary transition-colors duration-400">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-primary group-hover:text-primary-foreground transition-colors duration-400" />
+                    </div>
                     <p className="text-foreground text-sm leading-relaxed">{item}</p>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
 
-            {/* Visual stats block */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 25 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="rounded-2xl border border-border bg-card overflow-hidden">
-                <div className="bg-[hsl(var(--navy))] p-8 relative">
-                  <div className="absolute inset-0 opacity-[0.05]" style={{
+              <div className="rounded-3xl border border-border bg-card overflow-hidden shadow-2xl shadow-primary/[0.04]">
+                <div className="bg-[hsl(var(--navy))] p-10 md:p-12 relative">
+                  <div className="absolute inset-0 opacity-[0.04]" style={{
                     backgroundImage: "radial-gradient(hsl(43 45% 42%) 1px, transparent 1px)",
                     backgroundSize: "20px 20px"
                   }} />
+                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
                   <div className="relative z-10 text-center">
-                    <p className="text-primary text-xs tracking-[0.3em] uppercase font-medium mb-2">Assets Under Management</p>
+                    <p className="text-primary text-[10px] tracking-[0.35em] uppercase font-medium mb-3">Assets Under Management</p>
                     <p className="text-5xl md:text-6xl font-serif font-bold text-[hsl(0_0%_95%)]">CHF 3B+</p>
                   </div>
                 </div>
-                <div className="grid grid-cols-3 divide-x divide-border">
+                <div className="p-8 flex items-center justify-center gap-8">
                   {[
-                    { val: "Geneva", label: "Headquarters" },
+                    { val: "50+", label: "Projects" },
+                    { val: "2024", label: "Founded" },
+                    { val: "Geneva", label: "HQ" },
                   ].map((o) => (
-                    <div key={o.label} className="p-5 text-center">
-                      <p className="text-base font-serif font-bold text-foreground">{o.val}</p>
-                      <p className="text-muted-foreground text-xs mt-0.5 uppercase tracking-wider">{o.label}</p>
+                    <div key={o.label} className="text-center">
+                      <p className="text-lg font-serif font-bold text-foreground">{o.val}</p>
+                      <p className="text-muted-foreground text-[10px] mt-1 uppercase tracking-[0.15em]">{o.label}</p>
                     </div>
                   ))}
                 </div>
@@ -469,33 +528,34 @@ const OurApproach = () => {
       </section>
 
       {/* CTA */}
-      <section className="pb-24">
+      <section className="pb-28">
         <div className="container mx-auto px-6">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative rounded-2xl overflow-hidden"
+            className="relative rounded-3xl overflow-hidden"
           >
             <div className="absolute inset-0 bg-[hsl(var(--navy))]" />
-            <div className="absolute inset-0 opacity-[0.05]" style={{
+            <div className="absolute inset-0 opacity-[0.04]" style={{
               backgroundImage: "radial-gradient(hsl(43 45% 42%) 1px, transparent 1px)",
               backgroundSize: "24px 24px"
             }} />
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/[0.05] blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/[0.06] blur-[140px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-primary/[0.04] blur-[100px] pointer-events-none" />
 
-            <div className="relative z-10 p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="relative z-10 p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div>
-                <h3 className="text-2xl md:text-3xl font-serif font-bold text-[hsl(0_0%_95%)] mb-3">
-                  Ready to Explore What's Possible?
+                <h3 className="text-2xl md:text-4xl font-serif font-bold text-[hsl(0_0%_95%)] mb-4 leading-tight">
+                  Ready to Explore<br className="hidden md:block" /> What's Possible?
                 </h3>
-                <p className="text-[hsl(220_10%_65%)] max-w-lg">
+                <p className="text-[hsl(220_10%_60%)] max-w-lg leading-relaxed">
                   Whether you're looking to preserve wealth, invest in real estate, or explore venture capital, we'd love to start a conversation.
                 </p>
               </div>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-[hsl(var(--gold-light))] text-primary-foreground font-semibold hover:opacity-90 transition-all hover:shadow-xl hover:shadow-primary/25 shrink-0 group"
+                className="inline-flex items-center gap-2 px-9 py-4.5 rounded-full bg-gradient-to-r from-primary to-[hsl(var(--gold-light))] text-primary-foreground font-semibold text-sm hover:opacity-90 transition-all hover:shadow-2xl hover:shadow-primary/30 shrink-0 group"
               >
                 Get in Touch
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
