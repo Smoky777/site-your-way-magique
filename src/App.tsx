@@ -37,6 +37,7 @@ const App = () => (
           <Route path="/client-portal" element={<ClientPortal />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/our-approach" element={<OurApproach />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
           <Route path="*" element={<NotFound />} />
