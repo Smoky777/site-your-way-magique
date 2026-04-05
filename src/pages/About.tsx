@@ -163,21 +163,23 @@ const About = () => {
                   </div>
 
                   <div className="grid grid-cols-3 gap-3">
-                <div className="bg-muted/50 rounded-xl p-4 text-center">
-                  <p className="text-lg font-serif font-bold text-foreground">$30B+</p>
-                  <p className="text-xs text-muted-foreground">Personal Fortune (Forbes)</p>
-                </div>
-                <div className="bg-muted/50 rounded-xl p-4 text-center">
-                  <p className="text-lg font-serif font-bold text-foreground">$80B</p>
-                  <p className="text-xs text-muted-foreground">Peak Annual Revenue (MSC)</p>
-                </div>
-                <div className="bg-muted/50 rounded-xl p-4 text-center">
-                  <p className="text-lg font-serif font-bold text-foreground">#1</p>
-                  <p className="text-xs text-muted-foreground">World's Largest Shipping Line</p>
+                    <div className="bg-muted/50 rounded-xl p-4 text-center">
+                      <p className="text-lg font-serif font-bold text-foreground">$30B+</p>
+                      <p className="text-xs text-muted-foreground">Personal Fortune (Forbes)</p>
+                    </div>
+                    <div className="bg-muted/50 rounded-xl p-4 text-center">
+                      <p className="text-lg font-serif font-bold text-foreground">$80B</p>
+                      <p className="text-xs text-muted-foreground">Peak Annual Revenue (MSC)</p>
+                    </div>
+                    <div className="bg-muted/50 rounded-xl p-4 text-center">
+                      <p className="text-lg font-serif font-bold text-foreground">#1</p>
+                      <p className="text-xs text-muted-foreground">World's Largest Shipping Line</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="p-8 md:p-10 pt-0 md:pt-0 space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   Gianluigi Aponte's story is one of the most remarkable entrepreneurial journeys of the 20th century. Born into a modest family on Italy's Amalfi Coast, he trained as a <span className="text-foreground font-semibold">maritime captain</span> before making a fateful decision in 1970: to charter a single cargo vessel and launch the <span className="text-foreground font-semibold">Mediterranean Shipping Company (MSC)</span> from a small office in Naples.
                 </p>
