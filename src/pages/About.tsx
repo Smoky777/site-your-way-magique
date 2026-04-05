@@ -202,19 +202,30 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-card border border-border rounded-2xl p-8 md:p-10"
+              className="bg-card border border-border rounded-2xl overflow-hidden"
             >
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <Users className="h-7 w-7 text-primary" />
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-72 lg:w-80 shrink-0">
+                  <img
+                    src={diegoPhoto}
+                    alt="Diego Aponte, President of MSC Group"
+                    className="w-full h-64 md:h-full object-cover object-top"
+                  />
                 </div>
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">Diego Aponte</h2>
-                  <p className="text-primary text-sm font-medium">President, MSC Group & Founder of Multi Investment</p>
+                <div className="p-8 md:p-10 flex-1">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                      <Users className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">Diego Aponte</h2>
+                      <p className="text-primary text-sm font-medium">President, MSC Group & Founder of Multi Investment</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="p-8 md:p-10 pt-0 md:pt-0 space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   <span className="text-foreground font-semibold">Diego Aponte</span> is the eldest son of Gianluigi Aponte and the operational architect behind MSC's modern-day dominance. He joined the family business in the early 1990s, working across every division before being appointed <span className="text-foreground font-semibold">President of the MSC Group in 2014</span>.
                 </p>
