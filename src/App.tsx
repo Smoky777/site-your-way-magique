@@ -14,6 +14,7 @@ import Team from "./pages/Team";
 import ClientPortal from "./pages/ClientPortal";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import OurApproach from "./pages/OurApproach";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 
