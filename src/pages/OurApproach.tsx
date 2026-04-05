@@ -89,7 +89,7 @@ const OurApproach = () => {
                     { val: "CHF 3B+", label: "Assets Under Management" },
                     { val: "2024", label: "Year Founded" },
                     { val: "50+", label: "Real Estate Projects" },
-                    { val: "3", label: "European Offices" },
+                    { val: "Geneva", label: "Headquarters" },
                   ].map((s, i) => (
                     <motion.div
                       key={s.label}
@@ -417,7 +417,7 @@ const OurApproach = () => {
                   "Co-investment model ensuring full alignment of interests",
                   "No external LP pressure — decisions driven by conviction, not fundraising cycles",
                   "Multi-generational perspective with permanent capital base",
-                  "Boutique team of 13 senior professionals across 3 offices",
+                  "Boutique team of 13 senior professionals based in Geneva",
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -454,9 +454,7 @@ const OurApproach = () => {
                 </div>
                 <div className="grid grid-cols-3 divide-x divide-border">
                   {[
-                    { val: "Geneva", label: "HQ" },
-                    { val: "Monaco", label: "Wealth" },
-                    { val: "Naples", label: "Real Estate" },
+                    { val: "Geneva", label: "Headquarters" },
                   ].map((o) => (
                     <div key={o.label} className="p-5 text-center">
                       <p className="text-base font-serif font-bold text-foreground">{o.val}</p>

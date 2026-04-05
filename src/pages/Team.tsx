@@ -161,7 +161,7 @@ const TeamCard = ({ member }: { member: Member }) => {
 
 const stats = [
   { value: "13", label: "Team Members", icon: Users },
-  { value: "3", label: "Offices", icon: Building2 },
+  { value: "Geneva", label: "Headquarters", icon: Building2 },
   { value: "8+", label: "Nationalities", icon: Globe },
   { value: "100+", label: "Years Experience", icon: Award },
 ];

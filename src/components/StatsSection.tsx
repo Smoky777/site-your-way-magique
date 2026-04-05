@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const stats = [
   { icon: TrendingUp, value: "CHF 3B+", label: "Assets Under Management" },
   { icon: Building, value: "50+", label: "Real Estate Projects" },
-  { icon: Globe, value: "3", label: "Global Offices" },
+  { icon: Globe, value: "1", label: "Office — Geneva" },
   { icon: Users, value: "100+", label: "Institutional Partners" },
 ];
 

@@ -149,9 +149,6 @@ const HeroSection = () => {
           <p className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">Trusted across</p>
           <div className="flex items-center gap-8 text-sm text-muted-foreground">
             <span>🇨🇭 Switzerland</span>
-            <span>🇲🇨 Monaco</span>
-            <span>🇮🇹 Italy</span>
-            <span>🇫🇷 France</span>
           </div>
         </div>
       </div>
