@@ -1,34 +1,10 @@
 import PageLayout from "@/components/PageLayout";
 import { Card, CardContent } from "@/components/ui/card";
-import { Building2, MapPin, ArrowUpRight, ArrowRight, TrendingUp, Globe, Landmark, Hotel, Home, BarChart3, Shield, CheckCircle2 } from "lucide-react";
-import { motion, useScroll, useTransform, useInView, animate } from "framer-motion";
+import { ArrowRight, TrendingUp, Globe, Landmark, Hotel, Home, BarChart3, Shield, CheckCircle2 } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-
-function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: number; suffix?: string; prefix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const [display, setDisplay] = useState(0);
-  useEffect(() => {
-    if (!isInView) return;
-    const controls = animate(0, value, {
-      duration: 1.8, ease: [0.25, 0.46, 0.45, 0.94],
-      onUpdate: (v) => setDisplay(Math.round(v)),
-    });
-    return () => controls.stop();
-  }, [isInView, value]);
-  return <span ref={ref}>{prefix}{display}{suffix}</span>;
-}
-
-const properties = [
-  { name: "Villa Posillipo", location: "Naples, Italy", type: "Luxury Residential", size: "1,200 m²", status: "Completed", image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop" },
-  { name: "Palazzo Monaco", location: "Monte Carlo", type: "Mixed-Use", size: "3,500 m²", status: "Under Development", image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop" },
-  { name: "Geneva Lakeside", location: "Geneva, Switzerland", type: "Commercial Office", size: "5,000 m²", status: "Completed", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" },
-  { name: "Côte d'Azur Resort", location: "Nice, France", type: "Hospitality", size: "8,000 m²", status: "Under Development", image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&h=400&fit=crop" },
-  { name: "Milano Centro", location: "Milan, Italy", type: "Luxury Residential", size: "2,800 m²", status: "Completed", image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop" },
-  { name: "Zurich Business Hub", location: "Zurich, Switzerland", type: "Commercial", size: "6,200 m²", status: "Acquisition", image: "https://images.unsplash.com/photo-1464938050520-ef2571e0e6e6?w=600&h=400&fit=crop" },
-];
 
 const focusAreas = [
   {
@@ -117,73 +93,6 @@ const RealEstate = () => {
               </motion.div>
             </div>
 
-            {/* Floating stats */}
-            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-16">
-              {[
-                { val: <AnimatedCounter value={6} suffix="+" />, label: "Active Projects", icon: Building2 },
-                { val: <AnimatedCounter value={26} suffix="k" />, label: "m² Under Management", icon: BarChart3 },
-                { val: <AnimatedCounter value={5} />, label: "European Countries", icon: Globe },
-                { val: <AnimatedCounter value={3} />, label: "Asset Classes", icon: Landmark },
-              ].map((s, i) => (
-                <motion.div key={s.label} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 + i * 0.08, type: "spring", damping: 20 }}
-                  className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-5 hover:bg-white/[0.07] transition-colors">
-                  <s.icon className="h-4 w-4 text-[hsl(43,50%,60%)] mb-3" />
-                  <p className="text-xl font-serif font-bold text-white">{s.val}</p>
-                  <p className="text-white/35 text-[11px] uppercase tracking-wider mt-0.5">{s.label}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Gallery */}
-      <section className="py-28">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3">Portfolio</motion.p>
-            <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}
-              className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Featured properties</motion.h2>
-            <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.12 }}
-              className="text-muted-foreground text-sm mb-14 max-w-xl">A curated selection from our active portfolio across Europe's most sought-after markets.</motion.p>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {properties.map((p, i) => (
-                <motion.div key={p.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}>
-                  <Card className="bg-card border-border overflow-hidden group cursor-pointer hover:shadow-lg transition-all duration-300 hover:border-primary/20 h-full">
-                    <div className="relative h-52 overflow-hidden">
-                      <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute top-3 right-3">
-                        <span className={`text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-full border font-medium backdrop-blur-sm ${
-                          p.status === "Completed" 
-                            ? "bg-emerald-500/10 text-emerald-300 border-emerald-500/20" 
-                            : p.status === "Acquisition" 
-                              ? "bg-amber-500/10 text-amber-300 border-amber-500/20"
-                              : "bg-white/10 text-white/80 border-white/20"
-                        }`}>{p.status}</span>
-                      </div>
-                    </div>
-                    <CardContent className="p-6">
-                      <h3 className="text-lg font-serif font-semibold text-foreground mb-2 group-hover:text-primary transition-colors flex items-center gap-2">
-                        {p.name} <ArrowUpRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </h3>
-                      <div className="flex items-center gap-1.5 text-muted-foreground text-sm mb-4">
-                        <MapPin className="h-3.5 w-3.5 text-primary/60" /> {p.location}
-                      </div>
-                      <div className="flex justify-between items-center text-xs text-muted-foreground pt-4 border-t border-border">
-                        <span className="flex items-center gap-1.5"><Building2 className="h-3 w-3 text-primary/40" />{p.type}</span>
-                        <span className="font-medium text-foreground/70">{p.size}</span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -268,9 +177,9 @@ const RealEstate = () => {
                   alt="Luxury property interior"
                   className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
                 />
-                <div className="absolute -bottom-5 -left-5 bg-card border border-border rounded-xl p-5 shadow-lg">
-                  <p className="text-2xl font-serif font-bold text-foreground"><AnimatedCounter value={26} suffix="k" /></p>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider">m² managed</p>
+                 <div className="absolute -bottom-5 -left-5 bg-card border border-border rounded-xl p-5 shadow-lg">
+                   <p className="text-2xl font-serif font-bold text-foreground">Pan-European</p>
+                   <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Coverage</p>
                 </div>
                 <div className="absolute -top-4 -right-4 bg-primary/10 border border-primary/20 rounded-xl px-4 py-2">
                   <p className="text-xs font-semibold text-primary">5 Countries</p>
