@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const leadership = [
-  { name: "Marco Aponte", role: "Chief Executive Officer", abbr: "CEO", bio: "Leads the firm's vision, strategy, and overall operations. Background in international finance and family enterprise.", icon: Award },
+  { name: "Marco Aponte", role: "Chief Executive Officer & Co-Founder", abbr: "CEO", bio: "Leads the firm's vision, strategy, and overall operations. Background in international finance and family enterprise.", icon: Award },
   { name: "Elena Rossi", role: "Chief Operating Officer", abbr: "COO", bio: "Oversees day-to-day operations, process optimization, and organizational efficiency across all divisions.", icon: Globe },
   { name: "Philippe Durand", role: "Chief Financial Officer", abbr: "CFO", bio: "Manages financial planning, reporting, and capital allocation. Former MD at a leading Swiss private bank.", icon: TrendingUp },
   { name: "Sofia Marchetti", role: "Chief Strategy Officer", abbr: "CSO", bio: "Drives long-term strategic initiatives, market expansion, and corporate development across Europe.", icon: Briefcase },
