@@ -1,3 +1,4 @@
+// Real Estate page
 import PageLayout from "@/components/PageLayout";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, TrendingUp, Globe, Landmark, Hotel, Home, BarChart3, Shield, CheckCircle2 } from "lucide-react";
