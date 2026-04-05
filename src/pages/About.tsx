@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import gianluigiPhoto from "@/assets/gianluigi-aponte.jpg";
+import diegoPhoto from "@/assets/diego-aponte.jpg";
 
 const milestones = [
   { year: "1940", text: "Gianluigi Aponte is born in Sant'Agnello, on Italy's stunning Amalfi Coast — a region steeped in maritime tradition.", icon: Anchor },
