@@ -233,7 +233,78 @@ const OurApproach = () => {
         </div>
       </section>
 
-      {/* Investment Pillars - cards with stats */}
+      {/* Investment Structures */}
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-3">Investment Structures</p>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Flexible Capital Deployment</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              We deploy capital through a range of structures tailored to each opportunity's stage, risk profile, and strategic objectives.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
+          >
+            {[
+              {
+                title: "Private Equity",
+                desc: "Direct equity investments in established companies through buyouts, growth capital, and co-investments. We take active board positions and work alongside management to drive operational improvements and long-term value.",
+                tag: "Core Strategy",
+              },
+              {
+                title: "Straight Equity",
+                desc: "Direct share purchases in both private and public companies, providing permanent capital with full ownership rights. This structure offers maximum upside participation and voting power in strategic decisions.",
+                tag: "Direct Ownership",
+              },
+              {
+                title: "Convertible Note",
+                desc: "Debt instruments that convert into equity at a future financing round, typically at a discounted valuation. Ideal for early-stage investments where valuation is premature, providing downside protection with equity upside.",
+                tag: "Hybrid Instrument",
+              },
+              {
+                title: "SAFE Note",
+                desc: "Simple Agreement for Future Equity — a streamlined instrument granting the right to future shares upon a triggering event. Faster and simpler than convertible notes, with no interest rate or maturity date.",
+                tag: "Early-Stage",
+              },
+              {
+                title: "SAFT",
+                desc: "Simple Agreement for Future Tokens — designed for blockchain and Web3 investments. Provides rights to tokens upon network launch, enabling us to participate in decentralized ecosystems from the earliest stages.",
+                tag: "Digital Assets",
+              },
+            ].map((s, i) => (
+              <motion.div key={s.title} variants={cardVariants}>
+                <div className="relative bg-card border border-border rounded-xl p-7 h-full hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 group overflow-hidden">
+                  {/* Accent line */}
+                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 group-hover:via-primary transition-all duration-500" />
+                  
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs text-primary/70 font-semibold tracking-wider uppercase bg-primary/5 px-2.5 py-1 rounded-full border border-primary/10">
+                      {s.tag}
+                    </span>
+                    <span className="text-3xl font-serif font-bold text-primary/[0.07] group-hover:text-primary/[0.12] transition-colors select-none">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-serif font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{s.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-20 bg-secondary/20">
         <div className="container mx-auto px-6">
           <motion.div
