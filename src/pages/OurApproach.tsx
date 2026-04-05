@@ -89,7 +89,7 @@ const OurApproach = () => {
                     { val: "CHF 3B+", label: "Assets Under Management" },
                     { val: "2024", label: "Year Founded" },
                     { val: "50+", label: "Real Estate Projects" },
-                    { val: "3", label: "European Offices" },
+                    { val: "Geneva", label: "Headquarters" },
                   ].map((s, i) => (
                     <motion.div
                       key={s.label}
