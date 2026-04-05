@@ -1,34 +1,10 @@
 import PageLayout from "@/components/PageLayout";
 import { Card, CardContent } from "@/components/ui/card";
-import { Building2, MapPin, ArrowUpRight, ArrowRight, TrendingUp, Globe, Landmark, Hotel, Home, BarChart3, Shield, CheckCircle2 } from "lucide-react";
-import { motion, useScroll, useTransform, useInView, animate } from "framer-motion";
+import { ArrowRight, TrendingUp, Globe, Landmark, Hotel, Home, BarChart3, Shield, CheckCircle2 } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-
-function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: number; suffix?: string; prefix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const [display, setDisplay] = useState(0);
-  useEffect(() => {
-    if (!isInView) return;
-    const controls = animate(0, value, {
-      duration: 1.8, ease: [0.25, 0.46, 0.45, 0.94],
-      onUpdate: (v) => setDisplay(Math.round(v)),
-    });
-    return () => controls.stop();
-  }, [isInView, value]);
-  return <span ref={ref}>{prefix}{display}{suffix}</span>;
-}
-
-const properties = [
-  { name: "Villa Posillipo", location: "Naples, Italy", type: "Luxury Residential", size: "1,200 m²", status: "Completed", image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop" },
-  { name: "Palazzo Monaco", location: "Monte Carlo", type: "Mixed-Use", size: "3,500 m²", status: "Under Development", image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop" },
-  { name: "Geneva Lakeside", location: "Geneva, Switzerland", type: "Commercial Office", size: "5,000 m²", status: "Completed", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" },
-  { name: "Côte d'Azur Resort", location: "Nice, France", type: "Hospitality", size: "8,000 m²", status: "Under Development", image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&h=400&fit=crop" },
-  { name: "Milano Centro", location: "Milan, Italy", type: "Luxury Residential", size: "2,800 m²", status: "Completed", image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop" },
-  { name: "Zurich Business Hub", location: "Zurich, Switzerland", type: "Commercial", size: "6,200 m²", status: "Acquisition", image: "https://images.unsplash.com/photo-1464938050520-ef2571e0e6e6?w=600&h=400&fit=crop" },
-];
 
 const focusAreas = [
   {
