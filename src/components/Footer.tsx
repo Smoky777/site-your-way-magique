@@ -37,11 +37,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-foreground font-semibold text-sm mb-4">Offices</h4>
+            <h4 className="text-foreground font-semibold text-sm mb-4">Office</h4>
             <div className="flex flex-col gap-3 text-sm text-muted-foreground">
-              <div>
-                <p className="text-foreground font-medium">Geneva</p>
-                <p>Rue du Rhône, 1204 Geneva</p>
               <div>
                 <p className="text-foreground font-medium">Geneva</p>
                 <p>Rue du Rhône, 1204 Geneva</p>

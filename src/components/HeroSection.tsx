@@ -150,9 +150,7 @@ const HeroSection = () => {
           <div className="flex items-center gap-8 text-sm text-muted-foreground">
             <span>🇨🇭 Switzerland</span>
           </div>
-          </div>
         </div>
-      </div>
     </section>
   );
 };
