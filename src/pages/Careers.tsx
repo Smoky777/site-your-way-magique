@@ -15,6 +15,8 @@ const positions = [
   { title: "Head of Real Estate", location: "Naples", type: "Full-time", desc: "Lead the real estate division, oversee acquisitions, development projects, and portfolio management." },
   { title: "Head of Venture Capital", location: "Geneva", type: "Full-time", desc: "Lead seed and early-stage investments in technology, fintech, and deep tech across Europe." },
   { title: "Compliance Officer", location: "Geneva", type: "Full-time", desc: "Ensure regulatory compliance, risk management, and adherence to legal standards across all jurisdictions." },
+  { title: "Chief Legal Officer", location: "Geneva", type: "Full-time", desc: "Direct all legal affairs, corporate governance, and regulatory matters across jurisdictions." },
+  { title: "Chief Technology Officer", location: "Geneva", type: "Full-time", desc: "Lead technology infrastructure, digital innovation, and data-driven investment tools." },
 ];
 
 const Careers = () => {

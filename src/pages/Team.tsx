@@ -13,6 +13,8 @@ const teamMembers = [
   { name: "Antonio Greco", role: "Head of Real Estate", bio: "Leads the firm's flagship real estate division with 15+ years in European property development and acquisitions.", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face" },
   { name: "David Keller", role: "Head of Venture Capital", bio: "Leads seed and early-stage investments in technology, fintech, and deep tech across Europe.", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face" },
   { name: "Nadia Laurent", role: "Compliance", bio: "Ensures regulatory compliance, risk management, and adherence to legal standards across all jurisdictions.", image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=300&h=300&fit=crop&crop=face" },
+  { name: "Julien Moreau", role: "Chief Legal Officer", bio: "Directs all legal affairs, corporate governance, and regulatory matters across jurisdictions.", image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=300&h=300&fit=crop&crop=face" },
+  { name: "Andreas Richter", role: "Chief Technology Officer", bio: "Leads technology infrastructure, digital innovation, and data-driven investment tools across the firm.", image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=300&h=300&fit=crop&crop=face" },
 ];
 
 const Team = () => {
