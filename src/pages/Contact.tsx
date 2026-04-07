@@ -81,7 +81,7 @@ const Contact = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <Clock className="h-4 w-4 text-accent mt-0.5 shrink-0" />
-                    <p className="text-sm text-foreground">Lundi – Vendredi : 8:00 – 19:00</p>
+                    <p className="text-sm text-foreground">Monday – Friday : 8:00 – 19:00</p>
                   </div>
                 </div>
               </div>
