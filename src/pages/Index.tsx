@@ -19,7 +19,7 @@ const Index = () => {
       <HeroSection />
 
       {/* About section - editorial style */}
-      <section className="py-28">
+      <section className="py-28 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-16 items-center">
             {/* Image stack */}
@@ -43,10 +43,10 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3, duration: 0.5 }}
-                className="absolute -bottom-6 -right-6 bg-card border border-border rounded-xl p-5 shadow-lg"
+               className="absolute -bottom-6 -right-6 bg-primary-foreground/10 border border-primary-foreground/20 rounded-xl p-5 shadow-lg backdrop-blur-sm"
               >
-                <p className="text-2xl font-serif font-bold text-foreground">2024</p>
-                <p className="text-xs text-muted-foreground">Year Founded</p>
+                <p className="text-2xl font-serif font-bold text-primary-foreground">2024</p>
+                <p className="text-xs text-primary-foreground/60">Year Founded</p>
               </motion.div>
             </motion.div>
 
@@ -56,7 +56,7 @@ const Index = () => {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-4"
+                className="text-primary-foreground/70 text-xs font-semibold tracking-[0.2em] uppercase mb-4"
               >
                 Who We Are
               </motion.p>
@@ -65,7 +65,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.08 }}
-                className="text-3xl md:text-[2.5rem] font-serif font-bold text-foreground mb-6 leading-tight"
+                className="text-3xl md:text-[2.5rem] font-serif font-bold text-primary-foreground mb-6 leading-tight"
               >
                 A family-founded firm
                 <br />
@@ -76,7 +76,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.16 }}
-                className="text-muted-foreground leading-relaxed mb-5 text-[15px]"
+                className="text-primary-foreground/60 leading-relaxed mb-5 text-[15px]"
               >
                 Founded by the Aponte family — heirs to the MSC shipping legacy — Multi Investment brings a unique blend of entrepreneurial heritage and institutional rigour.
               </motion.p>
@@ -85,7 +85,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.24 }}
-                className="text-muted-foreground leading-relaxed mb-8 text-[15px]"
+                className="text-primary-foreground/60 leading-relaxed mb-8 text-[15px]"
               >
                 We believe in long-term relationships, sustainable growth, and creating real impact through thoughtful capital deployment.
               </motion.p>
@@ -96,7 +96,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.32 }}
-                className="flex gap-10 mb-8 pb-8 border-b border-border"
+                className="flex gap-10 mb-8 pb-8 border-b border-primary-foreground/20"
               >
                 {[
                   { val: "CHF 3B+", label: "AUM" },
@@ -104,8 +104,8 @@ const Index = () => {
                   { val: "100+", label: "Partners" },
                 ].map((s) => (
                   <div key={s.label}>
-                    <p className="text-2xl font-serif font-bold text-foreground">{s.val}</p>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider">{s.label}</p>
+                    <p className="text-2xl font-serif font-bold text-primary-foreground">{s.val}</p>
+                    <p className="text-xs text-primary-foreground/50 uppercase tracking-wider">{s.label}</p>
                   </div>
                 ))}
               </motion.div>
@@ -116,7 +116,7 @@ const Index = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
               >
-                <Link to="/about" className="text-primary font-medium text-sm inline-flex items-center gap-1.5 hover:gap-3 transition-all group">
+                <Link to="/about" className="text-primary-foreground/80 font-medium text-sm inline-flex items-center gap-1.5 hover:gap-3 hover:text-primary-foreground transition-all group">
                   Read our full story <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </motion.div>
@@ -126,7 +126,7 @@ const Index = () => {
       </section>
 
       {/* Services - big cards with hover */}
-      <section className="py-28 bg-warm-section">
+      <section className="py-28">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
             <div>
@@ -194,14 +194,14 @@ const Index = () => {
       </section>
 
       {/* Values */}
-      <section className="py-28">
+      <section className="py-28 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3"
+              className="text-primary-foreground/70 text-xs font-semibold tracking-[0.2em] uppercase mb-3"
             >
               Our Values
             </motion.p>
@@ -210,7 +210,7 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.08 }}
-              className="text-3xl md:text-[2.5rem] font-serif font-bold text-foreground"
+              className="text-3xl md:text-[2.5rem] font-serif font-bold text-primary-foreground"
             >
               What guides us
             </motion.h2>
@@ -227,11 +227,11 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: i * 0.1 }}
-                className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-md transition-shadow"
+                className="bg-primary-foreground/10 border border-primary-foreground/15 rounded-2xl p-8 text-center hover:bg-primary-foreground/15 transition-all"
               >
                 <span className="text-4xl mb-5 block">{v.emoji}</span>
-                <h3 className="text-lg font-serif font-semibold text-foreground mb-3">{v.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{v.desc}</p>
+                <h3 className="text-lg font-serif font-semibold text-primary-foreground mb-3">{v.title}</h3>
+                <p className="text-primary-foreground/60 text-sm leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
           </div>
