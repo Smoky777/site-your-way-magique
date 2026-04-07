@@ -48,7 +48,7 @@ const Footer = () => {
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/50">
               <div>
                 <p className="text-primary-foreground font-medium">Geneva</p>
-                <p>Rue du Rhône, 1204 Geneva</p>
+                <p>Chemin Rieu 12, 1208 Genève, Switzerland</p>
               </div>
             </div>
           </div>
