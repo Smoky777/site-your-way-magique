@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import logo from "@/assets/logo.png";
 
 type NavChild = { label: string; path: string; desc?: string };
 type NavSection = { heading: string; items: NavChild[] };
@@ -119,14 +120,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border/60">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <div className="w-9 h-9 bg-gradient-gold rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-serif font-bold text-base">M</span>
-          </div>
-          <div>
-            <span className="text-foreground font-serif text-lg font-semibold tracking-wide">Multi</span>
-            <span className="text-primary font-serif text-lg font-semibold ml-1">Investment</span>
-          </div>
+        <Link to="/" className="flex items-center shrink-0">
+          <img src={logo} alt="Multi Investment" className="h-10" />
         </Link>
 
         {/* Desktop nav */}
