@@ -258,7 +258,7 @@ const Team = () => {
       </section>
 
       {/* Founders — personal, with quotes */}
-      <section className="py-14 bg-muted/30">
+      <section className="py-14 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -266,9 +266,9 @@ const Team = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Leadership</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-2">Our Founders</h2>
-            <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
+            <span className="text-primary-foreground/70 text-xs font-semibold tracking-[0.2em] uppercase">Leadership</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground mt-2">Our Founders</h2>
+            <p className="text-primary-foreground/60 mt-3 max-w-lg mx-auto">
               The vision behind Multi Investment — a family legacy built on trust, ambition, and a deep respect for long-term value.
             </p>
           </motion.div>
@@ -318,7 +318,7 @@ const Team = () => {
       </section>
 
       {/* Division Heads & Specialists */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -326,9 +326,9 @@ const Team = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Specialists</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-2">Division Heads & Experts</h2>
-            <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
+            <span className="text-primary-foreground/70 text-xs font-semibold tracking-[0.2em] uppercase">Specialists</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground mt-2">Division Heads & Experts</h2>
+            <p className="text-primary-foreground/60 mt-3 max-w-lg mx-auto">
               The hands-on experts who turn strategy into results across every asset class.
             </p>
           </motion.div>

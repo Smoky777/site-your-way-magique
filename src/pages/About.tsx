@@ -116,7 +116,7 @@ const About = () => {
       </section>
 
       {/* The Aponte Dynasty - Full Width Banner */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl">
             <motion.div
@@ -125,11 +125,11 @@ const About = () => {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3">The Founders</p>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
+              <p className="text-primary-foreground/70 text-sm tracking-[0.3em] uppercase mb-3">The Founders</p>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground">
                 The Aponte Dynasty
               </h2>
-              <p className="text-muted-foreground mt-3 max-w-2xl leading-relaxed">
+              <p className="text-primary-foreground/60 mt-3 max-w-2xl leading-relaxed">
                 One of Europe's most formidable business families — builders, visionaries, and now stewards of a fortune that spans continents.
               </p>
             </motion.div>
@@ -140,7 +140,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-card border border-border rounded-2xl overflow-hidden mb-6"
+              className="bg-primary-foreground/10 border border-primary-foreground/15 rounded-2xl overflow-hidden mb-6"
             >
               {/* Photo + Header */}
               <div className="flex flex-col md:flex-row">
@@ -153,34 +153,34 @@ const About = () => {
                 </div>
                 <div className="p-8 md:p-10 flex-1">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <Ship className="h-6 w-6 text-primary" />
+                      <div className="w-12 h-12 rounded-2xl bg-primary-foreground/15 flex items-center justify-center shrink-0">
+                      <Ship className="h-6 w-6 text-primary-foreground/80" />
                     </div>
                     <div>
-                      <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">Gianluigi Aponte</h2>
-                      <p className="text-primary text-sm font-medium">Founder & Chairman, MSC Group</p>
-                      <p className="text-muted-foreground text-xs mt-1">Born 1940, Sant'Agnello, Italy</p>
+                      <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary-foreground">Gianluigi Aponte</h2>
+                      <p className="text-primary-foreground/70 text-sm font-medium">Founder & Chairman, MSC Group</p>
+                      <p className="text-primary-foreground/50 text-xs mt-1">Born 1940, Sant'Agnello, Italy</p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-3 gap-3">
-                    <div className="bg-muted/50 rounded-xl p-4 text-center">
-                      <p className="text-lg font-serif font-bold text-foreground">$30B+</p>
-                      <p className="text-xs text-muted-foreground">Personal Fortune (Forbes)</p>
+                    <div className="bg-primary-foreground/10 rounded-xl p-4 text-center">
+                      <p className="text-lg font-serif font-bold text-primary-foreground">$30B+</p>
+                      <p className="text-xs text-primary-foreground/50">Personal Fortune (Forbes)</p>
                     </div>
-                    <div className="bg-muted/50 rounded-xl p-4 text-center">
-                      <p className="text-lg font-serif font-bold text-foreground">$80B</p>
-                      <p className="text-xs text-muted-foreground">Peak Annual Revenue (MSC)</p>
+                    <div className="bg-primary-foreground/10 rounded-xl p-4 text-center">
+                      <p className="text-lg font-serif font-bold text-primary-foreground">$80B</p>
+                      <p className="text-xs text-primary-foreground/50">Peak Annual Revenue (MSC)</p>
                     </div>
-                    <div className="bg-muted/50 rounded-xl p-4 text-center">
-                      <p className="text-lg font-serif font-bold text-foreground">#1</p>
-                      <p className="text-xs text-muted-foreground">World's Largest Shipping Line</p>
+                    <div className="bg-primary-foreground/10 rounded-xl p-4 text-center">
+                      <p className="text-lg font-serif font-bold text-primary-foreground">#1</p>
+                      <p className="text-xs text-primary-foreground/50">World's Largest Shipping Line</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="p-8 md:p-10 pt-0 md:pt-0 space-y-4 text-muted-foreground leading-relaxed">
+              <div className="p-8 md:p-10 pt-0 md:pt-0 space-y-4 text-primary-foreground/65 leading-relaxed">
                 <p>
                   Gianluigi Aponte's story is one of the most remarkable entrepreneurial journeys of the 20th century. Born into a modest family on Italy's Amalfi Coast, he trained as a <span className="text-foreground font-semibold">maritime captain</span> before making a fateful decision in 1970: to charter a single cargo vessel and launch the <span className="text-foreground font-semibold">Mediterranean Shipping Company (MSC)</span> from a small office in Naples.
                 </p>
@@ -202,7 +202,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-card border border-border rounded-2xl overflow-hidden"
+              className="bg-primary-foreground/10 border border-primary-foreground/15 rounded-2xl overflow-hidden"
             >
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-72 lg:w-80 shrink-0">
@@ -214,18 +214,18 @@ const About = () => {
                 </div>
                 <div className="p-8 md:p-10 flex-1">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <Users className="h-6 w-6 text-primary" />
+                    <div className="w-12 h-12 rounded-2xl bg-primary-foreground/15 flex items-center justify-center shrink-0">
+                      <Users className="h-6 w-6 text-primary-foreground/80" />
                     </div>
                     <div>
-                      <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">Diego Aponte</h2>
-                      <p className="text-primary text-sm font-medium">President, MSC Group & Founder of Multi Investment</p>
+                      <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary-foreground">Diego Aponte</h2>
+                      <p className="text-primary-foreground/70 text-sm font-medium">President, MSC Group & Founder of Multi Investment</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="p-8 md:p-10 pt-0 md:pt-0 space-y-4 text-muted-foreground leading-relaxed">
+              <div className="p-8 md:p-10 pt-0 md:pt-0 space-y-4 text-primary-foreground/65 leading-relaxed">
                 <p>
                   <span className="text-foreground font-semibold">Diego Aponte</span> is the eldest son of Gianluigi Aponte and the operational architect behind MSC's modern-day dominance. He joined the family business in the early 1990s, working across every division before being appointed <span className="text-foreground font-semibold">President of the MSC Group in 2014</span>.
                 </p>

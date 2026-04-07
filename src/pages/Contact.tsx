@@ -11,43 +11,43 @@ const offices = [
 const Contact = () => {
   return (
     <PageLayout>
-      <section className="py-24">
+      <section className="py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mb-16">
-            <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3 animate-on-scroll">Contact</p>
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 animate-on-scroll">
+             <p className="text-primary-foreground/70 text-sm tracking-[0.3em] uppercase mb-3 animate-on-scroll">Contact</p>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-6 animate-on-scroll">
               Get in Touch
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed animate-on-scroll">
+            <p className="text-primary-foreground/60 text-lg leading-relaxed animate-on-scroll">
               Interested in learning more about our services? Reach out to schedule a confidential consultation.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Form */}
-            <Card className="bg-card border-border animate-on-scroll">
+            <Card className="bg-primary-foreground/10 border-primary-foreground/15 animate-on-scroll">
               <CardContent className="p-8 space-y-5">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm text-muted-foreground mb-1.5 block">First Name</label>
-                    <Input className="bg-secondary border-border" />
+                    <label className="text-sm text-primary-foreground/60 mb-1.5 block">First Name</label>
+                    <Input className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/30" />
                   </div>
                   <div>
-                    <label className="text-sm text-muted-foreground mb-1.5 block">Last Name</label>
-                    <Input className="bg-secondary border-border" />
+                    <label className="text-sm text-primary-foreground/60 mb-1.5 block">Last Name</label>
+                    <Input className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/30" />
                   </div>
                 </div>
                 <div>
-                  <label className="text-sm text-muted-foreground mb-1.5 block">Email</label>
-                  <Input type="email" className="bg-secondary border-border" />
+                  <label className="text-sm text-primary-foreground/60 mb-1.5 block">Email</label>
+                  <Input type="email" className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/30" />
                 </div>
                 <div>
-                  <label className="text-sm text-muted-foreground mb-1.5 block">Phone</label>
-                  <Input type="tel" className="bg-secondary border-border" />
+                  <label className="text-sm text-primary-foreground/60 mb-1.5 block">Phone</label>
+                  <Input type="tel" className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/30" />
                 </div>
                 <div>
-                  <label className="text-sm text-muted-foreground mb-1.5 block">Message</label>
-                  <textarea className="w-full h-32 rounded-md border border-border bg-secondary px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring resize-none" />
+                  <label className="text-sm text-primary-foreground/60 mb-1.5 block">Message</label>
+                  <textarea className="w-full h-32 rounded-md border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-2 text-sm text-primary-foreground placeholder:text-primary-foreground/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring resize-none" />
                 </div>
                 <Button className="w-full bg-gradient-gold text-primary-foreground hover:opacity-90">
                   Send Message
@@ -70,13 +70,13 @@ const Contact = () => {
               </div>
 
               {offices.map((office, i) => (
-                <Card key={office.city} className={`animate-on-scroll delay-${i + 1} bg-card border-border`}>
+                <Card key={office.city} className={`animate-on-scroll delay-${i + 1} bg-primary-foreground/10 border-primary-foreground/15`}>
                   <CardContent className="p-6">
-                    <h3 className="text-foreground font-serif font-semibold text-lg mb-3">{office.city}</h3>
-                    <div className="space-y-2 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" />{office.address}</div>
-                      <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" />{office.phone}</div>
-                      <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-primary" />info@multi-investment.com</div>
+                    <h3 className="text-primary-foreground font-serif font-semibold text-lg mb-3">{office.city}</h3>
+                    <div className="space-y-2 text-sm text-primary-foreground/60">
+                      <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary-foreground/50" />{office.address}</div>
+                      <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary-foreground/50" />{office.phone}</div>
+                      <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-primary-foreground/50" />info@multi-investment.com</div>
                     </div>
                   </CardContent>
                 </Card>

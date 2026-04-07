@@ -77,8 +77,8 @@ const AssetManagement = () => {
               <source src="https://videos.pexels.com/video-files/6774917/6774917-uhd_2560_1440_30fps.mp4" type="video/mp4" />
             </video>
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,25%,4%)] via-[hsl(220,25%,4%)]/50 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,25%,4%)]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(150,15%,4%)] via-[hsl(150,15%,4%)]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(150,15%,4%)]/80 to-transparent" />
 
           {/* Subtle grid */}
           <div className="absolute inset-0 opacity-[0.025]" style={{
@@ -278,15 +278,15 @@ const AssetManagement = () => {
       </section>
 
       {/* Interactive Strategy Selector */}
-      <section className="py-28 bg-warm-section">
+      <section className="py-28 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3">Our Strategies</motion.p>
+              className="text-primary-foreground/70 text-xs font-semibold tracking-[0.2em] uppercase mb-3">Our Strategies</motion.p>
             <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}
-              className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Choose your approach</motion.h2>
+              className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-4">Choose your approach</motion.h2>
             <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.12 }}
-              className="text-muted-foreground mb-12 max-w-lg text-[15px]">Each strategy is carefully designed with distinct risk-return profiles to match your investment horizon.</motion.p>
+              className="text-primary-foreground/60 mb-12 max-w-lg text-[15px]">Each strategy is carefully designed with distinct risk-return profiles to match your investment horizon.</motion.p>
 
             {/* Strategy tabs */}
             <div className="grid lg:grid-cols-12 gap-6">
