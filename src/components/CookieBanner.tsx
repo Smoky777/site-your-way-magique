@@ -27,59 +27,50 @@ const CookieBanner = () => {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/25 backdrop-blur-sm">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/20 backdrop-blur-[2px]">
       <div
-        className="bg-background border border-border rounded-2xl shadow-2xl mx-6 w-full max-w-md px-8 py-10 text-center"
-        style={{ animation: "fadeScale 0.35s ease-out", fontFamily: "Georgia, 'Times New Roman', serif" }}
+        className="mx-5 w-full max-w-[420px] bg-background rounded-xl overflow-hidden shadow-2xl"
+        style={{ animation: "cookieFade 0.3s ease-out" }}
       >
-        <p style={{ fontSize: "22px", fontWeight: 600, color: "hsl(var(--foreground))", marginBottom: "12px", letterSpacing: "-0.01em" }}>
-          Cookies
-        </p>
-        <p style={{ fontSize: "14.5px", lineHeight: 1.7, color: "hsl(var(--muted-foreground))", marginBottom: "28px" }}>
-          We use cookies to make your visit smoother and more relevant. You can read more in our{" "}
-          <Link to="/privacy" style={{ color: "hsl(var(--accent))", textDecoration: "underline", textUnderlineOffset: "3px" }}>
-            Privacy Policy
-          </Link>.
-        </p>
-        <div className="flex gap-3 justify-center">
-          <button
-            onClick={handleDecline}
-            style={{
-              fontFamily: "Georgia, 'Times New Roman', serif",
-              fontSize: "14px",
-              padding: "10px 24px",
-              borderRadius: "8px",
-              border: "1px solid hsl(var(--border))",
-              background: "transparent",
-              color: "hsl(var(--muted-foreground))",
-              cursor: "pointer",
-            }}
-          >
-            No thanks
-          </button>
-          <button
-            onClick={handleAccept}
-            style={{
-              fontFamily: "Georgia, 'Times New Roman', serif",
-              fontSize: "14px",
-              fontWeight: 600,
-              padding: "10px 28px",
-              borderRadius: "8px",
-              border: "none",
-              background: "hsl(var(--accent))",
-              color: "hsl(var(--accent-foreground))",
-              cursor: "pointer",
-            }}
-          >
-            That's fine
-          </button>
+        {/* Gold accent bar */}
+        <div className="h-1 bg-accent" />
+
+        <div className="px-7 pt-7 pb-6">
+          {/* Title */}
+          <p className="font-serif text-lg text-foreground mb-2.5">
+            We use cookies
+          </p>
+
+          {/* Body */}
+          <p className="text-[13.5px] leading-[1.65] text-muted-foreground mb-7" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+            Cookies help us understand how you use our site so we can improve your experience. We respect your choice.{" "}
+            <Link to="/privacy" className="text-accent underline underline-offset-2 decoration-accent/40 hover:decoration-accent">
+              Privacy Policy
+            </Link>
+          </p>
+
+          {/* Buttons */}
+          <div className="flex gap-2.5">
+            <button
+              onClick={handleDecline}
+              className="flex-1 py-2.5 text-[13px] font-medium text-muted-foreground rounded-lg border border-border hover:border-foreground/20 hover:text-foreground transition-all"
+            >
+              Decline
+            </button>
+            <button
+              onClick={handleAccept}
+              className="flex-1 py-2.5 text-[13px] font-semibold text-accent-foreground bg-accent rounded-lg hover:brightness-105 transition-all"
+            >
+              Accept cookies
+            </button>
+          </div>
         </div>
       </div>
 
       <style>{`
-        @keyframes fadeScale {
-          from { opacity: 0; transform: scale(0.96); }
-          to { opacity: 1; transform: scale(1); }
+        @keyframes cookieFade {
+          from { opacity: 0; transform: translateY(8px) scale(0.98); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
         }
       `}</style>
     </div>
