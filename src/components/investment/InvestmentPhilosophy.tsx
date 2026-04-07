@@ -24,7 +24,7 @@ const InvestmentPhilosophy = () => {
             {/* Left content */}
             <div>
               <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-4">Our Philosophy</motion.p>
+                className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-4">Our Philosophy</motion.p>
               <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}
                 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-3 leading-tight">
                 Conviction-driven,<br /><span className="text-gradient-gold italic">patient</span> capital
