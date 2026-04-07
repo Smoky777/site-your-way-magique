@@ -18,6 +18,7 @@ import OurApproach from "./pages/OurApproach";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import Disclosure from "./pages/Disclosure";
+import CookieBanner from "./components/CookieBanner";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <CookieBanner />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/asset-management" element={<AssetManagement />} />
