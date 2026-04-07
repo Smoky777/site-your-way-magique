@@ -1,4 +1,5 @@
 import PageLayout from "@/components/PageLayout";
+import mihBoardroom from "@/assets/mih-boardroom.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { TrendingUp, BarChart3, PieChart, Shield, ArrowRight, CheckCircle2, Globe, Layers, Target, Briefcase, ArrowUpRight, Sparkles, Lock } from "lucide-react";
 import { motion, useScroll, useTransform, useInView, useMotionValue, useSpring, animate } from "framer-motion";
@@ -419,9 +420,10 @@ const AssetManagement = () => {
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
               className="relative">
               <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop"
-                alt="Team collaboration"
+                src={mihBoardroom}
+                alt="Multi Investment Holding boardroom"
                 className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
+                loading="lazy"
               />
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
