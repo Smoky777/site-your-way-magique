@@ -121,7 +121,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center shrink-0">
-          <img src={logo} alt="Multi Investment" className="h-12" />
+          <img src={logo} alt="Multi Investment" className="h-16" />
         </Link>
 
         {/* Desktop nav */}
