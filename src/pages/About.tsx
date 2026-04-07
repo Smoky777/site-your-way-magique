@@ -180,18 +180,18 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="p-8 md:p-10 pt-0 md:pt-0 space-y-4 text-primary-foreground/65 leading-relaxed">
+              <div className="p-8 md:p-10 pt-0 md:pt-0 space-y-4 text-primary-foreground/80 leading-relaxed">
                 <p>
-                  Gianluigi Aponte's story is one of the most remarkable entrepreneurial journeys of the 20th century. Born into a modest family on Italy's Amalfi Coast, he trained as a <span className="text-foreground font-semibold">maritime captain</span> before making a fateful decision in 1970: to charter a single cargo vessel and launch the <span className="text-foreground font-semibold">Mediterranean Shipping Company (MSC)</span> from a small office in Naples.
+                  Gianluigi Aponte's story is one of the most remarkable entrepreneurial journeys of the 20th century. Born into a modest family on Italy's Amalfi Coast, he trained as a <span className="text-primary-foreground font-semibold">maritime captain</span> before making a fateful decision in 1970: to charter a single cargo vessel and launch the <span className="text-primary-foreground font-semibold">Mediterranean Shipping Company (MSC)</span> from a small office in Naples.
                 </p>
                 <p>
-                  What followed was five decades of relentless expansion. Aponte possessed an extraordinary ability to <span className="text-foreground font-semibold">anticipate market cycles</span> — buying ships at distressed prices during downturns when competitors pulled back, and aggressively scaling capacity during booms. This countercyclical strategy, combined with a refusal to go public or take on outside investors, allowed MSC to grow faster and more freely than any rival.
+                  What followed was five decades of relentless expansion. Aponte possessed an extraordinary ability to <span className="text-primary-foreground font-semibold">anticipate market cycles</span> — buying ships at distressed prices during downturns when competitors pulled back, and aggressively scaling capacity during booms. This countercyclical strategy, combined with a refusal to go public or take on outside investors, allowed MSC to grow faster and more freely than any rival.
                 </p>
                 <p>
-                  By the 2000s, MSC had become a <span className="text-foreground font-semibold">global logistics colossus</span>: the world's second-largest container shipping company, a top-three cruise operator via MSC Cruises, and a major port terminal operator through Terminal Investment Limited (TiL). In <span className="text-foreground font-semibold">January 2022</span>, MSC officially overtook Denmark's A.P. Møller-Maersk to become the world's #1 container shipping line — a position it has held ever since.
+                  By the 2000s, MSC had become a <span className="text-primary-foreground font-semibold">global logistics colossus</span>: the world's second-largest container shipping company, a top-three cruise operator via MSC Cruises, and a major port terminal operator through Terminal Investment Limited (TiL). In <span className="text-primary-foreground font-semibold">January 2022</span>, MSC officially overtook Denmark's A.P. Møller-Maersk to become the world's #1 container shipping line — a position it has held ever since.
                 </p>
                 <p>
-                  Today, Gianluigi Aponte's empire spans <span className="text-foreground font-semibold">800+ vessels, 500+ ports, 155 countries</span>, with peak annual revenues exceeding <span className="text-foreground font-semibold">USD 80 billion</span>. The family fortune — entirely privately held — is estimated at over <span className="text-foreground font-semibold">$30 billion</span>, making the Apontes one of the wealthiest families in Italy, Switzerland, and all of Europe. A once-in-a-generation testament to the power of vision, patience, and family-driven capitalism.
+                  Today, Gianluigi Aponte's empire spans <span className="text-primary-foreground font-semibold">800+ vessels, 500+ ports, 155 countries</span>, with peak annual revenues exceeding <span className="text-primary-foreground font-semibold">USD 80 billion</span>. The family fortune — entirely privately held — is estimated at over <span className="text-primary-foreground font-semibold">$30 billion</span>, making the Apontes one of the wealthiest families in Italy, Switzerland, and all of Europe. A once-in-a-generation testament to the power of vision, patience, and family-driven capitalism.
                 </p>
               </div>
             </motion.div>
