@@ -4,13 +4,13 @@ const TermsOfUse = () => {
   return (
     <PageLayout>
       <section className="py-28 md:py-36">
-        <div className="container mx-auto px-6 md:px-8 max-w-4xl">
+        <div className="container mx-auto px-6 md:px-8 max-w-4xl legal-body">
 
           <div className="mb-16 animate-on-scroll">
-            <p className="text-xs font-sans uppercase tracking-[0.3em] text-accent mb-5 font-medium">Legal Notice</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-5 font-medium" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>Legal Notice</p>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground leading-[1.15]">Terms of Use</h1>
             <div className="w-20 h-[2px] bg-accent mt-8" />
-            <p className="text-muted-foreground text-base mt-8 font-sans tracking-wide">Effective Date — January 2024</p>
+            <p className="text-muted-foreground mt-8 tracking-wide">Effective Date — February 2024</p>
           </div>
 
           <div className="mb-14 animate-on-scroll">
