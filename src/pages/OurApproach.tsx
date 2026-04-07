@@ -1,31 +1,8 @@
 import PageLayout from "@/components/PageLayout";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Shield, Target, Compass, TrendingUp, Eye, Heart, Gem, ArrowRight, Building2, Rocket, Wallet, CheckCircle2 } from "lucide-react";
+import { Shield, Target, Compass, TrendingUp, Eye, Heart, Gem, ArrowRight, Building2, Rocket, Wallet, CheckCircle2, Layers, BarChart3, Lightbulb, Zap, Globe, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-
-const principles = [
-  { icon: Target, title: "Long-Term Value Creation", desc: "We invest with a generational perspective. Every decision is evaluated for its ability to create sustainable value over decades, not quarters.", number: "01" },
-  { icon: Shield, title: "Capital Preservation First", desc: "Protecting capital is the foundation of our strategy. We prioritize downside protection and rigorous risk management across every asset class.", number: "02" },
-  { icon: Compass, title: "Conviction-Driven Allocation", desc: "We concentrate our portfolio in high-conviction opportunities where we have deep expertise and a clear informational advantage.", number: "03" },
-  { icon: Eye, title: "Disciplined Due Diligence", desc: "Every investment undergoes a thorough multi-phase evaluation — financial, operational, legal, and strategic — before commitment.", number: "04" },
-  { icon: Heart, title: "Alignment of Interests", desc: "We invest our own capital alongside our partners. Our success is directly tied to theirs, ensuring full alignment at every level.", number: "05" },
-  { icon: Gem, title: "Quality Over Quantity", desc: "We pursue fewer, better opportunities. A concentrated portfolio of exceptional assets outperforms a diversified collection of average ones.", number: "06" },
-];
-
-const pillars = [
-  { title: "Real Estate", desc: "Core and value-add properties across the Mediterranean and Northern Europe.", icon: Building2, stats: "50+ projects" },
-  { title: "Private Equity", desc: "Growth and buyout investments in established businesses with strong fundamentals.", icon: TrendingUp, stats: "CHF 1.2B deployed" },
-  { title: "Venture Capital", desc: "Seed to Series A investments in technology, fintech, and deep tech.", icon: Rocket, stats: "30+ portfolio companies" },
-  { title: "Wealth Advisory", desc: "Comprehensive planning for UHNW families including tax, governance, and succession.", icon: Wallet, stats: "100+ families served" },
-];
-
-const process = [
-  { step: "Sourcing", desc: "We leverage our network and proprietary deal flow to identify exceptional opportunities before they reach the broader market." },
-  { step: "Analysis", desc: "A rigorous multi-dimensional assessment covering financial performance, market dynamics, management quality, and strategic fit." },
-  { step: "Execution", desc: "Precise structuring and negotiation, leveraging our legal and financial expertise to optimize terms and protect interests." },
-  { step: "Stewardship", desc: "Active portfolio management with hands-on involvement, board participation, and strategic support to maximize value creation." },
-];
 
 const containerVariants = {
   hidden: {},
@@ -36,6 +13,14 @@ const cardVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
+
+const SectionLabel = ({ label }: { label: string }) => (
+  <div className="flex items-center justify-center gap-3 mb-4">
+    <div className="w-8 h-px bg-primary/50" />
+    <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">{label}</p>
+    <div className="w-8 h-px bg-primary/50" />
+  </div>
+);
 
 const OurApproach = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -67,14 +52,14 @@ const OurApproach = () => {
                   <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">Our Approach</p>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[hsl(0_0%_95%)] mb-7 leading-[1.08]">
-                  Investment Philosophy
+                  Philosophy, Strategy
                   <br />
                   <span className="bg-gradient-to-r from-primary to-[hsl(var(--gold-light))] bg-clip-text text-transparent italic">
-                    Built on Conviction
+                    & Instruments
                   </span>
                 </h1>
                 <p className="text-[hsl(220_10%_62%)] text-lg leading-relaxed max-w-xl mb-10">
-                  We believe in the power of patience, discipline, and deep expertise. Our philosophy is rooted in the Aponte family's multi-generational approach to building enduring value.
+                  Discover how our investment philosophy, strategic framework, and flexible instruments work together to create lasting value across generations.
                 </p>
                 <div className="flex gap-4">
                   <Link to="/contact">
@@ -129,53 +114,44 @@ const OurApproach = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* Quote */}
+      {/* ========== SECTION 1: PHILOSOPHY ========== */}
       <section className="py-28">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative max-w-4xl mx-auto"
-          >
-            <div className="absolute -top-8 -left-6 text-[140px] font-serif text-primary/[0.06] leading-none select-none pointer-events-none">"</div>
-            
-            <div className="relative bg-card border border-border rounded-3xl p-12 md:p-16">
-              <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-              <blockquote className="text-xl md:text-2xl lg:text-[1.75rem] font-serif text-foreground leading-relaxed italic mb-8 text-center">
-                "True wealth is not built in a day. It is the result of careful stewardship, unwavering discipline, and the courage to think in generations."
-              </blockquote>
-              <div className="flex items-center justify-center gap-4">
-                <div className="w-10 h-px bg-primary/50" />
-                <p className="text-primary font-medium text-xs tracking-[0.2em] uppercase">Multi Investment Founding Principle</p>
-                <div className="w-10 h-px bg-primary/50" />
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Principles */}
-      <section className="py-24 bg-secondary/30 relative overflow-hidden">
-        <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-primary/[0.02] blur-[80px] pointer-events-none" />
-
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-16"
           >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-px bg-primary/50" />
-              <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">Core Principles</p>
-              <div className="w-8 h-px bg-primary/50" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">What Guides Every Decision</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">Six foundational principles that define how we evaluate, execute, and manage investments.</p>
+            <SectionLabel label="Philosophy" />
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">What We Believe In</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed text-lg">
+              Our philosophy is rooted in the Aponte family's multi-generational approach to wealth. We believe that patience, conviction, and integrity are the true drivers of lasting value.
+            </p>
           </motion.div>
 
+          {/* Quote */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative max-w-3xl mx-auto mb-20"
+          >
+            <div className="absolute -top-8 -left-6 text-[140px] font-serif text-primary/[0.06] leading-none select-none pointer-events-none">"</div>
+            <div className="relative bg-card border border-border rounded-3xl p-10 md:p-14">
+              <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+              <blockquote className="text-xl md:text-2xl font-serif text-foreground leading-relaxed italic mb-6 text-center">
+                "True wealth is not built in a day. It is the result of careful stewardship, unwavering discipline, and the courage to think in generations."
+              </blockquote>
+              <div className="flex items-center justify-center gap-4">
+                <div className="w-10 h-px bg-primary/50" />
+                <p className="text-primary font-medium text-xs tracking-[0.2em] uppercase">Founding Principle</p>
+                <div className="w-10 h-px bg-primary/50" />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Philosophy pillars */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -183,7 +159,14 @@ const OurApproach = () => {
             viewport={{ once: true, margin: "-50px" }}
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
           >
-            {principles.map((p) => {
+            {[
+              { icon: Target, title: "Long-Term Value Creation", desc: "We invest with a generational perspective. Every decision is evaluated for its ability to create sustainable value over decades, not quarters.", number: "01" },
+              { icon: Shield, title: "Capital Preservation First", desc: "Protecting capital is the foundation of our strategy. We prioritize downside protection and rigorous risk management.", number: "02" },
+              { icon: Compass, title: "Conviction-Driven Allocation", desc: "We concentrate in high-conviction opportunities where we have deep expertise and a clear informational advantage.", number: "03" },
+              { icon: Eye, title: "Disciplined Due Diligence", desc: "Every investment undergoes thorough multi-phase evaluation — financial, operational, legal, and strategic.", number: "04" },
+              { icon: Heart, title: "Alignment of Interests", desc: "We invest our own capital alongside our partners. Our success is directly tied to theirs.", number: "05" },
+              { icon: Gem, title: "Quality Over Quantity", desc: "We pursue fewer, better opportunities. A concentrated portfolio of exceptional assets outperforms a diversified collection of average ones.", number: "06" },
+            ].map((p) => {
               const Icon = p.icon;
               return (
                 <motion.div key={p.title} variants={cardVariants}>
@@ -208,8 +191,10 @@ const OurApproach = () => {
         </div>
       </section>
 
-      {/* Investment Process - horizontal on desktop */}
-      <section className="py-28">
+      {/* ========== SECTION 2: STRATEGY ========== */}
+      <section className="py-28 bg-secondary/30 relative overflow-hidden">
+        <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none" />
+
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -217,34 +202,81 @@ const OurApproach = () => {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-px bg-primary/50" />
-              <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">Our Process</p>
-              <div className="w-8 h-px bg-primary/50" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">From Opportunity to Value</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">A disciplined four-stage process ensures every investment meets our rigorous standards.</p>
+            <SectionLabel label="Strategy" />
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">How We Build Value</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Our strategy combines a disciplined investment process with four complementary pillars of expertise — creating a diversified yet focused portfolio built for resilience and growth.
+            </p>
           </motion.div>
 
-          {/* Desktop: horizontal timeline */}
-          <div className="hidden md:block">
-            <div className="relative">
-              <div className="absolute top-[2.25rem] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-              <div className="grid grid-cols-4 gap-6">
-                {process.map((p, i) => (
+          {/* Process timeline */}
+          <div className="mb-24">
+            <motion.h3
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-xl font-serif font-bold text-foreground text-center mb-12"
+            >
+              Our Investment Process
+            </motion.h3>
+
+            {/* Desktop */}
+            <div className="hidden md:block">
+              <div className="relative">
+                <div className="absolute top-[2.25rem] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+                <div className="grid grid-cols-4 gap-6">
+                  {[
+                    { step: "Sourcing", desc: "We leverage our network and proprietary deal flow to identify exceptional opportunities before they reach the broader market." },
+                    { step: "Analysis", desc: "A rigorous multi-dimensional assessment covering financial performance, market dynamics, management quality, and strategic fit." },
+                    { step: "Execution", desc: "Precise structuring and negotiation, leveraging our legal and financial expertise to optimize terms and protect interests." },
+                    { step: "Stewardship", desc: "Active portfolio management with hands-on involvement, board participation, and strategic support to maximize value." },
+                  ].map((p, i) => (
+                    <motion.div
+                      key={p.step}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.12, duration: 0.5 }}
+                      className="relative group"
+                    >
+                      <div className="flex flex-col items-center text-center">
+                        <div className="w-[4.5rem] h-[4.5rem] rounded-2xl bg-card border-2 border-primary/20 flex items-center justify-center mb-7 relative z-10 group-hover:border-primary group-hover:bg-primary transition-all duration-500 shadow-lg shadow-background">
+                          <span className="text-xl font-serif font-bold text-primary group-hover:text-primary-foreground transition-colors">{i + 1}</span>
+                        </div>
+                        <h3 className="text-lg font-serif font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{p.step}</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile */}
+            <div className="md:hidden relative">
+              <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
+              <div className="space-y-8">
+                {[
+                  { step: "Sourcing", desc: "Proprietary deal flow and network-driven opportunity identification." },
+                  { step: "Analysis", desc: "Multi-dimensional assessment of financials, market, and management." },
+                  { step: "Execution", desc: "Precise structuring and negotiation to optimize terms." },
+                  { step: "Stewardship", desc: "Active management with board participation and strategic support." },
+                ].map((p, i) => (
                   <motion.div
                     key={p.step}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.12, duration: 0.5 }}
-                    className="relative group"
+                    transition={{ delay: i * 0.1 }}
+                    className="flex gap-6 group"
                   >
-                    <div className="flex flex-col items-center text-center">
-                      <div className="w-[4.5rem] h-[4.5rem] rounded-2xl bg-card border-2 border-primary/20 flex items-center justify-center mb-7 relative z-10 group-hover:border-primary group-hover:bg-primary transition-all duration-500 shadow-lg shadow-background">
-                        <span className="text-xl font-serif font-bold text-primary group-hover:text-primary-foreground transition-colors">{i + 1}</span>
+                    <div className="relative shrink-0">
+                      <div className="w-12 h-12 rounded-xl bg-card border-2 border-primary/20 flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all z-10 relative">
+                        <span className="text-lg font-serif font-bold text-primary group-hover:text-primary-foreground transition-colors">{i + 1}</span>
                       </div>
-                      <h3 className="text-lg font-serif font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{p.step}</h3>
+                    </div>
+                    <div className="pb-6 pt-1 flex-1">
+                      <h3 className="text-lg font-serif font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{p.step}</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
                     </div>
                   </motion.div>
@@ -253,43 +285,61 @@ const OurApproach = () => {
             </div>
           </div>
 
-          {/* Mobile: vertical timeline */}
-          <div className="md:hidden relative">
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
-            <div className="space-y-8">
-              {process.map((p, i) => (
-                <motion.div
-                  key={p.step}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="flex gap-6 group"
-                >
-                  <div className="relative shrink-0">
-                    <div className="w-12 h-12 rounded-xl bg-card border-2 border-primary/20 flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all duration-400 z-10 relative">
-                      <span className="text-lg font-serif font-bold text-primary group-hover:text-primary-foreground transition-colors">{i + 1}</span>
+          {/* Strategic Pillars */}
+          <motion.h3
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-xl font-serif font-bold text-foreground text-center mb-12"
+          >
+            Four Strategic Pillars
+          </motion.h3>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid md:grid-cols-2 gap-6"
+          >
+            {[
+              { title: "Real Estate", desc: "Core and value-add properties across the Mediterranean and Northern Europe.", icon: Building2, stats: "50+ projects" },
+              { title: "Private Equity", desc: "Growth and buyout investments in established businesses with strong fundamentals.", icon: TrendingUp, stats: "CHF 1.2B deployed" },
+              { title: "Venture Capital", desc: "Seed to Series A investments in technology, fintech, and deep tech.", icon: Rocket, stats: "30+ companies" },
+              { title: "Wealth Advisory", desc: "Comprehensive planning for UHNW families including tax, governance, and succession.", icon: Wallet, stats: "100+ families" },
+            ].map((pillar) => {
+              const Icon = pillar.icon;
+              return (
+                <motion.div key={pillar.title} variants={cardVariants}>
+                  <div className="relative bg-card border border-border rounded-2xl p-9 h-full hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/[0.06] transition-all duration-500 group overflow-hidden hover:-translate-y-1">
+                    <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/0 group-hover:via-primary/50 group-hover:to-primary/0 transition-all duration-700" />
+                    <div className="flex items-start gap-6 relative z-10">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center shrink-0 border border-primary/10 group-hover:from-primary group-hover:to-primary group-hover:border-primary transition-all duration-500">
+                        <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-3">
+                          <h3 className="text-lg font-serif font-bold text-foreground">{pillar.title}</h3>
+                          <span className="text-[10px] text-primary/70 font-bold tracking-[0.1em] uppercase bg-primary/5 px-3 py-1 rounded-full border border-primary/10">{pillar.stats}</span>
+                        </div>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{pillar.desc}</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="pb-6 pt-1 flex-1">
-                    <h3 className="text-lg font-serif font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{p.step}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
-                  </div>
                 </motion.div>
-              ))}
-            </div>
-          </div>
+              );
+            })}
+          </motion.div>
         </div>
       </section>
 
-      {/* Investment Structures */}
+      {/* ========== SECTION 3: OUR INSTRUMENTS ========== */}
       <section className="py-28 relative overflow-hidden bg-[hsl(var(--navy))]">
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: "radial-gradient(hsl(43 45% 42%) 1px, transparent 1px)",
           backgroundSize: "28px 28px"
         }} />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-primary/[0.05] blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -298,15 +348,25 @@ const OurApproach = () => {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-px bg-primary/50" />
-              <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">Investment Structures</p>
-              <div className="w-8 h-px bg-primary/50" />
-            </div>
+            <SectionLabel label="Our Instruments" />
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-[hsl(0_0%_95%)] mb-5">Flexible Capital Deployment</h2>
             <p className="text-[hsl(220_10%_58%)] max-w-2xl mx-auto leading-relaxed">
               We deploy capital through a range of structures tailored to each opportunity's stage, risk profile, and strategic objectives.
             </p>
+          </motion.div>
+
+          {/* Instrument types visual */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap items-center justify-center gap-3 mb-14"
+          >
+            {["Equity", "Debt", "Hybrid", "Digital Assets"].map((cat, i) => (
+              <span key={cat} className="text-[11px] text-[hsl(220_10%_60%)] font-semibold tracking-[0.15em] uppercase bg-[hsl(0_0%_100%/0.04)] border border-[hsl(0_0%_100%/0.08)] px-4 py-2 rounded-full">
+                {cat}
+              </span>
+            ))}
           </motion.div>
 
           {/* Featured: Private Equity */}
@@ -350,28 +410,28 @@ const OurApproach = () => {
               {
                 title: "Straight Equity",
                 abbr: "SE",
-                desc: "Direct share purchases providing permanent capital with full ownership rights, maximum upside participation, and voting power in strategic decisions.",
+                desc: "Direct share purchases providing permanent capital with full ownership rights, maximum upside participation, and voting power.",
                 tag: "Direct Ownership",
                 detail: "Full control & upside",
               },
               {
                 title: "Convertible Note",
                 abbr: "CN",
-                desc: "Debt instruments converting into equity at a future round, typically at a discounted valuation. Downside protection with equity upside for pre-valuation opportunities.",
+                desc: "Debt instruments converting into equity at a future round, typically at a discounted valuation. Downside protection with equity upside.",
                 tag: "Hybrid Instrument",
                 detail: "Debt → Equity conversion",
               },
               {
                 title: "SAFE Note",
                 abbr: "SAFE",
-                desc: "Simple Agreement for Future Equity — a streamlined instrument granting rights to future shares upon a triggering event, with no interest or maturity date.",
+                desc: "Simple Agreement for Future Equity — a streamlined instrument granting rights to future shares upon a triggering event.",
                 tag: "Early-Stage",
                 detail: "Y Combinator standard",
               },
               {
                 title: "SAFT",
                 abbr: "SAFT",
-                desc: "Simple Agreement for Future Tokens — designed for blockchain and Web3 investments, providing rights to tokens upon network launch in decentralized ecosystems.",
+                desc: "Simple Agreement for Future Tokens — designed for blockchain and Web3 investments, providing rights to tokens upon network launch.",
                 tag: "Digital Assets",
                 detail: "Token-based rights",
               },
@@ -392,58 +452,6 @@ const OurApproach = () => {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Investment Pillars */}
-      <section className="py-28 bg-secondary/20">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-px bg-primary/50" />
-              <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">Investment Pillars</p>
-              <div className="w-8 h-px bg-primary/50" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">Four Pillars of Excellence</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">Our expertise spans four complementary verticals, each managed by dedicated specialists.</p>
-          </motion.div>
-
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="grid md:grid-cols-2 gap-6"
-          >
-            {pillars.map((pillar) => {
-              const Icon = pillar.icon;
-              return (
-                <motion.div key={pillar.title} variants={cardVariants}>
-                  <div className="relative bg-card border border-border rounded-2xl p-9 h-full hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/[0.06] transition-all duration-500 group overflow-hidden hover:-translate-y-1">
-                    <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/0 group-hover:via-primary/50 group-hover:to-primary/0 transition-all duration-700" />
-
-                    <div className="flex items-start gap-6 relative z-10">
-                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center shrink-0 border border-primary/10 group-hover:from-primary group-hover:to-primary group-hover:border-primary transition-all duration-500">
-                        <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-3">
-                          <h3 className="text-lg font-serif font-bold text-foreground">{pillar.title}</h3>
-                          <span className="text-[10px] text-primary/70 font-bold tracking-[0.1em] uppercase bg-primary/5 px-3 py-1 rounded-full border border-primary/10">{pillar.stats}</span>
-                        </div>
-                        <p className="text-muted-foreground text-sm leading-relaxed">{pillar.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
           </motion.div>
         </div>
       </section>
@@ -482,8 +490,8 @@ const OurApproach = () => {
                     transition={{ delay: i * 0.08 }}
                     className="flex items-start gap-4 group"
                   >
-                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary transition-colors duration-400">
-                      <CheckCircle2 className="h-3.5 w-3.5 text-primary group-hover:text-primary-foreground transition-colors duration-400" />
+                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary transition-colors">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-primary group-hover:text-primary-foreground transition-colors" />
                     </div>
                     <p className="text-foreground text-sm leading-relaxed">{item}</p>
                   </motion.div>
@@ -542,7 +550,6 @@ const OurApproach = () => {
               backgroundSize: "24px 24px"
             }} />
             <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/[0.06] blur-[140px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-primary/[0.04] blur-[100px] pointer-events-none" />
 
             <div className="relative z-10 p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div>
@@ -555,7 +562,7 @@ const OurApproach = () => {
               </div>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-9 py-4.5 rounded-full bg-gradient-to-r from-primary to-[hsl(var(--gold-light))] text-primary-foreground font-semibold text-sm hover:opacity-90 transition-all hover:shadow-2xl hover:shadow-primary/30 shrink-0 group"
+                className="inline-flex items-center gap-2 px-9 py-4 rounded-full bg-gradient-to-r from-primary to-[hsl(var(--gold-light))] text-primary-foreground font-semibold text-sm hover:opacity-90 transition-all hover:shadow-2xl hover:shadow-primary/30 shrink-0 group"
               >
                 Get in Touch
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
