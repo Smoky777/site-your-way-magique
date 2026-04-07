@@ -1,4 +1,5 @@
 import PageLayout from "@/components/PageLayout";
+import mscShip from "@/assets/msc-ship.jpg";
 import HeroSection from "@/components/HeroSection";
 import { Link } from "react-router-dom";
 import { ArrowRight, Building2, TrendingUp, Shield, Landmark, ChevronRight, ArrowUpRight } from "lucide-react";
@@ -30,9 +31,12 @@ const Index = () => {
               className="lg:col-span-2 relative"
             >
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=750&fit=crop"
-                alt="Team collaboration"
+                src={mscShip}
+                alt="MSC cargo ship sailing on the ocean"
                 className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
+                loading="lazy"
+                width={1024}
+                height={1280}
               />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
