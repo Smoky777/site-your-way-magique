@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
 import logo from "@/assets/logo.png";
 
-const linkClass = "text-primary-foreground/50 hover:text-primary-foreground text-sm transition-colors duration-200";
+const linkClass = "text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors duration-200";
 
 const Footer = () => {
   return (
@@ -19,7 +19,7 @@ const Footer = () => {
             <Link to="/" className="inline-block mb-5">
               <img src={logo} alt="Multi Investment" className="h-12 w-auto" />
             </Link>
-            <p className="text-primary-foreground/45 text-sm leading-relaxed max-w-xs">
+            <p className="text-primary-foreground/80 text-sm leading-relaxed max-w-xs">
               Global private equity and real estate investment firm. Founded in 2024 by the Aponte family.
             </p>
           </div>
@@ -61,7 +61,7 @@ const Footer = () => {
           {/* Office — 3 cols */}
           <div className="lg:col-span-3">
             <h4 className="text-xs uppercase tracking-[0.2em] text-accent font-semibold mb-5">Head Office</h4>
-            <div className="space-y-4 text-sm text-primary-foreground/50">
+            <div className="space-y-4 text-sm text-primary-foreground/80">
               <div className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-accent mt-0.5 shrink-0" />
                 <span>Chemin Rieu 12<br />1208 Genève, Switzerland</span>
@@ -83,10 +83,10 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-primary-foreground/35 text-xs">
+          <p className="text-primary-foreground/70 text-xs">
             © {new Date().getFullYear()} Multi Investment Holding SA. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-xs text-primary-foreground/35">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-xs text-primary-foreground/70">
             <span>RC: CH-660.0.567.024-5</span>
             <span className="hidden md:inline text-primary-foreground/15">|</span>
             <span>TVA: CHE-396.944.369</span>
