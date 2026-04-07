@@ -61,9 +61,9 @@ const HeroSection = () => {
                 src={heroLogo}
                 alt="Multi Investment"
                 className="h-28 md:h-36 lg:h-44 xl:h-52 mx-auto"
-                initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{ duration: 1, delay: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
+                initial={{ opacity: 0, scale: 0.3, filter: "blur(12px)" }}
+                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                transition={{ duration: 1.4, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               />
               <motion.div
                 initial={{ width: 0 }}
