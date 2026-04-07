@@ -256,7 +256,7 @@ const Index = () => {
             >
               <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-[hsl(220,25%,6%)]/70 flex items-center justify-center">
+            <div className="absolute inset-0 bg-[hsl(150,15%,6%)]/70 flex items-center justify-center">
               <div className="text-center px-6 max-w-lg">
                 <motion.h2
                   initial={{ opacity: 0, y: 20 }}
