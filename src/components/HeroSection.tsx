@@ -58,7 +58,7 @@ const HeroSection = () => {
                 className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-10"
               />
               <motion.img
-                src={logo}
+                src={heroLogo}
                 alt="Multi Investment"
                 className="h-28 md:h-36 lg:h-44 xl:h-52 mx-auto"
                 initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
