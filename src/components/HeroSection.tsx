@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import logo from "@/assets/logo.png";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
