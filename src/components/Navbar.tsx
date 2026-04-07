@@ -194,9 +194,9 @@ const Navbar = () => {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
-          <Link to="/contact" className="hidden xl:block">
+          <Link to="/client-portal" className="hidden xl:block">
             <Button size="sm" className="bg-gradient-gold text-primary-foreground hover:opacity-90 rounded-full px-5">
-              Contact
+              Client Portal
             </Button>
           </Link>
 
