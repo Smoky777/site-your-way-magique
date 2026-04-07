@@ -35,6 +35,15 @@ const Footer = () => {
           </div>
 
           <div>
+            <h4 className="text-primary-foreground font-semibold text-sm mb-4">Legal</h4>
+            <div className="flex flex-col gap-2.5">
+              <Link to="/privacy" className="text-primary-foreground/50 hover:text-primary-foreground text-sm transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="text-primary-foreground/50 hover:text-primary-foreground text-sm transition-colors">Terms of Use</Link>
+              <Link to="/disclosure" className="text-primary-foreground/50 hover:text-primary-foreground text-sm transition-colors">Disclosure</Link>
+            </div>
+          </div>
+
+          <div>
             <h4 className="text-primary-foreground font-semibold text-sm mb-4">Office</h4>
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/50">
               <div>
