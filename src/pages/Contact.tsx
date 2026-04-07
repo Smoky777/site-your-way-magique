@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 const offices = [
-  { city: "Geneva", address: "Rue du Rhône 14, 1204 Geneva, Switzerland", phone: "+41 22 000 0000", lat: 46.2044, lng: 6.1432 },
+  { city: "Geneva", address: "Chemin Rieu 12, 1208 Genève, Switzerland", phone: "+41 22 000 0000", lat: 46.2044, lng: 6.1432 },
 ];
 
 const Contact = () => {
