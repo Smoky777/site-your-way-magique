@@ -335,7 +335,7 @@ const AssetManagement = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-serif font-bold text-foreground">{strategies[activeStrategy].title}</h3>
-                        <p className="text-xs text-primary font-medium">{strategies[activeStrategy].highlight}</p>
+                        <p className="text-xs text-foreground font-medium">{strategies[activeStrategy].highlight}</p>
                       </div>
                     </div>
                     <p className="text-muted-foreground leading-relaxed mb-6">{strategies[activeStrategy].desc}</p>

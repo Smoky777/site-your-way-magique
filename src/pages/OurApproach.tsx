@@ -189,7 +189,7 @@ const OurApproach = () => {
               </blockquote>
               <div className="flex items-center justify-center gap-4">
                 <div className="w-10 h-px bg-primary/50" />
-                <p className="text-primary font-medium text-xs tracking-[0.2em] uppercase">Founding Principle</p>
+                <p className="text-foreground font-medium text-xs tracking-[0.2em] uppercase">Founding Principle</p>
                 <div className="w-10 h-px bg-primary/50" />
               </div>
             </div>
@@ -538,7 +538,7 @@ const OurApproach = () => {
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
                   <div className="relative z-10 text-center">
                     <Shield className="h-8 w-8 text-primary/60 mx-auto mb-4" />
-                    <p className="text-primary text-[10px] tracking-[0.35em] uppercase font-medium mb-2">Risk Framework</p>
+                    <p className="text-muted-foreground text-[10px] tracking-[0.35em] uppercase font-medium mb-2">Risk Framework</p>
                     <p className="text-2xl font-serif font-bold text-[hsl(0_0%_95%)]">Multi-Layer Protection</p>
                   </div>
                 </div>
@@ -709,7 +709,7 @@ const OurApproach = () => {
                   }} />
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
                   <div className="relative z-10 text-center">
-                    <p className="text-primary text-[10px] tracking-[0.35em] uppercase font-medium mb-3">Assets Under Management</p>
+                    <p className="text-muted-foreground text-[10px] tracking-[0.35em] uppercase font-medium mb-3">Assets Under Management</p>
                     <p className="text-5xl md:text-6xl font-serif font-bold text-[hsl(0_0%_95%)]">CHF 3B+</p>
                   </div>
                 </div>

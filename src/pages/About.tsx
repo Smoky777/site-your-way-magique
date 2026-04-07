@@ -185,13 +185,13 @@ const About = () => {
                   Gianluigi Aponte's story is one of the most remarkable entrepreneurial journeys of the 20th century. Born into a modest family on Italy's Amalfi Coast, he trained as a <span className="text-foreground font-semibold">maritime captain</span> before making a fateful decision in 1970: to charter a single cargo vessel and launch the <span className="text-foreground font-semibold">Mediterranean Shipping Company (MSC)</span> from a small office in Naples.
                 </p>
                 <p>
-                  What followed was five decades of relentless expansion. Aponte possessed an extraordinary ability to <span className="text-primary font-semibold">anticipate market cycles</span> — buying ships at distressed prices during downturns when competitors pulled back, and aggressively scaling capacity during booms. This countercyclical strategy, combined with a refusal to go public or take on outside investors, allowed MSC to grow faster and more freely than any rival.
+                  What followed was five decades of relentless expansion. Aponte possessed an extraordinary ability to <span className="text-foreground font-semibold">anticipate market cycles</span> — buying ships at distressed prices during downturns when competitors pulled back, and aggressively scaling capacity during booms. This countercyclical strategy, combined with a refusal to go public or take on outside investors, allowed MSC to grow faster and more freely than any rival.
                 </p>
                 <p>
-                  By the 2000s, MSC had become a <span className="text-foreground font-semibold">global logistics colossus</span>: the world's second-largest container shipping company, a top-three cruise operator via MSC Cruises, and a major port terminal operator through Terminal Investment Limited (TiL). In <span className="text-primary font-semibold">January 2022</span>, MSC officially overtook Denmark's A.P. Møller-Maersk to become the world's #1 container shipping line — a position it has held ever since.
+                  By the 2000s, MSC had become a <span className="text-foreground font-semibold">global logistics colossus</span>: the world's second-largest container shipping company, a top-three cruise operator via MSC Cruises, and a major port terminal operator through Terminal Investment Limited (TiL). In <span className="text-foreground font-semibold">January 2022</span>, MSC officially overtook Denmark's A.P. Møller-Maersk to become the world's #1 container shipping line — a position it has held ever since.
                 </p>
                 <p>
-                  Today, Gianluigi Aponte's empire spans <span className="text-foreground font-semibold">800+ vessels, 500+ ports, 155 countries</span>, with peak annual revenues exceeding <span className="text-primary font-semibold">USD 80 billion</span>. The family fortune — entirely privately held — is estimated at over <span className="text-foreground font-semibold">$30 billion</span>, making the Apontes one of the wealthiest families in Italy, Switzerland, and all of Europe. A once-in-a-generation testament to the power of vision, patience, and family-driven capitalism.
+                  Today, Gianluigi Aponte's empire spans <span className="text-foreground font-semibold">800+ vessels, 500+ ports, 155 countries</span>, with peak annual revenues exceeding <span className="text-foreground font-semibold">USD 80 billion</span>. The family fortune — entirely privately held — is estimated at over <span className="text-foreground font-semibold">$30 billion</span>, making the Apontes one of the wealthiest families in Italy, Switzerland, and all of Europe. A once-in-a-generation testament to the power of vision, patience, and family-driven capitalism.
                 </p>
               </div>
             </motion.div>
@@ -230,13 +230,13 @@ const About = () => {
                   <span className="text-foreground font-semibold">Diego Aponte</span> is the eldest son of Gianluigi Aponte and the operational architect behind MSC's modern-day dominance. He joined the family business in the early 1990s, working across every division before being appointed <span className="text-foreground font-semibold">President of the MSC Group in 2014</span>.
                 </p>
                 <p>
-                  Under Diego's leadership, MSC underwent a <span className="text-primary font-semibold">radical transformation</span>. He doubled the company's shipping capacity in under a decade, invested billions in next-generation LNG-powered vessels, spearheaded MSC's digital transformation with AI-driven supply chain platforms, and expanded the terminal portfolio to control strategic chokepoints across Asia, Europe, and the Americas.
+                  Under Diego's leadership, MSC underwent a <span className="text-foreground font-semibold">radical transformation</span>. He doubled the company's shipping capacity in under a decade, invested billions in next-generation LNG-powered vessels, spearheaded MSC's digital transformation with AI-driven supply chain platforms, and expanded the terminal portfolio to control strategic chokepoints across Asia, Europe, and the Americas.
                 </p>
                 <p>
                   Diego also drove the explosive growth of <span className="text-foreground font-semibold">MSC Cruises</span>, overseeing an order book of over €30 billion in new ships that transformed the division into a challenger brand against Royal Caribbean and Carnival. His vision: to make MSC not just the biggest, but the most modern, sustainable, and technologically advanced shipping company on the planet.
                 </p>
                 <p>
-                  In 2024, recognizing that a fortune of this magnitude requires dedicated, institutional-grade stewardship, Diego personally spearheaded the creation of <span className="text-primary font-semibold">Multi Investment</span> — a Geneva-based family office designed to strategically diversify the Aponte wealth beyond maritime into <span className="text-foreground font-semibold">prime real estate, private equity, venture capital, and alternative investments</span>. His mandate: preserve the legacy, multiply the fortune, and build a platform that will serve the family for the next 100 years.
+                  In 2024, recognizing that a fortune of this magnitude requires dedicated, institutional-grade stewardship, Diego personally spearheaded the creation of <span className="text-foreground font-semibold">Multi Investment</span> — a Geneva-based family office designed to strategically diversify the Aponte wealth beyond maritime into <span className="text-foreground font-semibold">prime real estate, private equity, venture capital, and alternative investments</span>. His mandate: preserve the legacy, multiply the fortune, and build a platform that will serve the family for the next 100 years.
                 </p>
               </div>
             </motion.div>
@@ -358,13 +358,13 @@ const About = () => {
             >
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  The Aponte family built one of the greatest private fortunes in European history through a single, concentrated bet: global shipping. While that bet has paid off spectacularly — yielding a fortune north of <span className="text-primary font-semibold">$30 billion</span> — it also created a concentration risk that grows with each passing year.
+                  The Aponte family built one of the greatest private fortunes in European history through a single, concentrated bet: global shipping. While that bet has paid off spectacularly — yielding a fortune north of <span className="text-foreground font-semibold">$30 billion</span> — it also created a concentration risk that grows with each passing year.
                 </p>
                 <p>
                   <span className="text-foreground font-semibold">Multi Investment was created in 2024</span> with a clear mandate: to systematically deploy capital outside of maritime into a diversified portfolio of world-class assets. From <span className="text-foreground font-semibold">trophy real estate in London, Geneva, and Monaco</span> to <span className="text-foreground font-semibold">growth equity in European mid-market champions</span> and <span className="text-foreground font-semibold">venture capital backing the next generation of disruptors</span> — we are building a permanent portfolio designed to endure across market cycles and generations.
                 </p>
                 <p>
-                  Unlike traditional family offices, Multi Investment benefits from an unparalleled competitive advantage: the <span className="text-primary font-semibold">global infrastructure, relationships, and deal flow</span> of the MSC network. With a presence in 155 countries, we see opportunities before the market does — and we have the capital, patience, and conviction to act decisively.
+                  Unlike traditional family offices, Multi Investment benefits from an unparalleled competitive advantage: the <span className="text-foreground font-semibold">global infrastructure, relationships, and deal flow</span> of the MSC network. With a presence in 155 countries, we see opportunities before the market does — and we have the capital, patience, and conviction to act decisively.
                 </p>
               </div>
             </motion.div>
@@ -441,7 +441,7 @@ const About = () => {
                             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                               <m.icon className="h-4 w-4 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                             </div>
-                            <span className="text-primary font-serif font-bold text-2xl">{m.year}</span>
+                            <span className="text-foreground font-serif font-bold text-2xl">{m.year}</span>
                           </div>
                         </div>
                         <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground/80 transition-colors">
@@ -482,7 +482,7 @@ const About = () => {
                     </div>
                   </div>
                   <div className="bg-card border border-border rounded-xl p-5 flex-1 group-hover:border-primary/30 group-hover:shadow-md transition-all duration-300">
-                    <span className="text-primary font-serif font-bold text-xl">{m.year}</span>
+                    <span className="text-foreground font-serif font-bold text-xl">{m.year}</span>
                     <p className="text-muted-foreground mt-1.5 text-sm leading-relaxed">{m.text}</p>
                   </div>
                 </motion.div>
