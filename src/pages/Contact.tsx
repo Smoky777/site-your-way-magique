@@ -2,6 +2,7 @@ import PageLayout from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import officeBuilding from "@/assets/office-building.jpg";
 
 const infoStyle: React.CSSProperties = { fontFamily: "Georgia, 'Times New Roman', serif" };
 
@@ -66,6 +67,14 @@ const Contact = () => {
 
             {/* Info */}
             <div className="space-y-8">
+              {/* Office photo */}
+              <div className="animate-on-scroll rounded-xl overflow-hidden border border-border shadow-sm">
+                <img
+                  src={officeBuilding}
+                  alt="Multi Investment — Geneva Office Building"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
               {/* Map */}
               <div className="animate-on-scroll rounded-xl overflow-hidden border border-border h-64 shadow-sm">
                 <iframe
