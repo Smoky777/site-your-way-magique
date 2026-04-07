@@ -1,12 +1,12 @@
 import PageLayout from "@/components/PageLayout";
 import { Card, CardContent } from "@/components/ui/card";
-import { User, Users, Award, Globe, TrendingUp, Shield, Briefcase, ChevronRight, Building2, Sparkles } from "lucide-react";
-import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useState, useRef } from "react";
+import { User, Users, Award, Globe, TrendingUp, Shield, Briefcase, ChevronRight, Building2, Sparkles, Heart, Quote, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const founders = [
-  { name: "Marco Aponte", role: "Chief Executive Officer", abbr: "CEO", bio: "Leads the firm's vision, strategy, and overall operations. Background in international finance and family enterprise.", icon: Award },
-  { name: "Diego Aponte", role: "Co-Founder", abbr: "Co-F", bio: "Co-founded Multi Investment with a vision to build a world-class family investment office rooted in the Aponte legacy.", icon: Sparkles },
+  { name: "Marco Aponte", role: "Chief Executive Officer", abbr: "CEO", bio: "Leads the firm's vision, strategy, and overall operations. Background in international finance and family enterprise.", quote: "Building something that lasts means putting people first — always.", icon: Award },
+  { name: "Diego Aponte", role: "Co-Founder", abbr: "Co-F", bio: "Co-founded Multi Investment with a vision to build a world-class family investment office rooted in the Aponte legacy.", quote: "Our family's values are the foundation of every decision we make.", icon: Sparkles },
 ];
 
 const leadership = [
@@ -31,70 +31,68 @@ const getInitials = (name: string) =>
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
+  visible: { transition: { staggerChildren: 0.12 } },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] } },
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 0.61, 0.36, 1] } },
 };
 
-type Member = typeof founders[0];
+type Founder = typeof founders[0];
+type Member = typeof leadership[0];
 
-const FounderCard = ({ member }: { member: Member }) => {
+const FounderCard = ({ member, index }: { member: Founder; index: number }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const Icon = member.icon;
 
   return (
     <motion.div
       variants={cardVariants}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      className="group"
     >
-      <Card className="relative overflow-hidden border-primary/20 bg-card hover:border-primary/50 transition-all duration-500 h-full hover:shadow-2xl hover:shadow-primary/10">
-        {/* Gold accent bar */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-[hsl(var(--gold-light))] to-primary" />
-
-        {/* Corner decoration */}
-        <div className="absolute top-0 right-0 w-40 h-40 opacity-[0.04] pointer-events-none">
-          <svg viewBox="0 0 100 100" className="w-full h-full text-primary">
-            <circle cx="80" cy="20" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" />
-            <circle cx="80" cy="20" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" />
-            <circle cx="80" cy="20" r="10" fill="none" stroke="currentColor" strokeWidth="0.5" />
-          </svg>
-        </div>
+      <Card className="relative overflow-hidden border-primary/15 bg-card hover:border-primary/40 transition-all duration-700 h-full hover:shadow-2xl hover:shadow-primary/8">
+        {/* Warm gradient accent */}
+        <motion.div 
+          className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/40 via-primary to-primary/40"
+          animate={{ opacity: isHovered ? 1 : 0.6 }}
+        />
 
         <CardContent className="relative z-10 p-8 md:p-10">
-          <div className="flex flex-col sm:flex-row items-start gap-6">
-            {/* Large avatar */}
-            <div className="relative shrink-0">
+          <div className="flex flex-col gap-6">
+            {/* Top: Avatar + Info */}
+            <div className="flex items-center gap-5">
               <motion.div
-                className="w-24 h-24 rounded-2xl flex items-center justify-center font-serif font-bold text-2xl border-2"
+                className="w-20 h-20 rounded-full flex items-center justify-center font-serif font-bold text-xl border-2 shrink-0"
                 animate={{
                   background: isHovered
                     ? "linear-gradient(135deg, hsl(43 45% 42%), hsl(43 45% 55%))"
-                    : "linear-gradient(135deg, hsl(43 45% 42% / 0.08), hsl(43 45% 42% / 0.15))",
+                    : "linear-gradient(135deg, hsl(43 45% 42% / 0.1), hsl(43 45% 42% / 0.18))",
                   color: isHovered ? "hsl(0 0% 100%)" : "hsl(43 45% 42%)",
                   borderColor: isHovered ? "hsl(43 45% 42%)" : "hsl(43 45% 42% / 0.2)",
-                  scale: isHovered ? 1.05 : 1,
                 }}
-                transition={{ duration: 0.4 }}
+                transition={{ duration: 0.5 }}
               >
                 {getInitials(member.name)}
               </motion.div>
-              <div className="absolute -bottom-2 -right-2 px-2 py-0.5 rounded-lg bg-primary text-primary-foreground text-[10px] font-bold tracking-widest shadow-lg">
-                {member.abbr}
+
+              <div>
+                <span className="text-primary/70 text-xs font-semibold tracking-[0.15em] uppercase">{member.abbr}</span>
+                <h3 className="text-2xl font-serif font-bold text-foreground mt-0.5">{member.name}</h3>
+                <p className="text-primary text-sm font-medium mt-0.5">{member.role}</p>
               </div>
             </div>
 
-            <div className="min-w-0 flex-1">
-              <div className="flex items-center gap-2 mb-1">
-                <Icon className="h-4 w-4 text-primary/60" />
-                <span className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">{member.role}</span>
-              </div>
-              <h3 className="text-2xl font-serif font-bold text-foreground mb-3">{member.name}</h3>
-              <div className="w-12 h-px bg-gradient-to-r from-primary to-transparent mb-4" />
-              <p className="text-muted-foreground leading-relaxed">{member.bio}</p>
+            {/* Bio */}
+            <p className="text-muted-foreground leading-relaxed">{member.bio}</p>
+
+            {/* Personal quote — human touch */}
+            <div className="relative bg-muted/50 rounded-xl p-5 border border-border/50">
+              <Quote className="absolute top-3 left-3 h-4 w-4 text-primary/20" />
+              <p className="text-foreground/80 text-sm italic leading-relaxed pl-6 font-serif">
+                "{member.quote}"
+              </p>
             </div>
           </div>
         </CardContent>
@@ -109,49 +107,32 @@ const TeamCard = ({ member }: { member: Member }) => {
 
   return (
     <motion.div variants={cardVariants} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      <Card className="relative overflow-hidden border-border bg-card hover:border-primary/40 transition-all duration-500 h-full hover:shadow-xl hover:shadow-primary/5">
-        {/* Animated accent */}
-        <motion.div
-          className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary/0 via-primary to-primary/0"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: isHovered ? 1 : 0 }}
-          transition={{ duration: 0.4 }}
-        />
-
+      <Card className="relative overflow-hidden border-border/80 bg-card hover:border-primary/30 transition-all duration-500 h-full hover:shadow-lg hover:shadow-primary/5 group">
         <CardContent className="relative z-10 p-6">
-          <div className="flex items-start gap-4">
-            <div className="relative shrink-0">
-              <motion.div
-                className="w-14 h-14 rounded-xl flex items-center justify-center font-serif font-bold text-base border"
-                animate={{
-                  background: isHovered
-                    ? "linear-gradient(135deg, hsl(43 45% 42%), hsl(43 45% 52%))"
-                    : "linear-gradient(135deg, hsl(43 45% 42% / 0.08), hsl(43 45% 42% / 0.15))",
-                  color: isHovered ? "hsl(0 0% 100%)" : "hsl(43 45% 42%)",
-                  borderColor: isHovered ? "hsl(43 45% 42% / 0.5)" : "hsl(43 45% 42% / 0.15)",
-                }}
-                transition={{ duration: 0.35 }}
-              >
-                {getInitials(member.name)}
-              </motion.div>
-              <div className="absolute -bottom-1 -right-1 px-1.5 py-0.5 rounded-md bg-secondary border border-border text-[9px] font-bold tracking-wider text-muted-foreground">
-                {member.abbr}
-              </div>
-            </div>
-
-            <div className="min-w-0 flex-1">
-              <h3 className="text-base font-serif font-semibold text-foreground group-hover:text-primary">{member.name}</h3>
-              <p className="text-primary/70 text-sm font-medium mb-2">{member.role}</p>
-              <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">{member.bio}</p>
-            </div>
-
+          <div className="flex flex-col items-center text-center gap-4">
+            {/* Circular avatar */}
             <motion.div
-              className="shrink-0 mt-1"
-              animate={{ opacity: isHovered ? 1 : 0, scale: isHovered ? 1 : 0.8 }}
-              transition={{ duration: 0.25 }}
+              className="w-16 h-16 rounded-full flex items-center justify-center font-serif font-bold text-lg border-2"
+              animate={{
+                background: isHovered
+                  ? "linear-gradient(135deg, hsl(43 45% 42%), hsl(43 45% 52%))"
+                  : "linear-gradient(135deg, hsl(43 45% 42% / 0.08), hsl(43 45% 42% / 0.15))",
+                color: isHovered ? "hsl(0 0% 100%)" : "hsl(43 45% 42%)",
+                borderColor: isHovered ? "hsl(43 45% 42% / 0.6)" : "hsl(43 45% 42% / 0.15)",
+              }}
+              transition={{ duration: 0.4 }}
             >
-              <Icon className="h-4 w-4 text-primary/40" />
+              {getInitials(member.name)}
             </motion.div>
+
+            <div>
+              <h3 className="text-base font-serif font-bold text-foreground">{member.name}</h3>
+              <p className="text-primary/80 text-sm font-medium mt-0.5">{member.role}</p>
+            </div>
+
+            <div className="w-8 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
+            <p className="text-muted-foreground text-sm leading-relaxed">{member.bio}</p>
           </div>
         </CardContent>
       </Card>
@@ -159,165 +140,175 @@ const TeamCard = ({ member }: { member: Member }) => {
   );
 };
 
-const stats = [
-  { value: "13", label: "Team Members", icon: Users },
-  { value: "Geneva", label: "Headquarters", icon: Building2 },
-  { value: "8+", label: "Nationalities", icon: Globe },
-  { value: "100+", label: "Years Experience", icon: Award },
+const values = [
+  { icon: Heart, title: "People First", desc: "We invest in relationships as much as in assets. Every partnership is built on trust." },
+  { icon: Shield, title: "Integrity Always", desc: "Transparency and honesty guide every decision, from boardroom to portfolio." },
+  { icon: Globe, title: "Global Perspective", desc: "Rooted in Geneva, connected worldwide. Diverse backgrounds fuel better thinking." },
+  { icon: TrendingUp, title: "Long-Term Vision", desc: "We build for generations, not quarters. Patient capital creates lasting value." },
 ];
-
-const SectionHeader = ({ icon: Icon, title, subtitle }: { icon: React.ElementType; title: string; subtitle: string }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 15 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="flex items-center gap-4 mb-10"
-  >
-    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center border border-primary/10">
-      <Icon className="h-5 w-5 text-primary" />
-    </div>
-    <div>
-      <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">{title}</h2>
-      <p className="text-muted-foreground text-sm mt-0.5">{subtitle}</p>
-    </div>
-    <div className="flex-1 h-px bg-gradient-to-r from-border to-transparent ml-4 hidden md:block" />
-  </motion.div>
-);
 
 const Team = () => {
   return (
     <PageLayout>
-      {/* Dark hero */}
-      <section className="relative pt-28 pb-32 overflow-hidden bg-[hsl(var(--navy))]">
-        {/* Subtle animated dots */}
-        <div className="absolute inset-0 opacity-[0.06]" style={{
-          backgroundImage: "radial-gradient(hsl(43 45% 42%) 1px, transparent 1px)",
-          backgroundSize: "32px 32px"
-        }} />
-
-        {/* Large radial glow */}
-        <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[700px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/[0.02] blur-[80px] pointer-events-none" />
+      {/* Hero — warm, narrative feel */}
+      <section className="relative pt-28 pb-36 overflow-hidden bg-[hsl(var(--navy))]">
+        {/* Soft organic shapes instead of dots */}
+        <div className="absolute top-20 left-10 w-[500px] h-[500px] rounded-full bg-primary/[0.04] blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-10 right-20 w-[400px] h-[400px] rounded-full bg-[hsl(220_25%_35%)]/20 blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-3xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.8 }}
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <div className="flex items-center justify-center gap-3 mb-8">
+                <div className="w-10 h-px bg-primary/40" />
                 <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium">Our Team</p>
+                <div className="w-10 h-px bg-primary/40" />
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[hsl(0_0%_95%)] mb-6 leading-[1.1]">
-                The Minds Behind<br />
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[hsl(0_0%_95%)] mb-8 leading-[1.15]">
+                The People Who Make<br />
                 <span className="bg-gradient-to-r from-primary to-[hsl(var(--gold-light))] bg-clip-text text-transparent">
-                  Multi Investment
+                  It All Possible
                 </span>
               </h1>
-              <p className="text-[hsl(220_10%_65%)] text-lg leading-relaxed max-w-xl">
-                A curated team of finance, real estate, and technology professionals united by excellence, integrity, and long-term value creation.
+
+              <p className="text-[hsl(220_10%_65%)] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+                Behind every investment decision is a team of passionate individuals who believe that 
+                finance, done right, can create a better future for families and communities.
               </p>
             </motion.div>
 
-            {/* Right side: key figures */}
+            {/* Human stats — more personal */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="hidden lg:grid grid-cols-2 gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex flex-wrap items-center justify-center gap-8 md:gap-12"
             >
-              {stats.map((stat, i) => {
-                const Icon = stat.icon;
-                return (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 + i * 0.1 }}
-                    className="rounded-xl border border-[hsl(0_0%_100%/0.08)] bg-[hsl(0_0%_100%/0.03)] backdrop-blur-sm p-6 text-center hover:border-primary/30 transition-colors duration-300 group"
-                  >
-                    <Icon className="h-5 w-5 text-primary/50 mx-auto mb-2.5 group-hover:text-primary transition-colors" />
-                    <p className="text-3xl font-serif font-bold text-[hsl(0_0%_95%)]">{stat.value}</p>
-                    <p className="text-[hsl(220_10%_55%)] text-xs mt-1 uppercase tracking-wider">{stat.label}</p>
-                  </motion.div>
-                );
-              })}
+              {[
+                { value: "13", label: "Team members" },
+                { value: "8+", label: "Nationalities" },
+                { value: "100+", label: "Years combined experience" },
+              ].map((s, i) => (
+                <div key={s.label} className="text-center">
+                  <p className="text-3xl md:text-4xl font-serif font-bold text-[hsl(0_0%_95%)]">{s.value}</p>
+                  <p className="text-[hsl(220_10%_55%)] text-xs mt-1 uppercase tracking-wider">{s.label}</p>
+                </div>
+              ))}
+              <div className="text-center flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-primary/60" />
+                <div>
+                  <p className="text-lg font-serif font-bold text-[hsl(0_0%_95%)] text-left">Geneva</p>
+                  <p className="text-[hsl(220_10%_55%)] text-xs uppercase tracking-wider">Switzerland</p>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
 
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
+        {/* Smooth bottom transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* Mobile stats */}
-      <section className="relative -mt-10 z-10 mb-8 lg:hidden">
+      {/* Our Culture intro — warm narrative */}
+      <section className="py-20">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 gap-3">
-            {stats.map((stat, i) => {
-              const Icon = stat.icon;
-              return (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="bg-card border border-border rounded-xl p-5 text-center"
-                >
-                  <Icon className="h-4 w-4 text-primary/50 mx-auto mb-2" />
-                  <p className="text-2xl font-serif font-bold text-foreground">{stat.value}</p>
-                  <p className="text-muted-foreground text-xs mt-1 uppercase tracking-wider">{stat.label}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
+              More Than a Team —<br />A Shared Purpose
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              We come from different countries, different backgrounds, and different walks of life. 
+              But we share something powerful: a belief that thoughtful investing can preserve and grow 
+              what matters most to the families who trust us.
+            </p>
+          </motion.div>
 
-      {/* Founders */}
-      <section className="py-14">
-        <div className="container mx-auto px-6">
-          <SectionHeader icon={Award} title="Founders" subtitle="Vision & Legacy" />
+          {/* Values grid */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid md:grid-cols-2 gap-6"
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
           >
-            {founders.map((m) => (
-              <FounderCard key={m.name} member={m} />
+            {values.map((v) => {
+              const Icon = v.icon;
+              return (
+                <motion.div key={v.title} variants={cardVariants} className="text-center group">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                    <Icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-serif font-bold text-foreground mb-2">{v.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{v.desc}</p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Founders — personal, with quotes */}
+      <section className="py-14 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Leadership</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-2">Our Founders</h2>
+            <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
+              The vision behind Multi Investment — a family legacy built on trust, ambition, and a deep respect for long-term value.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+          >
+            {founders.map((m, i) => (
+              <FounderCard key={m.name} member={m} index={i} />
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Decorative divider */}
-      <div className="container mx-auto px-6">
-        <div className="flex items-center gap-4">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-          <div className="flex gap-1.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-primary/30" />
-            <div className="w-1.5 h-1.5 rounded-full bg-primary/15" />
-            <div className="w-1.5 h-1.5 rounded-full bg-primary/30" />
-          </div>
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-        </div>
-      </div>
-
       {/* Executive Leadership */}
-      <section className="py-14">
+      <section className="py-20">
         <div className="container mx-auto px-6">
-          <SectionHeader icon={Users} title="Executive Leadership" subtitle="C-Suite & Strategic Direction" />
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">C-Suite</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-2">Executive Leadership</h2>
+            <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
+              Experienced leaders who bring diverse expertise and a shared commitment to excellence.
+            </p>
+          </motion.div>
+
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
           >
             {leadership.map((m) => (
               <TeamCard key={m.name} member={m} />
@@ -326,29 +317,28 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Decorative divider */}
-      <div className="container mx-auto px-6">
-        <div className="flex items-center gap-4">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-          <div className="flex gap-1.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-primary/30" />
-            <div className="w-1.5 h-1.5 rounded-full bg-primary/15" />
-            <div className="w-1.5 h-1.5 rounded-full bg-primary/30" />
-          </div>
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-        </div>
-      </div>
-
       {/* Division Heads & Specialists */}
-      <section className="py-14">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
-          <SectionHeader icon={User} title="Division Heads & Specialists" subtitle="Investment, Real Estate & Operations" />
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Specialists</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-2">Division Heads & Experts</h2>
+            <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
+              The hands-on experts who turn strategy into results across every asset class.
+            </p>
+          </motion.div>
+
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
           >
             {specialists.map((m) => (
               <TeamCard key={m.name} member={m} />
@@ -357,41 +347,31 @@ const Team = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="pb-24 pt-8">
+      {/* Human CTA — warm, inviting */}
+      <section className="py-24">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative rounded-2xl overflow-hidden"
+            className="relative rounded-2xl overflow-hidden max-w-4xl mx-auto"
           >
-            {/* Background */}
             <div className="absolute inset-0 bg-[hsl(var(--navy))]" />
-            <div className="absolute inset-0 opacity-[0.05]" style={{
-              backgroundImage: "radial-gradient(hsl(43 45% 42%) 1px, transparent 1px)",
-              backgroundSize: "24px 24px"
-            }} />
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/[0.05] blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/[0.06] blur-[100px] pointer-events-none" />
 
-            <div className="relative z-10 p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8">
-              <div>
-                <div className="flex items-center gap-2 mb-4">
-                  <Sparkles className="h-4 w-4 text-primary" />
-                  <span className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Careers</span>
-                </div>
-                <h3 className="text-2xl md:text-3xl font-serif font-bold text-[hsl(0_0%_95%)] mb-3">
-                  Interested in Joining Our Team?
-                </h3>
-                <p className="text-[hsl(220_10%_65%)] max-w-lg">
-                  We're always looking for exceptional talent to strengthen our capabilities across Europe.
-                </p>
-              </div>
+            <div className="relative z-10 p-10 md:p-16 text-center">
+              <Heart className="h-8 w-8 text-primary/60 mx-auto mb-6" />
+              <h3 className="text-2xl md:text-3xl font-serif font-bold text-[hsl(0_0%_95%)] mb-4">
+                We're Looking for People,<br />Not Just Résumés
+              </h3>
+              <p className="text-[hsl(220_10%_65%)] max-w-lg mx-auto mb-8 leading-relaxed">
+                If you're passionate about finance, driven by purpose, and want to be part of something meaningful — we'd love to hear from you.
+              </p>
               <a
                 href="/careers"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-[hsl(var(--gold-light))] text-primary-foreground font-semibold hover:opacity-90 transition-all hover:shadow-xl hover:shadow-primary/25 shrink-0 group"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-[hsl(var(--gold-light))] text-primary-foreground font-semibold hover:opacity-90 transition-all hover:shadow-xl hover:shadow-primary/25 group"
               >
-                View Open Positions
+                Explore Careers
                 <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
