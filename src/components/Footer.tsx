@@ -50,6 +50,14 @@ const Footer = () => {
                 <p className="text-primary-foreground font-medium">Geneva</p>
                 <p>Chemin Rieu 12, 1208 Genève, Switzerland</p>
               </div>
+              <div>
+                <p className="text-primary-foreground font-medium">Phone</p>
+                <p>+41 22 000 0000</p>
+              </div>
+              <div className="pt-2 border-t border-primary-foreground/10 mt-1 space-y-1">
+                <p>RC: CH-660.0.567.024-5</p>
+                <p>TVA: CHE-396.944.369</p>
+              </div>
             </div>
           </div>
         </div>
