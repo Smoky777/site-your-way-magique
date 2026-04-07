@@ -1,6 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Shield, Target, Compass, TrendingUp, Eye, Heart, Gem, ArrowRight, Building2, Rocket, Wallet, CheckCircle2, Layers, BarChart3, Lightbulb, Zap, Globe, BookOpen } from "lucide-react";
+import { Shield, Target, Compass, TrendingUp, Eye, Heart, Gem, ArrowRight, ArrowDown, Building2, Rocket, Wallet, CheckCircle2, BarChart3, Globe, Scale, Users, Gauge, Lock, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 
@@ -22,16 +22,28 @@ const SectionLabel = ({ label }: { label: string }) => (
   </div>
 );
 
+const navSections = [
+  { id: "philosophy", label: "Philosophy", icon: Compass },
+  { id: "strategy", label: "Strategy", icon: Target },
+  { id: "instruments", label: "Instruments", icon: BarChart3 },
+  { id: "risk", label: "Risk Management", icon: Shield },
+  { id: "track-record", label: "Track Record", icon: TrendingUp },
+];
+
 const OurApproach = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 80]);
 
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <PageLayout>
       {/* Hero */}
-      <section ref={heroRef} className="relative pt-28 pb-40 overflow-hidden bg-[hsl(var(--navy))]">
+      <section ref={heroRef} className="relative pt-28 pb-44 overflow-hidden bg-[hsl(var(--navy))]">
         <div className="absolute inset-0 opacity-[0.04]" style={{
           backgroundImage: "radial-gradient(hsl(43 45% 42%) 1px, transparent 1px)",
           backgroundSize: "32px 32px"
@@ -111,11 +123,43 @@ const OurApproach = () => {
           </motion.div>
         </div>
 
+        {/* Navigation arrows at the bottom of hero */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="absolute bottom-12 left-0 right-0 z-20"
+        >
+          <div className="container mx-auto px-6">
+            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+              {navSections.map((nav, i) => {
+                const Icon = nav.icon;
+                return (
+                  <motion.button
+                    key={nav.id}
+                    onClick={() => scrollTo(nav.id)}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.97 }}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.9 + i * 0.08 }}
+                    className="flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3 rounded-full border border-[hsl(0_0%_100%/0.12)] bg-[hsl(0_0%_100%/0.05)] backdrop-blur-md hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 group"
+                  >
+                    <Icon className="h-3.5 w-3.5 text-primary/60 group-hover:text-primary transition-colors" />
+                    <span className="text-[hsl(0_0%_85%)] text-xs font-medium tracking-wide group-hover:text-primary transition-colors">{nav.label}</span>
+                    <ChevronDown className="h-3 w-3 text-[hsl(0_0%_50%)] group-hover:text-primary transition-colors" />
+                  </motion.button>
+                );
+              })}
+            </div>
+          </div>
+        </motion.div>
+
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
       {/* ========== SECTION 1: PHILOSOPHY ========== */}
-      <section className="py-28">
+      <section id="philosophy" className="py-28 scroll-mt-24">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -175,7 +219,6 @@ const OurApproach = () => {
                       {p.number}
                     </span>
                     <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/0 group-hover:via-primary/60 group-hover:to-primary/0 transition-all duration-700" />
-
                     <div className="relative z-10">
                       <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-6 border border-primary/10 group-hover:from-primary group-hover:to-primary group-hover:border-primary/50 transition-all duration-500">
                         <Icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
@@ -192,7 +235,7 @@ const OurApproach = () => {
       </section>
 
       {/* ========== SECTION 2: STRATEGY ========== */}
-      <section className="py-28 bg-secondary/30 relative overflow-hidden">
+      <section id="strategy" className="py-28 bg-secondary/30 relative overflow-hidden scroll-mt-24">
         <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6">
@@ -220,7 +263,6 @@ const OurApproach = () => {
               Our Investment Process
             </motion.h3>
 
-            {/* Desktop */}
             <div className="hidden md:block">
               <div className="relative">
                 <div className="absolute top-[2.25rem] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
@@ -252,7 +294,6 @@ const OurApproach = () => {
               </div>
             </div>
 
-            {/* Mobile */}
             <div className="md:hidden relative">
               <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
               <div className="space-y-8">
@@ -334,7 +375,7 @@ const OurApproach = () => {
       </section>
 
       {/* ========== SECTION 3: OUR INSTRUMENTS ========== */}
-      <section className="py-28 relative overflow-hidden bg-[hsl(var(--navy))]">
+      <section id="instruments" className="py-28 relative overflow-hidden bg-[hsl(var(--navy))] scroll-mt-24">
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: "radial-gradient(hsl(43 45% 42%) 1px, transparent 1px)",
           backgroundSize: "28px 28px"
@@ -355,14 +396,14 @@ const OurApproach = () => {
             </p>
           </motion.div>
 
-          {/* Instrument types visual */}
+          {/* Instrument categories */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="flex flex-wrap items-center justify-center gap-3 mb-14"
           >
-            {["Equity", "Debt", "Hybrid", "Digital Assets"].map((cat, i) => (
+            {["Equity", "Debt", "Hybrid", "Digital Assets"].map((cat) => (
               <span key={cat} className="text-[11px] text-[hsl(220_10%_60%)] font-semibold tracking-[0.15em] uppercase bg-[hsl(0_0%_100%/0.04)] border border-[hsl(0_0%_100%/0.08)] px-4 py-2 rounded-full">
                 {cat}
               </span>
@@ -407,40 +448,15 @@ const OurApproach = () => {
             className="grid md:grid-cols-2 gap-5"
           >
             {[
-              {
-                title: "Straight Equity",
-                abbr: "SE",
-                desc: "Direct share purchases providing permanent capital with full ownership rights, maximum upside participation, and voting power.",
-                tag: "Direct Ownership",
-                detail: "Full control & upside",
-              },
-              {
-                title: "Convertible Note",
-                abbr: "CN",
-                desc: "Debt instruments converting into equity at a future round, typically at a discounted valuation. Downside protection with equity upside.",
-                tag: "Hybrid Instrument",
-                detail: "Debt → Equity conversion",
-              },
-              {
-                title: "SAFE Note",
-                abbr: "SAFE",
-                desc: "Simple Agreement for Future Equity — a streamlined instrument granting rights to future shares upon a triggering event.",
-                tag: "Early-Stage",
-                detail: "Y Combinator standard",
-              },
-              {
-                title: "SAFT",
-                abbr: "SAFT",
-                desc: "Simple Agreement for Future Tokens — designed for blockchain and Web3 investments, providing rights to tokens upon network launch.",
-                tag: "Digital Assets",
-                detail: "Token-based rights",
-              },
+              { title: "Straight Equity", abbr: "SE", desc: "Direct share purchases providing permanent capital with full ownership rights, maximum upside participation, and voting power.", tag: "Direct Ownership", detail: "Full control & upside" },
+              { title: "Convertible Note", abbr: "CN", desc: "Debt instruments converting into equity at a future round, typically at a discounted valuation. Downside protection with equity upside.", tag: "Hybrid Instrument", detail: "Debt → Equity conversion" },
+              { title: "SAFE Note", abbr: "SAFE", desc: "Simple Agreement for Future Equity — a streamlined instrument granting rights to future shares upon a triggering event.", tag: "Early-Stage", detail: "Y Combinator standard" },
+              { title: "SAFT", abbr: "SAFT", desc: "Simple Agreement for Future Tokens — designed for blockchain and Web3 investments, providing rights to tokens upon network launch.", tag: "Digital Assets", detail: "Token-based rights" },
             ].map((s) => (
               <motion.div key={s.title} variants={cardVariants}>
                 <div className="relative rounded-2xl border border-[hsl(0_0%_100%/0.07)] bg-[hsl(0_0%_100%/0.02)] backdrop-blur-sm p-8 h-full hover:border-primary/40 transition-all duration-500 group overflow-hidden hover:bg-[hsl(0_0%_100%/0.04)]">
                   <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/0 group-hover:via-primary/50 group-hover:to-primary/0 transition-all duration-700" />
                   <div className="absolute top-4 right-6 text-5xl font-serif font-bold text-primary/[0.04] group-hover:text-primary/[0.1] transition-colors duration-500 select-none">{s.abbr}</div>
-                  
                   <div className="relative z-10">
                     <div className="flex flex-wrap items-center gap-2.5 mb-5">
                       <span className="text-[10px] text-primary/90 font-bold tracking-[0.12em] uppercase bg-primary/10 px-3 py-1 rounded-full border border-primary/15">{s.tag}</span>
@@ -453,6 +469,186 @@ const OurApproach = () => {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* ========== SECTION 4: RISK MANAGEMENT ========== */}
+      <section id="risk" className="py-28 scroll-mt-24">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <SectionLabel label="Risk Management" />
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">Protecting What Matters</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Risk management isn't just a department — it's embedded in every layer of our decision-making. We believe that the best returns come from understanding and managing risk, not ignoring it.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Risk framework */}
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              className="space-y-5"
+            >
+              {[
+                { icon: Gauge, title: "Portfolio Stress Testing", desc: "We regularly stress-test portfolios against adverse market scenarios — recession, interest rate shocks, geopolitical events — to ensure resilience under pressure." },
+                { icon: Scale, title: "Diversification by Design", desc: "Strategic allocation across asset classes, geographies, and vintages minimizes concentration risk while preserving conviction in our best ideas." },
+                { icon: Lock, title: "Counterparty & Liquidity Risk", desc: "Every partnership and structure is evaluated for counterparty reliability, exit optionality, and liquidity constraints before commitment." },
+                { icon: Eye, title: "Continuous Monitoring", desc: "Real-time dashboards and quarterly reviews track key risk indicators across the entire portfolio, enabling proactive adjustments." },
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div key={item.title} variants={cardVariants}>
+                    <div className="relative bg-card border border-border rounded-2xl p-7 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/[0.04] transition-all duration-500 group">
+                      <div className="flex items-start gap-5">
+                        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center shrink-0 border border-primary/10 group-hover:from-primary group-hover:to-primary transition-all duration-500">
+                          <Icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
+                        </div>
+                        <div>
+                          <h3 className="text-base font-serif font-bold text-foreground mb-2">{item.title}</h3>
+                          <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+
+            {/* Risk stats card */}
+            <motion.div
+              initial={{ opacity: 0, x: 25 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="sticky top-28"
+            >
+              <div className="rounded-3xl border border-border bg-card overflow-hidden shadow-xl">
+                <div className="bg-[hsl(var(--navy))] p-10 relative">
+                  <div className="absolute inset-0 opacity-[0.04]" style={{
+                    backgroundImage: "radial-gradient(hsl(43 45% 42%) 1px, transparent 1px)",
+                    backgroundSize: "20px 20px"
+                  }} />
+                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+                  <div className="relative z-10 text-center">
+                    <Shield className="h-8 w-8 text-primary/60 mx-auto mb-4" />
+                    <p className="text-primary text-[10px] tracking-[0.35em] uppercase font-medium mb-2">Risk Framework</p>
+                    <p className="text-2xl font-serif font-bold text-[hsl(0_0%_95%)]">Multi-Layer Protection</p>
+                  </div>
+                </div>
+                <div className="p-8 space-y-6">
+                  {[
+                    { label: "Max Single Position", value: "15%", desc: "of total portfolio" },
+                    { label: "Geographic Spread", value: "12+", desc: "countries covered" },
+                    { label: "Stress Test Frequency", value: "Quarterly", desc: "scenario analysis" },
+                    { label: "Liquidity Reserve", value: "20%", desc: "always available" },
+                  ].map((stat) => (
+                    <div key={stat.label} className="flex items-center justify-between">
+                      <div>
+                        <p className="text-sm font-medium text-foreground">{stat.label}</p>
+                        <p className="text-muted-foreground text-xs">{stat.desc}</p>
+                      </div>
+                      <p className="text-xl font-serif font-bold text-primary">{stat.value}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== SECTION 5: TRACK RECORD ========== */}
+      <section id="track-record" className="py-28 bg-secondary/30 relative overflow-hidden scroll-mt-24">
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none" />
+
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <SectionLabel label="Track Record" />
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5">Results That Speak</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Our performance reflects the discipline of our process and the conviction behind our investments. Here's a snapshot of what we've achieved.
+            </p>
+          </motion.div>
+
+          {/* Key metrics */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20"
+          >
+            {[
+              { value: "CHF 3B+", label: "Assets Under Management", accent: true },
+              { value: "18.2%", label: "Avg. Net IRR (PE)", accent: false },
+              { value: "2.4x", label: "Avg. Equity Multiple", accent: false },
+              { value: "0", label: "Capital Losses to Date", accent: true },
+            ].map((m, i) => (
+              <motion.div key={m.label} variants={cardVariants}>
+                <div className={`relative rounded-2xl border p-8 text-center h-full transition-all duration-500 group hover:-translate-y-1 overflow-hidden ${
+                  m.accent
+                    ? "border-primary/20 bg-card hover:border-primary/40 hover:shadow-xl hover:shadow-primary/[0.06]"
+                    : "border-border bg-card hover:border-primary/30 hover:shadow-lg"
+                }`}>
+                  {m.accent && <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent" />}
+                  <p className="text-3xl md:text-4xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">{m.value}</p>
+                  <p className="text-muted-foreground text-xs mt-2 uppercase tracking-wider">{m.label}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Milestones */}
+          <motion.h3
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-xl font-serif font-bold text-foreground text-center mb-12"
+          >
+            Key Milestones
+          </motion.h3>
+
+          <div className="max-w-3xl mx-auto">
+            <div className="relative">
+              <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
+              {[
+                { year: "2024", event: "Multi Investment founded in Geneva by the Aponte family", side: "left" },
+                { year: "2024", event: "First CHF 500M deployed across Real Estate and Private Equity", side: "right" },
+                { year: "2025", event: "Venture Capital division launched — 15 seed investments in first year", side: "left" },
+                { year: "2025", event: "AUM surpasses CHF 2B — Wealth Advisory division established", side: "right" },
+                { year: "2026", event: "CHF 3B+ AUM milestone — expanding into Northern European markets", side: "left" },
+              ].map((m, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`relative flex items-start gap-6 mb-10 ${
+                    m.side === "right" ? "md:flex-row-reverse md:text-right" : ""
+                  }`}
+                >
+                  <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-primary border-2 border-background shadow-md z-10" />
+                  <div className={`pl-14 md:pl-0 md:w-1/2 ${m.side === "left" ? "md:pr-12" : "md:pl-12"}`}>
+                    <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">{m.year}</span>
+                    <p className="text-foreground text-sm leading-relaxed mt-1">{m.event}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
