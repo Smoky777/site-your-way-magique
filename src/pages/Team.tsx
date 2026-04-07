@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const founders = [
-  { name: "Marco Aponte", role: "Chief Executive Officer", abbr: "CEO", bio: "Leads the firm's vision, strategy, and overall operations. Background in international finance and family enterprise.", quote: "Building something that lasts means putting people first — always.", icon: Award },
+  { name: "Gianluigi Aponte", role: "Chairman", abbr: "CH", bio: "Founder of the MSC Group and visionary patriarch of the Aponte family. His entrepreneurial legacy spans over five decades of global maritime and logistics leadership.", quote: "Vision without action is merely a dream — action without vision just passes the time.", icon: Award },
   { name: "Diego Aponte", role: "Co-Founder", abbr: "Co-F", bio: "Co-founded Multi Investment with a vision to build a world-class family investment office rooted in the Aponte legacy.", quote: "Our family's values are the foundation of every decision we make.", icon: Sparkles },
 ];
 
