@@ -225,18 +225,18 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="p-8 md:p-10 pt-0 md:pt-0 space-y-4 text-primary-foreground/65 leading-relaxed">
+              <div className="p-8 md:p-10 pt-0 md:pt-0 space-y-4 text-primary-foreground/80 leading-relaxed">
                 <p>
-                  <span className="text-foreground font-semibold">Diego Aponte</span> is the eldest son of Gianluigi Aponte and the operational architect behind MSC's modern-day dominance. He joined the family business in the early 1990s, working across every division before being appointed <span className="text-foreground font-semibold">President of the MSC Group in 2014</span>.
+                  <span className="text-primary-foreground font-semibold">Diego Aponte</span> is the eldest son of Gianluigi Aponte and the operational architect behind MSC's modern-day dominance. He joined the family business in the early 1990s, working across every division before being appointed <span className="text-primary-foreground font-semibold">President of the MSC Group in 2014</span>.
                 </p>
                 <p>
-                  Under Diego's leadership, MSC underwent a <span className="text-foreground font-semibold">radical transformation</span>. He doubled the company's shipping capacity in under a decade, invested billions in next-generation LNG-powered vessels, spearheaded MSC's digital transformation with AI-driven supply chain platforms, and expanded the terminal portfolio to control strategic chokepoints across Asia, Europe, and the Americas.
+                  Under Diego's leadership, MSC underwent a <span className="text-primary-foreground font-semibold">radical transformation</span>. He doubled the company's shipping capacity in under a decade, invested billions in next-generation LNG-powered vessels, spearheaded MSC's digital transformation with AI-driven supply chain platforms, and expanded the terminal portfolio to control strategic chokepoints across Asia, Europe, and the Americas.
                 </p>
                 <p>
-                  Diego also drove the explosive growth of <span className="text-foreground font-semibold">MSC Cruises</span>, overseeing an order book of over €30 billion in new ships that transformed the division into a challenger brand against Royal Caribbean and Carnival. His vision: to make MSC not just the biggest, but the most modern, sustainable, and technologically advanced shipping company on the planet.
+                  Diego also drove the explosive growth of <span className="text-primary-foreground font-semibold">MSC Cruises</span>, overseeing an order book of over €30 billion in new ships that transformed the division into a challenger brand against Royal Caribbean and Carnival. His vision: to make MSC not just the biggest, but the most modern, sustainable, and technologically advanced shipping company on the planet.
                 </p>
                 <p>
-                  In 2024, recognizing that a fortune of this magnitude requires dedicated, institutional-grade stewardship, Diego personally spearheaded the creation of <span className="text-foreground font-semibold">Multi Investment</span> — a Geneva-based family office designed to strategically diversify the Aponte wealth beyond maritime into <span className="text-foreground font-semibold">prime real estate, private equity, venture capital, and alternative investments</span>. His mandate: preserve the legacy, multiply the fortune, and build a platform that will serve the family for the next 100 years.
+                  In 2024, recognizing that a fortune of this magnitude requires dedicated, institutional-grade stewardship, Diego personally spearheaded the creation of <span className="text-primary-foreground font-semibold">Multi Investment</span> — a Geneva-based family office designed to strategically diversify the Aponte wealth beyond maritime into <span className="text-primary-foreground font-semibold">prime real estate, private equity, venture capital, and alternative investments</span>. His mandate: preserve the legacy, multiply the fortune, and build a platform that will serve the family for the next 100 years.
                 </p>
               </div>
             </motion.div>
