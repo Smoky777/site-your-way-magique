@@ -74,6 +74,16 @@ const Contact = () => {
                   alt="Multi Investment — Geneva Office Building"
                   className="w-full h-64 object-cover"
                 />
+                <div className="bg-card p-5 space-y-2">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="h-4 w-4 text-accent mt-0.5 shrink-0" />
+                    <p className="text-sm text-foreground">Chemin Rieu 12, 1208 Genève, Switzerland</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Clock className="h-4 w-4 text-accent mt-0.5 shrink-0" />
+                    <p className="text-sm text-foreground">Lundi – Vendredi : 8:00 – 19:00</p>
+                  </div>
+                </div>
               </div>
               {/* Map */}
               <div className="animate-on-scroll rounded-xl overflow-hidden border border-border h-64 shadow-sm">
