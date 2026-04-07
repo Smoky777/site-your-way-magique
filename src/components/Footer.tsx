@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,10 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-gold rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-serif font-bold text-sm">M</span>
-              </div>
-              <span className="text-foreground font-serif text-lg font-semibold">Multi Investment</span>
+              <img src={logo} alt="Multi Investment" className="h-12 w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Global private equity and real estate investment firm. Founded in 2024 by the Aponte family.
