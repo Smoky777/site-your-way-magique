@@ -75,6 +75,7 @@ const Contact = () => {
                   className="w-full h-64 object-cover"
                 />
                 <div className="bg-card p-5 space-y-2">
+                  <h3 className="font-serif font-semibold text-foreground text-base mb-3">Multi Investment Holding SA</h3>
                   <div className="flex items-start gap-3">
                     <MapPin className="h-4 w-4 text-accent mt-0.5 shrink-0" />
                     <p className="text-sm text-foreground">Chemin Rieu 12, 1208 Genève, Switzerland</p>
