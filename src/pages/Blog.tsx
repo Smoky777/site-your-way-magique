@@ -21,7 +21,7 @@ const Blog = () => {
       <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mb-16">
-            <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3 animate-on-scroll">Blog & Insights</p>
+            <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-3 animate-on-scroll">Blog & Insights</p>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 animate-on-scroll">
               Market Intelligence
             </h1>
@@ -41,7 +41,7 @@ const Blog = () => {
                   </div>
                   <h3 className="text-lg font-serif font-semibold text-foreground mb-3 group-hover:text-primary transition-colors leading-snug">{article.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-4">{article.excerpt}</p>
-                  <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  <span className="text-muted-foreground text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                     Read on MSC.com <ArrowRight className="h-3 w-3" />
                   </span>
                 </CardContent>

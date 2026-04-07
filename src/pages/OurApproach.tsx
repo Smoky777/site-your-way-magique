@@ -17,7 +17,7 @@ const cardVariants = {
 const SectionLabel = ({ label }: { label: string }) => (
   <div className="flex items-center justify-center gap-3 mb-4">
     <div className="w-8 h-px bg-primary/50" />
-    <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">{label}</p>
+    <p className="text-muted-foreground text-xs tracking-[0.35em] uppercase font-medium">{label}</p>
     <div className="w-8 h-px bg-primary/50" />
   </div>
 );
@@ -61,7 +61,7 @@ const OurApproach = () => {
               >
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-8 h-px bg-primary" />
-                  <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">Our Approach</p>
+                  <p className="text-muted-foreground text-xs tracking-[0.35em] uppercase font-medium">Our Approach</p>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[hsl(0_0%_95%)] mb-7 leading-[1.08]">
                   Philosophy, Strategy
@@ -642,7 +642,7 @@ const OurApproach = () => {
                 >
                   <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-primary border-2 border-background shadow-md z-10" />
                   <div className={`pl-14 md:pl-0 md:w-1/2 ${m.side === "left" ? "md:pr-12" : "md:pl-12"}`}>
-                    <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">{m.year}</span>
+                    <span className="text-muted-foreground text-xs font-bold tracking-[0.2em] uppercase">{m.year}</span>
                     <p className="text-foreground text-sm leading-relaxed mt-1">{m.event}</p>
                   </div>
                 </motion.div>
@@ -663,7 +663,7 @@ const OurApproach = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-px bg-primary/50" />
-                <p className="text-primary text-xs tracking-[0.35em] uppercase font-medium">Why Multi Investment</p>
+                <p className="text-muted-foreground text-xs tracking-[0.35em] uppercase font-medium">Why Multi Investment</p>
               </div>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">What Sets Us Apart</h2>
               <p className="text-muted-foreground leading-relaxed mb-10">

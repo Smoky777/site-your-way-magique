@@ -134,7 +134,7 @@ const Index = () => {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3"
+                className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-3"
               >
                 Our Services
               </motion.p>
@@ -154,7 +154,7 @@ const Index = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <Link to="/asset-management" className="text-primary text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all">
+              <Link to="/asset-management" className="text-muted-foreground text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all">
                 View all services <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </motion.div>

@@ -20,7 +20,7 @@ const FAQ = () => {
       <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mb-16">
-            <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3 animate-on-scroll">FAQ</p>
+            <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-3 animate-on-scroll">FAQ</p>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 animate-on-scroll">
               Frequently Asked Questions
             </h1>

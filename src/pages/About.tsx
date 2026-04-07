@@ -55,7 +55,7 @@ const About = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-primary text-sm tracking-[0.3em] uppercase mb-4"
+              className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-4"
             >
               About Multi Investment
             </motion.p>
@@ -84,10 +84,10 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-wrap gap-3 mt-8"
             >
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">Family Office</span>
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">Est. 2024</span>
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">Geneva, Switzerland</span>
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">CHF 3B+ AUM</span>
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-muted-foreground text-sm font-medium">Family Office</span>
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-muted-foreground text-sm font-medium">Est. 2024</span>
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-muted-foreground text-sm font-medium">Geneva, Switzerland</span>
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-muted-foreground text-sm font-medium">CHF 3B+ AUM</span>
             </motion.div>
           </div>
         </div>
@@ -254,7 +254,7 @@ const About = () => {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3">L'Empire MSC</p>
+              <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-3">L'Empire MSC</p>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-3">
                 What is <span className="text-gradient-gold">MSC Group</span>?
               </h2>
@@ -344,7 +344,7 @@ const About = () => {
               viewport={{ once: true }}
               className="mb-10"
             >
-              <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3">The Thesis</p>
+              <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-3">The Thesis</p>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
                 Why Multi Investment Exists
               </h2>
@@ -402,7 +402,7 @@ const About = () => {
               viewport={{ once: true }}
               className="mb-16 text-center"
             >
-              <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3">Milestones</p>
+              <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-3">Milestones</p>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
                 From One Ship to a Global Empire
               </h2>
@@ -529,7 +529,7 @@ const About = () => {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3">Our Philosophy</p>
+              <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-3">Our Philosophy</p>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
                 What Drives Us
               </h2>
