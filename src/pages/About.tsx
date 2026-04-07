@@ -244,8 +244,98 @@ const About = () => {
         </div>
       </section>
 
-      {/* Why Multi Investment Exists */}
+      {/* What MSC Does */}
       <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3">L'Empire MSC</p>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-3">
+                What is <span className="text-gradient-gold">MSC Group</span>?
+              </h2>
+              <p className="text-muted-foreground max-w-3xl leading-relaxed">
+                The Mediterranean Shipping Company (MSC) is the world's largest privately held transport and logistics conglomerate, spanning container shipping, cruise tourism, port operations, and cargo aviation — all under one family's control.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-5 mb-8">
+              {[
+                {
+                  icon: Ship,
+                  title: "MSC Cargo — Container Shipping",
+                  desc: "The world's #1 container shipping line since January 2022, surpassing Maersk. MSC operates a fleet of 800+ vessels serving 500+ ports across 155 countries, carrying approximately one-third of all global seaborne trade. From raw materials to consumer goods, MSC moves the world economy.",
+                  stats: [{ v: "#1", l: "Global Rank" }, { v: "800+", l: "Vessels" }, { v: "24M+ TEU", l: "Annual Capacity" }],
+                },
+                {
+                  icon: Crown,
+                  title: "MSC Cruises — Luxury Tourism",
+                  desc: "Launched in 1995, MSC Cruises has grown into the world's third-largest cruise operator and #1 in Europe. With a fleet of 22 ultra-modern ships and an order book exceeding €30 billion in new builds, MSC Cruises sets the standard for Mediterranean and global luxury cruising.",
+                  stats: [{ v: "#3", l: "World Rank" }, { v: "22", l: "Cruise Ships" }, { v: "€30B+", l: "Order Book" }],
+                },
+                {
+                  icon: Building,
+                  title: "TiL — Port Terminal Operations",
+                  desc: "Terminal Investment Limited (TiL), founded in 2003, manages and operates port terminal concessions worldwide. By controlling key port infrastructure across Asia, Europe, Africa, and the Americas, TiL provides MSC with unmatched vertical integration in the global supply chain.",
+                  stats: [{ v: "70+", l: "Terminals" }, { v: "5", l: "Continents" }, { v: "Strategic", l: "Chokepoints" }],
+                },
+                {
+                  icon: Globe,
+                  title: "MSC Air Cargo & Logistics",
+                  desc: "MSC's most recent expansion into air freight and integrated logistics solutions, providing end-to-end supply chain services. With dedicated cargo aircraft and partnerships with major airlines, MSC offers multimodal transport solutions covering sea, land, and air.",
+                  stats: [{ v: "New", l: "Division" }, { v: "Global", l: "Coverage" }, { v: "Multimodal", l: "Solutions" }],
+                },
+              ].map((div, i) => (
+                <motion.div
+                  key={div.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  className="bg-card border border-border rounded-2xl p-7 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <div.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <h3 className="text-foreground font-serif text-lg font-semibold">{div.title}</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-5">{div.desc}</p>
+                  <div className="grid grid-cols-3 gap-2">
+                    {div.stats.map((s) => (
+                      <div key={s.l} className="bg-muted/50 rounded-lg p-3 text-center">
+                        <p className="text-base font-serif font-bold text-foreground">{s.v}</p>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{s.l}</p>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Revenue highlight */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-card border border-primary/20 rounded-2xl p-8 text-center"
+            >
+              <p className="text-muted-foreground text-sm mb-2 uppercase tracking-wider">Combined Group Revenue (Peak)</p>
+              <p className="text-4xl md:text-5xl font-serif font-bold text-gradient-gold mb-2">$80+ Billion</p>
+              <p className="text-muted-foreground text-sm max-w-xl mx-auto">
+                Making MSC Group one of the largest privately held companies in the world — entirely family-owned, zero public shareholders.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Multi Investment Exists */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl">
             <motion.div
