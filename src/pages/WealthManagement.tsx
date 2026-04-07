@@ -192,7 +192,7 @@ const WealthManagement = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3">Our Process</motion.p>
+                className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-3">Our Process</motion.p>
               <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}
                 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">A disciplined approach to your wealth</motion.h2>
               <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.12 }}

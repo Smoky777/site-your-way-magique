@@ -48,7 +48,7 @@ const InvestmentStructures = () => (
           {/* Left sticky header */}
           <div className="lg:sticky lg:top-32">
             <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-4">How We Invest</motion.p>
+              className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-4">How We Invest</motion.p>
             <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}
               className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-5 leading-tight">
               Flexible structures,<br /><span className="text-gradient-gold italic">disciplined</span> execution

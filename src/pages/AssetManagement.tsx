@@ -187,7 +187,7 @@ const AssetManagement = () => {
             <div className="grid lg:grid-cols-5 gap-10 items-start">
               <div className="lg:col-span-3">
                 <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                  className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3">Performance Overview</motion.p>
+                  className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-3">Performance Overview</motion.p>
                 <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}
                   className="text-3xl font-serif font-bold text-foreground mb-3">Cumulative returns</motion.h2>
                 <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.12 }}
@@ -335,7 +335,7 @@ const AssetManagement = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-serif font-bold text-foreground">{strategies[activeStrategy].title}</h3>
-                        <p className="text-xs text-primary font-medium">{strategies[activeStrategy].highlight}</p>
+                        <p className="text-xs text-foreground font-medium">{strategies[activeStrategy].highlight}</p>
                       </div>
                     </div>
                     <p className="text-muted-foreground leading-relaxed mb-6">{strategies[activeStrategy].desc}</p>
@@ -357,7 +357,7 @@ const AssetManagement = () => {
                   </div>
                   <div className="border-t border-border px-8 py-4 bg-muted/20 flex items-center justify-between">
                     <p className="text-xs text-muted-foreground">Interested in this strategy?</p>
-                    <Link to="/contact" className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+                    <Link to="/contact" className="text-muted-foreground text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
                       Request details <ArrowUpRight className="h-3.5 w-3.5" />
                     </Link>
                   </div>
@@ -374,7 +374,7 @@ const AssetManagement = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3">Investment Process</motion.p>
+                className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-3">Investment Process</motion.p>
               <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}
                 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-3">How we manage your capital</motion.h2>
               <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.12 }}
@@ -439,7 +439,7 @@ const AssetManagement = () => {
 
             <div>
               <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3">The Multi Advantage</motion.p>
+                className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-3">The Multi Advantage</motion.p>
               <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}
                 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-8">Why invest with us</motion.h2>
               <div className="space-y-4">

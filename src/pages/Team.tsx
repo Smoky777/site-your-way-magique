@@ -80,7 +80,7 @@ const FounderCard = ({ member, index }: { member: Founder; index: number }) => {
               <div>
                 <span className="text-primary/70 text-xs font-semibold tracking-[0.15em] uppercase">{member.abbr}</span>
                 <h3 className="text-2xl font-serif font-bold text-foreground mt-0.5">{member.name}</h3>
-                <p className="text-primary text-sm font-medium mt-0.5">{member.role}</p>
+                <p className="text-muted-foreground text-sm font-medium mt-0.5">{member.role}</p>
               </div>
             </div>
 
@@ -165,7 +165,7 @@ const Team = () => {
             >
               <div className="flex items-center justify-center gap-3 mb-8">
                 <div className="w-10 h-px bg-primary/40" />
-                <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium">Our Team</p>
+                <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase font-medium">Our Team</p>
                 <div className="w-10 h-px bg-primary/40" />
               </div>
 
@@ -296,7 +296,7 @@ const Team = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">C-Suite</span>
+            <span className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase">C-Suite</span>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-2">Executive Leadership</h2>
             <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
               Experienced leaders who bring diverse expertise and a shared commitment to excellence.
