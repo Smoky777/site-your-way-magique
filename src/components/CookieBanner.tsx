@@ -9,7 +9,7 @@ const CookieBanner = () => {
   useEffect(() => {
     const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
     if (!consent) {
-      const timer = setTimeout(() => setVisible(true), 2000);
+      const timer = setTimeout(() => setVisible(true), 1500);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -27,37 +27,38 @@ const CookieBanner = () => {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-6 left-6 right-6 md:left-auto md:right-8 md:max-w-sm z-[100]">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/30 backdrop-blur-sm">
       <div
-        className="bg-primary text-primary-foreground rounded-xl shadow-2xl p-5"
-        style={{ animation: "slideUp 0.4s ease-out" }}
+        className="bg-background border border-border rounded-2xl shadow-2xl mx-6 w-full max-w-lg p-8 text-center"
+        style={{ animation: "fadeScale 0.35s ease-out" }}
       >
-        <p className="text-sm leading-relaxed text-primary-foreground/80 mb-4">
-          This site uses cookies to improve your experience.{" "}
-          <Link to="/privacy" className="underline text-accent hover:text-accent/80">
+        <h3 className="font-serif text-xl font-semibold text-foreground mb-3">Cookie Preferences</h3>
+        <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+          We use cookies to ensure the best experience on our website. By continuing, you agree to our{" "}
+          <Link to="/privacy" className="text-accent hover:underline font-medium">
             Privacy Policy
-          </Link>
+          </Link>.
         </p>
-        <div className="flex gap-3">
+        <div className="flex gap-3 justify-center">
           <button
             onClick={handleDecline}
-            className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground border border-border rounded-lg px-6 py-2.5 transition-colors"
           >
             Decline
           </button>
           <button
             onClick={handleAccept}
-            className="ml-auto text-sm font-semibold bg-accent text-accent-foreground px-5 py-2 rounded-lg hover:opacity-90 transition-opacity"
+            className="text-sm font-semibold bg-accent text-accent-foreground px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
           >
-            Accept
+            Accept All
           </button>
         </div>
       </div>
 
       <style>{`
-        @keyframes slideUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeScale {
+          from { opacity: 0; transform: scale(0.95); }
+          to { opacity: 1; transform: scale(1); }
         }
       `}</style>
     </div>
