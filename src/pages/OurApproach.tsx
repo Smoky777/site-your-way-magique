@@ -66,9 +66,9 @@ const OurApproach = () => {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[hsl(0_0%_95%)] mb-7 leading-[1.08]">
                   Philosophy, Strategy
                   <br />
-                  <span className="bg-gradient-to-r from-primary to-[hsl(var(--gold-light))] bg-clip-text text-transparent italic">
+                   <span className="text-[hsl(0_0%_95%)] italic">
                     & Instruments
-                  </span>
+                   </span>
                 </h1>
                 <p className="text-[hsl(220_10%_62%)] text-lg leading-relaxed max-w-xl mb-10">
                   Discover how our investment philosophy, strategic framework, and flexible instruments work together to create lasting value across generations.
