@@ -16,7 +16,17 @@ const navLinks = [
     ],
   },
   { label: "About", path: "/about" },
-  { label: "Our Approach", path: "/our-approach" },
+  {
+    label: "Our Approach",
+    path: "/our-approach",
+    children: [
+      { label: "Philosophy", path: "/our-approach#philosophy" },
+      { label: "Strategy", path: "/our-approach#strategy" },
+      { label: "Our Instruments", path: "/our-approach#instruments" },
+      { label: "Risk Management", path: "/our-approach#risk" },
+      { label: "Track Record", path: "/our-approach#track-record" },
+    ],
+  },
   { label: "Team", path: "/team" },
   { label: "Blog", path: "/blog" },
   { label: "Contact", path: "/contact" },
