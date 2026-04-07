@@ -53,8 +53,8 @@ const RealEstate = () => {
               className="w-full h-full object-cover"
             />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(150,15%,4%)] via-[hsl(150,15%,4%)]/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(150,15%,4%)]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(210,40%,6%)] via-[hsl(210,40%,6%)]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(210,40%,6%)]/80 to-transparent" />
 
           <div className="absolute inset-0 opacity-[0.03]" style={{
             backgroundImage: `linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)`,
