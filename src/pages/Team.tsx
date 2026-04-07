@@ -10,7 +10,7 @@ const founders = [
 ];
 
 const leadership = [
-  { name: "Elena Rossi", role: "Chief Operating Officer", abbr: "COO", bio: "Oversees day-to-day operations, process optimization, and organizational efficiency across all divisions.", icon: Globe },
+  { name: "Simon Aponte-Vago", role: "Chief Operating Officer", abbr: "COO", bio: "Oversees day-to-day operations, process optimization, and organizational efficiency across all divisions.", icon: Globe },
   { name: "Philippe Durand", role: "Chief Financial Officer", abbr: "CFO", bio: "Manages financial planning, reporting, and capital allocation. Former MD at a leading Swiss private bank.", icon: TrendingUp },
   { name: "Sofia Marchetti", role: "Chief Strategy Officer", abbr: "CSO", bio: "Drives long-term strategic initiatives, market expansion, and corporate development across Europe.", icon: Briefcase },
   { name: "Thomas Weber", role: "Chief Investment Officer", abbr: "CIO", bio: "Responsible for portfolio strategy, asset allocation, and investment thesis across all verticals.", icon: TrendingUp },
