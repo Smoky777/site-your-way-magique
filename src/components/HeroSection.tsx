@@ -46,45 +46,30 @@ const HeroSection = () => {
           <div className="flex flex-col items-center justify-center min-h-screen py-32 text-center">
             {/* Centered company name with animation */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: [0.22, 0.61, 0.36, 1] }}
+              transition={{ duration: 1.2, ease: [0.22, 0.61, 0.36, 1] }}
               className="mb-6"
             >
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "5rem" }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-8"
+                className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-10"
               />
-              <motion.h1
-                className="font-serif font-bold text-white leading-none"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                <motion.span
-                  className="block text-5xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight"
-                  initial={{ opacity: 0, letterSpacing: "0.3em" }}
-                  animate={{ opacity: 1, letterSpacing: "0.02em" }}
-                  transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 0.61, 0.36, 1] }}
-                >
-                  Multi
-                </motion.span>
-                <motion.span
-                  className="block text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-gradient-gold tracking-tight mt-1"
-                  initial={{ opacity: 0, letterSpacing: "0.3em" }}
-                  animate={{ opacity: 1, letterSpacing: "0.02em" }}
-                  transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 0.61, 0.36, 1] }}
-                >
-                  Investment
-                </motion.span>
-              </motion.h1>
+              <motion.img
+                src={logo}
+                alt="Multi Investment"
+                className="h-28 md:h-36 lg:h-44 xl:h-52 mx-auto"
+                initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 1, delay: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
+              />
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "5rem" }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-8"
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-10"
               />
             </motion.div>
 
