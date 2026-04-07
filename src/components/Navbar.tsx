@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
@@ -34,10 +34,32 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (path: string) => location.pathname === path;
+
+  // Handle hash scrolling after navigation
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const id = location.hash.replace("#", "");
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
+  }, [location]);
+
+  const handleAnchorClick = (path: string) => {
+    setActiveDropdown(null);
+    setOpen(false);
+    const [route, hash] = path.split("#");
+    if (location.pathname === route && hash) {
+      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      navigate(path);
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/60">
@@ -58,24 +80,38 @@ const Navbar = () => {
               <div
                 key={link.label}
                 className="relative group"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
+                onMouseEnter={() => setActiveDropdown(link.label)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="px-3.5 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50">
-                  {link.label}
-                </button>
-                {servicesOpen && (
+                {link.path ? (
+                  <Link
+                    to={link.path}
+                    className={`px-3.5 py-2 text-sm transition-colors rounded-lg block ${
+                      isActive(link.path) ? "text-primary font-medium bg-primary/5" : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <button className="px-3.5 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50">
+                    {link.label}
+                  </button>
+                )}
+                {activeDropdown === link.label && (
                   <div className="absolute top-full left-0 w-52 bg-card border border-border rounded-xl shadow-lg py-2 mt-1">
                     {link.children.map((child) => (
-                      <Link
+                      <button
                         key={child.path}
-                        to={child.path}
-                        className={`block px-4 py-2.5 text-sm transition-colors hover:bg-muted rounded-lg mx-1 ${
-                          isActive(child.path) ? "text-primary font-medium" : "text-muted-foreground hover:text-foreground"
+                        onClick={() => handleAnchorClick(child.path)}
+                        className={`block w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-muted rounded-lg mx-1 ${
+                          isActive(child.path.split("#")[0]) && location.hash === `#${child.path.split("#")[1] || ""}`
+                            ? "text-primary font-medium"
+                            : "text-muted-foreground hover:text-foreground"
                         }`}
+                        style={{ width: "calc(100% - 0.5rem)" }}
                       >
                         {child.label}
-                      </Link>
+                      </button>
                     ))}
                   </div>
                 )}
@@ -115,14 +151,13 @@ const Navbar = () => {
                     <div key={link.label} className="flex flex-col mb-2">
                       <span className="px-4 py-2 text-xs uppercase tracking-widest text-muted-foreground">{link.label}</span>
                       {link.children.map((child) => (
-                        <Link
+                        <button
                           key={child.path}
-                          to={child.path}
-                          onClick={() => setOpen(false)}
-                          className="px-6 py-2.5 text-sm text-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-colors"
+                          onClick={() => handleAnchorClick(child.path)}
+                          className="px-6 py-2.5 text-sm text-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-colors text-left"
                         >
                           {child.label}
-                        </Link>
+                        </button>
                       ))}
                     </div>
                   ) : (
