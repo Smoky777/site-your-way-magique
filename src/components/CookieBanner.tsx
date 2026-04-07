@@ -27,37 +27,58 @@ const CookieBanner = () => {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/30 backdrop-blur-sm">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/25 backdrop-blur-sm">
       <div
-        className="bg-background border border-border rounded-2xl shadow-2xl mx-6 w-full max-w-lg p-8 text-center"
-        style={{ animation: "fadeScale 0.35s ease-out" }}
+        className="bg-background border border-border rounded-2xl shadow-2xl mx-6 w-full max-w-md px-8 py-10 text-center"
+        style={{ animation: "fadeScale 0.35s ease-out", fontFamily: "Georgia, 'Times New Roman', serif" }}
       >
-        <h3 className="font-serif text-xl font-semibold text-foreground mb-3">Cookie Preferences</h3>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-          We use cookies to ensure the best experience on our website. By continuing, you agree to our{" "}
-          <Link to="/privacy" className="text-accent hover:underline font-medium">
+        <p style={{ fontSize: "22px", fontWeight: 600, color: "hsl(var(--foreground))", marginBottom: "12px", letterSpacing: "-0.01em" }}>
+          Cookies
+        </p>
+        <p style={{ fontSize: "14.5px", lineHeight: 1.7, color: "hsl(var(--muted-foreground))", marginBottom: "28px" }}>
+          We use cookies to make your visit smoother and more relevant. You can read more in our{" "}
+          <Link to="/privacy" style={{ color: "hsl(var(--accent))", textDecoration: "underline", textUnderlineOffset: "3px" }}>
             Privacy Policy
           </Link>.
         </p>
         <div className="flex gap-3 justify-center">
           <button
             onClick={handleDecline}
-            className="text-sm font-medium text-muted-foreground hover:text-foreground border border-border rounded-lg px-6 py-2.5 transition-colors"
+            style={{
+              fontFamily: "Georgia, 'Times New Roman', serif",
+              fontSize: "14px",
+              padding: "10px 24px",
+              borderRadius: "8px",
+              border: "1px solid hsl(var(--border))",
+              background: "transparent",
+              color: "hsl(var(--muted-foreground))",
+              cursor: "pointer",
+            }}
           >
-            Decline
+            No thanks
           </button>
           <button
             onClick={handleAccept}
-            className="text-sm font-semibold bg-accent text-accent-foreground px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
+            style={{
+              fontFamily: "Georgia, 'Times New Roman', serif",
+              fontSize: "14px",
+              fontWeight: 600,
+              padding: "10px 28px",
+              borderRadius: "8px",
+              border: "none",
+              background: "hsl(var(--accent))",
+              color: "hsl(var(--accent-foreground))",
+              cursor: "pointer",
+            }}
           >
-            Accept All
+            That's fine
           </button>
         </div>
       </div>
 
       <style>{`
         @keyframes fadeScale {
-          from { opacity: 0; transform: scale(0.95); }
+          from { opacity: 0; transform: scale(0.96); }
           to { opacity: 1; transform: scale(1); }
         }
       `}</style>
