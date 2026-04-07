@@ -53,8 +53,8 @@ const RealEstate = () => {
               className="w-full h-full object-cover"
             />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,25%,4%)] via-[hsl(220,25%,4%)]/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,25%,4%)]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(150,15%,4%)] via-[hsl(150,15%,4%)]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(150,15%,4%)]/80 to-transparent" />
 
           <div className="absolute inset-0 opacity-[0.03]" style={{
             backgroundImage: `linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)`,
@@ -99,33 +99,33 @@ const RealEstate = () => {
       </section>
 
       {/* Focus Areas */}
-      <section className="py-28 bg-muted/30">
+      <section className="py-28 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3">Asset Classes</motion.p>
+                className="text-primary-foreground/70 text-xs font-semibold tracking-[0.2em] uppercase mb-3">Asset Classes</motion.p>
               <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}
-                className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Three pillars of real estate excellence</motion.h2>
+                className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-4">Three pillars of real estate excellence</motion.h2>
               <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.12 }}
-                className="text-muted-foreground text-sm max-w-lg mx-auto">Each asset class is managed with deep sector expertise, local knowledge, and institutional-grade governance.</motion.p>
+                className="text-primary-foreground/60 text-sm max-w-lg mx-auto">Each asset class is managed with deep sector expertise, local knowledge, and institutional-grade governance.</motion.p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-5">
               {focusAreas.map((area, i) => (
                 <motion.div key={area.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}>
-                  <Card className="bg-card border-border h-full hover:shadow-lg transition-all duration-300 group hover:border-primary/20">
+                  <Card className="bg-primary-foreground/10 border-primary-foreground/15 h-full hover:bg-primary-foreground/15 transition-all duration-300 group">
                     <CardContent className="p-7">
-                      <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                        <area.icon className="h-5 w-5 text-primary" />
+                      <div className="w-11 h-11 rounded-xl bg-primary-foreground/15 flex items-center justify-center mb-5 group-hover:bg-primary-foreground/25 transition-colors">
+                        <area.icon className="h-5 w-5 text-primary-foreground/80" />
                       </div>
-                      <h3 className="text-lg font-serif font-semibold text-foreground mb-2">{area.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-5">{area.desc}</p>
+                      <h3 className="text-lg font-serif font-semibold text-primary-foreground mb-2">{area.title}</h3>
+                      <p className="text-primary-foreground/55 text-sm leading-relaxed mb-5">{area.desc}</p>
                       <div className="space-y-2">
                         {area.features.map((f) => (
-                          <div key={f} className="flex items-center gap-2 text-xs text-muted-foreground">
-                            <CheckCircle2 className="h-3.5 w-3.5 text-primary/60" />
+                          <div key={f} className="flex items-center gap-2 text-xs text-primary-foreground/50">
+                            <CheckCircle2 className="h-3.5 w-3.5 text-primary-foreground/40" />
                             <span>{f}</span>
                           </div>
                         ))}
