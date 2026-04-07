@@ -77,8 +77,8 @@ const AssetManagement = () => {
               <source src="https://videos.pexels.com/video-files/6774917/6774917-uhd_2560_1440_30fps.mp4" type="video/mp4" />
             </video>
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(210,40%,6%)] via-[hsl(210,40%,6%)]/50 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(210,40%,6%)]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(222,50%,5%)] via-[hsl(222,50%,5%)]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(222,50%,5%)]/80 to-transparent" />
 
           {/* Subtle grid */}
           <div className="absolute inset-0 opacity-[0.025]" style={{

@@ -33,8 +33,8 @@ const HeroSection = () => {
         </motion.div>
 
         {/* Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(210,40%,6%)]/95 via-[hsl(210,40%,6%)]/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(210,40%,6%)] via-transparent to-[hsl(210,40%,6%)]/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(222,50%,5%)]/95 via-[hsl(222,50%,5%)]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(222,50%,5%)] via-transparent to-[hsl(222,50%,5%)]/30" />
 
         {/* Animated grid lines */}
         <div className="absolute inset-0 opacity-[0.03]" style={{

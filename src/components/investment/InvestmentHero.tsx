@@ -22,8 +22,8 @@ const InvestmentHero = () => {
             className="w-full h-full object-cover"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(210,40%,6%)] via-[hsl(210,40%,6%)]/70 to-[hsl(210,40%,6%)]/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(210,40%,6%)]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(222,50%,5%)] via-[hsl(222,50%,5%)]/70 to-[hsl(222,50%,5%)]/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(222,50%,5%)]/80 to-transparent" />
 
         {/* Subtle grid */}
         <div className="absolute inset-0 opacity-[0.03]" style={{
