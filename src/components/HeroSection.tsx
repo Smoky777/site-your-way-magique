@@ -42,86 +42,114 @@ const HeroSection = () => {
         }} />
 
         <motion.div className="container mx-auto px-6 relative z-10" style={{ y: textY }}>
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-32">
-            {/* Left content */}
-            <div>
+          <div className="flex flex-col items-center justify-center min-h-screen py-32 text-center">
+            {/* Centered company name with animation */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: [0.22, 0.61, 0.36, 1] }}
+              className="mb-6"
+            >
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 bg-white/[0.07] border border-white/[0.08] rounded-full px-5 py-2 mb-8"
-              >
-                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-white/70 text-xs tracking-wider uppercase">Managing CHF 3B+ in assets</span>
-              </motion.div>
-
+                initial={{ width: 0 }}
+                animate={{ width: "5rem" }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-8"
+              />
               <motion.h1
-                initial={{ opacity: 0, y: 40 }}
+                className="font-serif font-bold text-white leading-none"
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-[4rem] font-serif font-bold text-white leading-[1.1] mb-7"
+                transition={{ duration: 0.8, delay: 0.2 }}
               >
-                We help families
-                <br />
-                build <span className="text-gradient-gold italic">lasting</span>
-                <br />
-                wealth.
+                <motion.span
+                  className="block text-5xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight"
+                  initial={{ opacity: 0, letterSpacing: "0.3em" }}
+                  animate={{ opacity: 1, letterSpacing: "0.02em" }}
+                  transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 0.61, 0.36, 1] }}
+                >
+                  Multi
+                </motion.span>
+                <motion.span
+                  className="block text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-gradient-gold tracking-tight mt-1"
+                  initial={{ opacity: 0, letterSpacing: "0.3em" }}
+                  animate={{ opacity: 1, letterSpacing: "0.02em" }}
+                  transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 0.61, 0.36, 1] }}
+                >
+                  Investment
+                </motion.span>
               </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-base text-white/55 max-w-md mb-10 leading-relaxed"
-              >
-                A family-founded firm dedicated to private equity, real estate, and venture capital — with a human approach to global finance.
-              </motion.p>
-
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.45 }}
-                className="flex flex-wrap gap-3"
-              >
-                <Link to="/about">
-                  <Button size="lg" className="bg-gradient-gold text-primary-foreground hover:opacity-90 rounded-full px-7 h-12 text-sm font-semibold">
-                    Discover Our Vision <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                <Link to="/contact">
-                  <Button size="lg" variant="ghost" className="text-white/80 hover:text-white hover:bg-white/[0.06] rounded-full px-7 h-12 text-sm border border-white/[0.12]">
-                    Get in Touch
-                  </Button>
-                </Link>
-              </motion.div>
-            </div>
+                initial={{ width: 0 }}
+                animate={{ width: "5rem" }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-8"
+              />
+            </motion.div>
 
-            {/* Right - floating stat cards */}
-            <div className="hidden lg:block relative">
-              <div className="relative h-[420px]">
-                {[
-                  { value: "CHF 3B+", label: "AUM", delay: 0.3, x: 0, y: 0 },
-                  { value: "50+", label: "Real Estate Projects", delay: 0.45, x: 140, y: 120 },
-                  { value: "2024", label: "Founded", delay: 0.6, x: 20, y: 260 },
-                ].map((card) => (
-                  <motion.div
-                    key={card.label}
-                    initial={{ opacity: 0, scale: 0.8, y: 30 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: card.delay, type: "spring", damping: 20 }}
-                    className="absolute bg-white/[0.06] border border-white/[0.1] rounded-2xl p-6 min-w-[200px]"
-                    style={{ left: card.x, top: card.y }}
-                    whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
-                  >
-                    <p className="text-3xl font-serif font-bold text-white mb-1">{card.value}</p>
-                    <p className="text-white/40 text-xs uppercase tracking-wider">{card.label}</p>
-                  </motion.div>
-                ))}
+            {/* Tagline */}
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+              className="text-white/50 text-sm md:text-base tracking-[0.25em] uppercase mb-10"
+            >
+              Family Office · Private Equity · Real Estate
+            </motion.p>
 
-                {/* Decorative glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[hsl(43,45%,42%)]/10 rounded-full blur-[80px]" />
-              </div>
-            </div>
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.1 }}
+              className="text-white/45 text-base md:text-lg max-w-xl mx-auto mb-12 leading-relaxed"
+            >
+              A family-founded firm dedicated to building lasting wealth through private equity, real estate, and venture capital.
+            </motion.p>
+
+            {/* Stats row */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.3 }}
+              className="flex items-center gap-8 md:gap-14 mb-14"
+            >
+              {[
+                { value: "CHF 3B+", label: "AUM" },
+                { value: "50+", label: "Projects" },
+                { value: "Geneva", label: "HQ" },
+              ].map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.4 + i * 0.1 }}
+                  className="text-center"
+                >
+                  <p className="text-2xl md:text-3xl font-serif font-bold text-white">{stat.value}</p>
+                  <p className="text-white/30 text-[10px] uppercase tracking-[0.2em] mt-1">{stat.label}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* CTA buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.5 }}
+              className="flex flex-wrap justify-center gap-4"
+            >
+              <Link to="/about">
+                <Button size="lg" className="bg-gradient-gold text-primary-foreground hover:opacity-90 rounded-full px-8 h-12 text-sm font-semibold">
+                  Discover Our Vision <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button size="lg" variant="ghost" className="text-white/80 hover:text-white hover:bg-white/[0.06] rounded-full px-8 h-12 text-sm border border-white/[0.12]">
+                  Get in Touch
+                </Button>
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
 
