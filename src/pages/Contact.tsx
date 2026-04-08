@@ -87,17 +87,6 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              {/* Jet d'Eau */}
-              <div className="animate-on-scroll rounded-xl overflow-hidden border border-border shadow-sm">
-                <img
-                  src={jetDeau}
-                  alt="Jet d'Eau — Geneva's iconic water fountain on Lake Geneva"
-                  className="w-full h-64 object-cover"
-                  loading="lazy"
-                  width={1024}
-                  height={640}
-                />
-              </div>
 
               {/* Map */}
               <div className="animate-on-scroll rounded-xl overflow-hidden border border-border h-64 shadow-sm">
