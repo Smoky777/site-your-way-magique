@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import officeBuilding from "@/assets/office-building.jpg";
+import jetDeau from "@/assets/jet-deau-geneva.jpg";
 
 const infoStyle: React.CSSProperties = { fontFamily: "Georgia, 'Times New Roman', serif" };
 
@@ -86,6 +87,18 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
+              {/* Jet d'Eau */}
+              <div className="animate-on-scroll rounded-xl overflow-hidden border border-border shadow-sm">
+                <img
+                  src={jetDeau}
+                  alt="Jet d'Eau — Geneva's iconic water fountain on Lake Geneva"
+                  className="w-full h-64 object-cover"
+                  loading="lazy"
+                  width={1024}
+                  height={640}
+                />
+              </div>
+
               {/* Map */}
               <div className="animate-on-scroll rounded-xl overflow-hidden border border-border h-64 shadow-sm">
                 <iframe
