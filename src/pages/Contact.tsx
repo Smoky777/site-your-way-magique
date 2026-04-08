@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import officeBuilding from "@/assets/office-building.jpg";
-import jetDeau from "@/assets/jet-deau-geneva.jpg";
+
 
 const infoStyle: React.CSSProperties = { fontFamily: "Georgia, 'Times New Roman', serif" };
 
