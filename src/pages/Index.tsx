@@ -1,5 +1,5 @@
 import PageLayout from "@/components/PageLayout";
-import jetDeau from "@/assets/jet-deau-geneva.jpg";
+import mscShip from "@/assets/msc-ship.jpg";
 import HeroSection from "@/components/HeroSection";
 import { Link } from "react-router-dom";
 import { ArrowRight, Building2, TrendingUp, Shield, Landmark, ChevronRight, ArrowUpRight } from "lucide-react";
@@ -31,12 +31,12 @@ const Index = () => {
               className="lg:col-span-2 relative"
             >
               <img
-                src={jetDeau}
-                alt="Jet d'Eau — Geneva's iconic water fountain"
+                src={mscShip}
+                alt="MSC cargo ship sailing on the ocean"
                 className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
                 loading="lazy"
                 width={1024}
-                height={640}
+                height={1280}
               />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
