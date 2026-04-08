@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import heroLogo from "@/assets/logo-hero.png";
 import jetDeau from "@/assets/jet-deau-geneva.jpg";
+import jetDeauVideo from "@/assets/jet-deau-video.mp4.asset.json";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -29,7 +30,7 @@ const HeroSection = () => {
             className="w-full h-full object-cover"
             poster={jetDeau}
           >
-            <source src="https://videos.pexels.com/video-files/2325093/2325093-hd_1920_1080_30fps.mp4" type="video/mp4" />
+            <source src={jetDeauVideo.url} type="video/mp4" />
           </video>
         </motion.div>
 
