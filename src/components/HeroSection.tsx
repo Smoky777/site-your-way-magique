@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import heroLogo from "@/assets/logo-hero.png";
+import jetDeau from "@/assets/jet-deau-geneva.jpg";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -26,7 +27,7 @@ const HeroSection = () => {
             loop
             playsInline
             className="w-full h-full object-cover"
-            poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop"
+            poster={jetDeau}
           >
             <source src="https://videos.pexels.com/video-files/2325093/2325093-hd_1920_1080_30fps.mp4" type="video/mp4" />
           </video>
