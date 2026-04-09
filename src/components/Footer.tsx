@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const linkClass = "text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors duration-200";
@@ -65,10 +65,6 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-accent mt-0.5 shrink-0" />
                 <span>Chemin Rieu 12<br />1208 Genève, Switzerland</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Phone className="h-4 w-4 text-accent mt-0.5 shrink-0" />
-                <span>+41 22 000 0000</span>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="h-4 w-4 text-accent mt-0.5 shrink-0" />

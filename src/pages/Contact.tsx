@@ -1,7 +1,7 @@
 import PageLayout from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Mail, Clock } from "lucide-react";
 import jetDeau from "@/assets/jet-deau-geneva.jpg";
 
 
@@ -48,10 +48,6 @@ const Contact = () => {
                 <div>
                   <label className="text-sm text-muted-foreground mb-1.5 block font-medium">Email</label>
                   <Input type="email" placeholder="john.doe@example.com" className="bg-background border-border text-foreground h-11" />
-                </div>
-                <div>
-                  <label className="text-sm text-muted-foreground mb-1.5 block font-medium">Phone</label>
-                  <Input type="tel" placeholder="+41 22 000 0000" className="bg-background border-border text-foreground h-11" />
                 </div>
                 <div>
                   <label className="text-sm text-muted-foreground mb-1.5 block font-medium">Message</label>
@@ -114,18 +110,6 @@ const Contact = () => {
                       <p className="text-muted-foreground text-[14px] leading-relaxed">
                         Chemin Rieu 12<br />
                         1208 Genève, Switzerland
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
-                      <Phone className="h-4 w-4 text-accent" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground text-sm mb-0.5">Phone</p>
-                      <p className="text-muted-foreground text-[14px] tracking-wide" style={{ fontVariantNumeric: "tabular-nums" }}>
-                        +41 22 000 00 00
                       </p>
                     </div>
                   </div>
