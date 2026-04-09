@@ -67,10 +67,6 @@ const Footer = () => {
                 <span>Chemin Rieu 12<br />1208 Genève, Switzerland</span>
               </div>
               <div className="flex items-start gap-3">
-                <Phone className="h-4 w-4 text-accent mt-0.5 shrink-0" />
-                <span>+41 22 000 0000</span>
-              </div>
-              <div className="flex items-start gap-3">
                 <Mail className="h-4 w-4 text-accent mt-0.5 shrink-0" />
                 <a href="mailto:office@multiinvest.com" className="text-accent hover:underline">office@multiinvest.com</a>
               </div>
