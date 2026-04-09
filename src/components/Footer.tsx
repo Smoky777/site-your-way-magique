@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const linkClass = "text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors duration-200";
