@@ -163,9 +163,11 @@ const Index = () => {
               >
                 <Link to={services[0].path} className="group block h-full">
                   <div className="relative h-full min-h-[320px] lg:min-h-full border border-border rounded-3xl bg-card p-8 md:p-10 flex flex-col justify-end hover:border-accent/30 transition-all duration-500 overflow-hidden">
-                    <div className="absolute top-8 right-8 w-16 h-16 rounded-2xl bg-primary/[0.06] flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
-                      <services[0].icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
-                    </div>
+                    {(() => { const Icon = services[0].icon; return (
+                      <div className="absolute top-8 right-8 w-16 h-16 rounded-2xl bg-primary/[0.06] flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
+                        <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                      </div>
+                    ); })()}
                     <div className="absolute top-6 left-8 text-[6rem] font-serif font-bold text-border/50 leading-none select-none">01</div>
                     <div className="relative mt-auto">
                       <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
