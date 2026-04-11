@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MapPin, Mail, Clock, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import jetDeau from "@/assets/jet-deau-geneva.jpg";
+import officeBuilding from "@/assets/office-building.jpg";
 
 const Contact = () => {
   return (
@@ -67,8 +67,8 @@ const Contact = () => {
                 style={{ borderRadius: "20px 3px 3px 20px" }}
               >
                 <img
-                  src={jetDeau}
-                  alt="Jet d'Eau — Geneva's iconic water fountain on Lake Geneva"
+                  src={officeBuilding}
+                  alt="Multi Investment office building in Geneva"
                   className="w-full h-48 object-cover"
                 />
                 <div className="bg-card p-4 space-y-2">
