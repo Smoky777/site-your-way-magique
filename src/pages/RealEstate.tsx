@@ -89,7 +89,7 @@ const RealEstate = () => {
                 className="lg:col-span-5 lg:row-span-2">
                 <div className="bg-primary-foreground/[0.06] border border-primary-foreground/10 rounded-3xl p-8 h-full flex flex-col justify-end group hover:bg-primary-foreground/[0.1] transition-all">
                   <motion.div className="w-12 h-12 rounded-2xl bg-primary-foreground/10 flex items-center justify-center mb-5" whileHover={{ rotate: 8 }}>
-                    <focusAreas[0].icon className="h-5 w-5 text-primary-foreground/70" />
+                    {(() => { const Icon = focusAreas[0].icon; return <Icon className="h-5 w-5 text-primary-foreground/70" />; })()}
                   </motion.div>
                   <h3 className="text-xl font-serif font-semibold text-primary-foreground mb-2">{focusAreas[0].title}</h3>
                   <p className="text-primary-foreground/50 text-[13px] leading-relaxed mb-5">{focusAreas[0].desc}</p>
