@@ -87,6 +87,17 @@
   }
 }
 
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: hsl(40 72% 50% / 0.2);
+  color: hsl(222 35% 10%);
+}
+
 /* Scroll animations */
 .animate-on-scroll {
   opacity: 0;
