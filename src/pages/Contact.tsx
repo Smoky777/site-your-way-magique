@@ -74,7 +74,7 @@ const Contact = () => {
                 <div className="bg-card p-4 space-y-2">
                   <h3 className="font-serif font-semibold text-foreground text-[14px]">Multi Investment Holding SA</h3>
                   <div className="flex items-start gap-2.5">
-                    <MapPin className="h-3.5 w-3.5 text-accent mt-0.5 shrink-0" />
+                    <MapPin className="h-3.5 w-3.5 text-primary-foreground mt-0.5 shrink-0" />
                     <p className="text-[13px] text-foreground">Chemin Rieu 12, 1208 Genève</p>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ const Contact = () => {
               >
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-primary/[0.06] rounded-lg flex items-center justify-center shrink-0 mt-0.5">
-                    <MapPin className="h-3.5 w-3.5 text-accent" />
+                    <MapPin className="h-3.5 w-3.5 text-primary-foreground" />
                   </div>
                   <div>
                     <p className="font-semibold text-foreground text-[13px] mb-0.5">Address</p>
@@ -117,16 +117,16 @@ const Contact = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-primary/[0.06] rounded-lg flex items-center justify-center shrink-0 mt-0.5">
-                    <Mail className="h-3.5 w-3.5 text-accent" />
+                    <Mail className="h-3.5 w-3.5 text-primary-foreground" />
                   </div>
                   <div>
                     <p className="font-semibold text-foreground text-[13px] mb-0.5">Email</p>
-                    <a href="mailto:office@multiinvest.com" className="text-accent hover:underline text-[13px] font-medium">office@multiinvest.com</a>
+                    <a href="mailto:office@multiinvest.com" className="text-foreground hover:text-accent hover:underline text-[13px] font-medium">office@multiinvest.com</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-primary/[0.06] rounded-lg flex items-center justify-center shrink-0 mt-0.5">
-                    <Clock className="h-3.5 w-3.5 text-accent" />
+                    <Clock className="h-3.5 w-3.5 text-primary-foreground" />
                   </div>
                   <div>
                     <p className="font-semibold text-foreground text-[13px] mb-0.5">Office Hours</p>
