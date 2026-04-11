@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MapPin, Mail, Clock, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import jetDeau from "@/assets/jet-deau-geneva.jpg";
+import officeBuilding from "@/assets/office-building.jpg";
 
 const Contact = () => {
   return (
