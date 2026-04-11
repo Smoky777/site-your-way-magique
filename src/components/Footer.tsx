@@ -57,12 +57,18 @@ const Footer = () => {
             <h4 className="text-[11px] uppercase tracking-[0.18em] text-primary-foreground/30 font-medium mb-5">Contact</h4>
             <div className="space-y-3.5 text-[13px] text-primary-foreground/55">
               <div className="flex items-start gap-2.5">
-                <MapPin className="h-3.5 w-3.5 text-accent mt-0.5 shrink-0" />
+                <MapPin className="h-3.5 w-3.5 text-primary-foreground/60 mt-0.5 shrink-0" />
                 <span>Chemin Rieu 12<br />1208 Genève</span>
               </div>
               <div className="flex items-start gap-2.5">
-                <Mail className="h-3.5 w-3.5 text-accent mt-0.5 shrink-0" />
-                <a href="mailto:office@multiinvest.com" className="text-accent/80 hover:text-accent transition-colors">office@multiinvest.com</a>
+                <Mail className="h-3.5 w-3.5 text-primary-foreground/60 mt-0.5 shrink-0" />
+                <a href="mailto:office@multiinvest.com" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">office@multiinvest.com</a>
+              </div>
+              <div className="pt-2 mt-1 border-t border-primary-foreground/10">
+                <p className="text-[11px] text-primary-foreground/35 leading-relaxed">
+                  Registre: CH-660.0.567.024-5<br />
+                  TVA: CHE-396.944.369
+                </p>
               </div>
             </div>
           </div>
