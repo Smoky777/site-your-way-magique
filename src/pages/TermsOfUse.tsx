@@ -78,6 +78,7 @@ const TermsOfUse = () => {
                 <p className="font-semibold text-foreground text-lg font-serif">Multi Investment Holding SA</p>
                 <p className="mt-1">Chemin Rieu 12</p>
                 <p>1208 Genève, Switzerland</p>
+                <p className="text-sm mt-1">Registre du commerce: CH-660.0.567.024-5 · TVA: CHE-396.944.369</p>
                 <p className="mt-2">Email: <a href="mailto:privacy@multiinvest.com" className="text-accent hover:underline font-medium">privacy@multiinvest.com</a></p>
               </div>
             </div>

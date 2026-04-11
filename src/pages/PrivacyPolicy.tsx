@@ -30,6 +30,7 @@ const PrivacyPolicy = () => {
                 <p className="font-semibold text-foreground text-lg">Multi Investment Holding SA</p>
                 <p>Chemin Rieu 12</p>
                 <p>1208 Genève, Switzerland</p>
+                <p className="text-sm mt-1">Registre du commerce: CH-660.0.567.024-5 · TVA: CHE-396.944.369</p>
                 <p className="mt-2">Email: <a href="mailto:privacy@multiinvest.com" className="text-accent hover:underline font-medium">privacy@multiinvest.com</a></p>
               </div>
               <p className="text-base text-muted-foreground leading-[2] font-sans">If you have any questions about how we handle your personal data, or if you wish to exercise any of your rights as described below, please do not hesitate to contact our Privacy Office using the details provided above.</p>
