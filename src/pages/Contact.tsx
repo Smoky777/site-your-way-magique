@@ -67,8 +67,8 @@ const Contact = () => {
                 style={{ borderRadius: "20px 3px 3px 20px" }}
               >
                 <img
-                  src={jetDeau}
-                  alt="Jet d'Eau — Geneva's iconic water fountain on Lake Geneva"
+                  src={officeBuilding}
+                  alt="Multi Investment office building in Geneva"
                   className="w-full h-48 object-cover"
                 />
                 <div className="bg-card p-4 space-y-2">
