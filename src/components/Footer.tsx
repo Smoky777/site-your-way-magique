@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Mail } from "lucide-react";
+import { MapPin, Mail, Linkedin } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -85,6 +85,15 @@ const Footer = () => {
             <Link to="/privacy" className="hover:text-primary-foreground/70 transition-colors">Privacy</Link>
             <Link to="/terms" className="hover:text-primary-foreground/70 transition-colors">Terms</Link>
             <Link to="/disclosure" className="hover:text-primary-foreground/70 transition-colors">Disclosure</Link>
+            <a 
+              href="https://www.linkedin.com/company/multi-investment-sa/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-primary-foreground/70 transition-colors flex items-center gap-1"
+            >
+              <Linkedin className="h-3.5 w-3.5" />
+              <span>LinkedIn</span>
+            </a>
           </div>
         </div>
       </div>
