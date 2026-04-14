@@ -18,6 +18,14 @@ const Footer = () => {
             <p className="text-primary-foreground/50 text-[13.5px] leading-relaxed max-w-[280px]">
               Global private equity and real estate investment firm. Founded in 2024 by the Aponte family.
             </p>
+            <a 
+              href="https://www.linkedin.com/company/multi-investment-sa/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 mt-4 text-primary-foreground/50 hover:text-primary-foreground transition-colors"
+            >
+              <Linkedin className="h-4 w-4" />
+            </a>
           </div>
 
           {/* Services */}
@@ -85,15 +93,6 @@ const Footer = () => {
             <Link to="/privacy" className="hover:text-primary-foreground/70 transition-colors">Privacy</Link>
             <Link to="/terms" className="hover:text-primary-foreground/70 transition-colors">Terms</Link>
             <Link to="/disclosure" className="hover:text-primary-foreground/70 transition-colors">Disclosure</Link>
-            <a 
-              href="https://www.linkedin.com/company/multi-investment-sa/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-primary-foreground/70 transition-colors flex items-center gap-1"
-            >
-              <Linkedin className="h-3.5 w-3.5" />
-              <span>LinkedIn</span>
-            </a>
           </div>
         </div>
       </div>
