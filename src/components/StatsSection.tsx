@@ -25,7 +25,7 @@ const StatsSection = () => {
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <stat.icon className="h-5 w-5 text-primary" />
               </div>
-              <p className="text-3xl font-serif font-bold text-foreground mb-1">{stat.value}</p>
+              <p className="text-3xl font-serif font-bold text-foreground mb-1" style={{ fontVariantNumeric: 'lining-nums tabular-nums' }}>{stat.value}</p>
               <p className="text-xs text-muted-foreground">{stat.label}</p>
             </motion.div>
           ))}
