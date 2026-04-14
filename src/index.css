@@ -62,12 +62,14 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
+    font-variant-numeric: lining-nums tabular-nums;
   }
 }
 
 @layer utilities {
   .font-serif {
     font-family: 'Lora', serif;
+    font-variant-numeric: lining-nums tabular-nums;
   }
   .font-sans {
     font-family: 'Raleway', sans-serif;
