@@ -117,11 +117,22 @@ html {
 .animate-on-scroll.delay-3 { transition-delay: 0.3s; }
 .animate-on-scroll.delay-4 { transition-delay: 0.4s; }
 
-video[autoplay]::-webkit-media-controls,
-video[autoplay]::-webkit-media-controls-panel,
-video[autoplay]::-webkit-media-controls-play-button,
-video[autoplay]::-webkit-media-controls-start-playback-button,
-video[autoplay]::-webkit-media-controls-overlay-play-button {
+.animate-on-scroll.delay-4 { transition-delay: 0.4s; }
+
+.decorative-video,
+.decorative-video video {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.decorative-video video::-webkit-media-controls,
+.decorative-video video::-webkit-media-controls-panel,
+.decorative-video video::-webkit-media-controls-play-button,
+.decorative-video video::-webkit-media-controls-start-playback-button,
+.decorative-video video::-webkit-media-controls-overlay-play-button,
+.decorative-video video::-webkit-media-controls-enclosure,
+.decorative-video video::-webkit-media-controls-container {
   display: none !important;
+  opacity: 0 !important;
   -webkit-appearance: none;
 }
