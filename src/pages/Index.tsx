@@ -216,8 +216,16 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto relative overflow-hidden" style={{ borderRadius: "6px 24px 24px 6px" }}>
             <video
-              autoPlay muted loop playsInline
-              className="w-full h-56 md:h-72 object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              // @ts-ignore - iOS Safari needs this
+              webkit-playsinline="true"
+              preload="auto"
+              disablePictureInPicture
+              controls={false}
+              className="w-full h-56 md:h-72 object-cover pointer-events-none"
             >
               <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
             </video>
