@@ -116,3 +116,12 @@ html {
 .animate-on-scroll.delay-2 { transition-delay: 0.2s; }
 .animate-on-scroll.delay-3 { transition-delay: 0.3s; }
 .animate-on-scroll.delay-4 { transition-delay: 0.4s; }
+
+video[autoplay]::-webkit-media-controls,
+video[autoplay]::-webkit-media-controls-panel,
+video[autoplay]::-webkit-media-controls-play-button,
+video[autoplay]::-webkit-media-controls-start-playback-button,
+video[autoplay]::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
