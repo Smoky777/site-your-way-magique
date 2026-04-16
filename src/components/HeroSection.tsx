@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import heroLogo from "@/assets/logo-hero.png";
 import jetDeau from "@/assets/jet-deau-geneva.jpg";
 import jetDeauVideo from "@/assets/jet-deau-video.mp4.asset.json";
+import DecorativeVideo from "@/components/DecorativeVideo";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -17,47 +17,16 @@ const HeroSection = () => {
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
   const textY = useTransform(scrollYProgress, [0, 0.5], [0, 40]);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = true;
-    video.defaultMuted = true;
-    video.play().catch(() => {
-      const onInteract = () => {
-        video.play().finally(() => {
-          window.removeEventListener("touchstart", onInteract);
-          window.removeEventListener("click", onInteract);
-          window.removeEventListener("scroll", onInteract);
-        });
-      };
-      window.addEventListener("touchstart", onInteract, { once: true, passive: true });
-      window.addEventListener("click", onInteract, { once: true });
-      window.addEventListener("scroll", onInteract, { once: true, passive: true });
-    });
-  }, []);
-
   return (
     <section ref={sectionRef} className="relative overflow-hidden">
       <div className="relative min-h-screen flex items-center">
         {/* Video background */}
         <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            // @ts-ignore - iOS Safari needs this
-            webkit-playsinline="true"
-            preload="auto"
-            disablePictureInPicture
-            disableRemotePlayback
-            controls={false}
-            className="w-full h-full object-cover pointer-events-none"
+          <DecorativeVideo
+            src={jetDeauVideo.url}
             poster={jetDeau}
-          >
-            <source src={jetDeauVideo.url} type="video/mp4" />
-          </video>
+            className="absolute inset-0"
+          />
         </motion.div>
 
         {/* Overlays — simpler, less layered */}

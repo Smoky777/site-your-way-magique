@@ -1,6 +1,7 @@
 import PageLayout from "@/components/PageLayout";
 import mscShip from "@/assets/msc-ship.jpg";
 import HeroSection from "@/components/HeroSection";
+import DecorativeVideo from "@/components/DecorativeVideo";
 import { Link } from "react-router-dom";
 import { ArrowRight, Building2, TrendingUp, Shield, Landmark, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -215,20 +216,10 @@ const Index = () => {
       <section className="pb-12 md:pb-16">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto relative overflow-hidden" style={{ borderRadius: "6px 24px 24px 6px" }}>
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              // @ts-ignore - iOS Safari needs this
-              webkit-playsinline="true"
-              preload="auto"
-              disablePictureInPicture
-              controls={false}
-              className="w-full h-56 md:h-72 object-cover pointer-events-none"
-            >
-              <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-            </video>
+            <DecorativeVideo
+              src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4"
+              className="h-56 md:h-72"
+            />
             <div className="absolute inset-0 bg-[hsl(150,15%,6%)]/75" />
             <div className="absolute inset-0 flex items-end p-7 md:p-12">
               <div className="max-w-sm">
