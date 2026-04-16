@@ -22,8 +22,17 @@ const HeroSection = () => {
         {/* Video background */}
         <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
           <video
-            autoPlay muted loop playsInline
-            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            // @ts-ignore - iOS Safari needs this
+            webkit-playsinline="true"
+            preload="auto"
+            disablePictureInPicture
+            disableRemotePlayback
+            controls={false}
+            className="w-full h-full object-cover pointer-events-none"
             poster={jetDeau}
           >
             <source src={jetDeauVideo.url} type="video/mp4" />
