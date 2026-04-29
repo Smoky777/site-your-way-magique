@@ -30,8 +30,7 @@ const HeroSection = () => {
         </motion.div>
 
         {/* Overlays — simpler, less layered */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-primary/20" />
+        <div className="absolute inset-0 bg-primary/40" />
 
         <motion.div className="container mx-auto px-6 relative z-10" style={{ y: textY }}>
           <div className="flex flex-col items-center justify-center min-h-screen py-32 text-center">
