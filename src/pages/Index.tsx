@@ -19,7 +19,7 @@ const Index = () => {
       <HeroSection />
 
       {/* About — editorial, no numbered label */}
-      <section className="pt-24 md:pt-44 pb-16 md:pb-24 bg-primary text-primary-foreground overflow-hidden">
+      <section className="pt-20 md:pt-32 pb-16 md:pb-24 bg-primary text-primary-foreground overflow-hidden relative z-10">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-4 items-end">
             <div className="lg:col-span-5 lg:pb-6 order-2 lg:order-1">
