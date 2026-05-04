@@ -7,10 +7,38 @@ import { ArrowRight, Building2, TrendingUp, Shield, Landmark, ArrowUpRight } fro
 import { motion } from "framer-motion";
 
 const services = [
-  { icon: TrendingUp, title: "Asset Management", desc: "Diversified portfolio strategies across global markets.", path: "/asset-management" },
-  { icon: Shield, title: "Wealth Management", desc: "Bespoke planning for UHNW individuals and family offices.", path: "/wealth-management" },
-  { icon: Landmark, title: "Investment Strategies", desc: "Private Equity, Seed to Growth stage investments.", path: "/investment-strategies" },
-  { icon: Building2, title: "Real Estate", desc: "Prime acquisitions across Europe's top locations.", path: "/real-estate" },
+  {
+    num: "01",
+    icon: TrendingUp,
+    title: "Asset Management",
+    desc: "Diversified portfolio strategies across global public and private markets, calibrated to long-term family office mandates.",
+    meta: "Multi-asset · Discretionary",
+    path: "/asset-management",
+  },
+  {
+    num: "02",
+    icon: Shield,
+    title: "Wealth Management",
+    desc: "Bespoke planning and stewardship for ultra-high-net-worth individuals, families and single-family offices.",
+    meta: "UHNW · Multi-generational",
+    path: "/wealth-management",
+  },
+  {
+    num: "03",
+    icon: Landmark,
+    title: "Investment Strategies",
+    desc: "Direct private equity, seed-to-growth venture, convertible notes and SAFTs — sourced through proprietary networks.",
+    meta: "Private Equity · Venture",
+    path: "/investment-strategies",
+  },
+  {
+    num: "04",
+    icon: Building2,
+    title: "Real Estate",
+    desc: "Prime acquisitions, opportunistic development and core-plus mandates across Europe's most enduring locations.",
+    meta: "Core+ · Opportunistic",
+    path: "/real-estate",
+  },
 ];
 
 const Index = () => {
@@ -18,21 +46,62 @@ const Index = () => {
     <PageLayout>
       <HeroSection />
 
-      {/* About — editorial, no numbered label */}
-      <section className="pt-20 md:pt-32 pb-16 md:pb-24 bg-primary text-primary-foreground overflow-hidden relative z-10">
+      {/* Institutional band — credibility ribbon */}
+      <section className="bg-primary border-y border-white/10 relative z-10">
         <div className="container mx-auto px-6">
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-4 items-end">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
+            {[
+              { val: "CHF 3B+", label: "Under Management" },
+              { val: "USD 10M", label: "Minimum Ticket" },
+              { val: "50+", label: "Active Mandates" },
+              { val: "1970", label: "Family Heritage" },
+            ].map((s) => (
+              <div key={s.label} className="text-center py-10 md:py-12 px-4 first:border-l-0">
+                <p className="text-2xl md:text-[2rem] font-serif font-bold text-white leading-none lining-nums">
+                  {s.val}
+                </p>
+                <p className="text-[10px] text-white/45 uppercase tracking-[0.22em] mt-3">
+                  {s.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About — editorial */}
+      <section className="pt-24 md:pt-36 pb-20 md:pb-28 bg-primary text-primary-foreground overflow-hidden relative z-10">
+        <div className="container mx-auto px-6">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-6 items-end">
             <div className="lg:col-span-5 lg:pb-6 order-2 lg:order-1">
-              <h2 className="text-[1.6rem] md:text-[2.6rem] font-serif font-bold text-primary-foreground leading-[1.08] mb-5">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="h-px w-8 bg-accent" />
+                <span className="text-accent text-[10px] tracking-[0.3em] uppercase font-medium">
+                  The Firm
+                </span>
+              </div>
+              <h2 className="text-[1.8rem] md:text-[2.8rem] font-serif font-bold text-white leading-[1.05] mb-7">
                 A family-founded firm
                 <br className="hidden md:block" />
-                <span className="text-primary-foreground/55 font-normal italic text-[0.82em]">with a global vision</span>
+                <span className="text-white/55 font-normal italic text-[0.82em]">
+                  with a global vision.
+                </span>
               </h2>
-              <p className="text-primary-foreground/40 leading-[1.95] text-[14.5px] max-w-[26rem] mb-9">
-                Founded by the Aponte family — heirs to the MSC shipping legacy — Multi Investment brings a unique blend of entrepreneurial heritage and institutional rigour.
+              <p className="text-white/60 leading-[1.95] text-[14.5px] max-w-[28rem] mb-6">
+                Founded by the Aponte family — heirs to the MSC shipping legacy, a group
+                generating over USD 80 billion in annual revenue — Multi Investment combines
+                entrepreneurial heritage with the discipline of an institutional allocator.
               </p>
-              <Link to="/about" className="text-accent font-medium text-[13px] inline-flex items-center gap-2 hover:gap-3 transition-all group">
-                Read our full story <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+              <p className="text-white/45 leading-[1.95] text-[13.5px] max-w-[28rem] mb-9">
+                From Geneva, we manage capital for a curated set of families, foundations
+                and partners across more than fifty active mandates worldwide.
+              </p>
+              <Link
+                to="/about"
+                className="text-accent font-medium text-[12px] tracking-[0.18em] uppercase inline-flex items-center gap-2 hover:gap-3 transition-all group border-b border-accent/40 pb-1"
+              >
+                Read our full story{" "}
+                <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
 
@@ -41,15 +110,21 @@ const Index = () => {
                 <img
                   src={mscShip}
                   alt="MSC cargo ship sailing on the ocean"
-                  className="w-full h-[280px] md:h-[490px] object-cover"
+                  className="w-full h-[280px] md:h-[520px] object-cover"
                   style={{ borderRadius: "20px 4px 4px 20px" }}
                   loading="lazy"
                   width={1024}
                   height={1280}
                 />
-                <div className="absolute -bottom-5 left-5 bg-accent text-accent-foreground rounded-xl px-5 py-3.5 shadow-xl">
-                  <p className="text-xl font-serif font-bold leading-none">2024</p>
-                  <p className="text-[9px] uppercase tracking-wider mt-1 opacity-60">Year Founded</p>
+                <div className="absolute -bottom-6 left-6 bg-accent text-accent-foreground rounded-xl px-6 py-4 shadow-2xl">
+                  <p className="text-2xl font-serif font-bold leading-none lining-nums">1970</p>
+                  <p className="text-[9px] uppercase tracking-[0.22em] mt-1.5 opacity-70">
+                    Aponte Family Heritage
+                  </p>
+                </div>
+                <div className="absolute -top-5 right-5 bg-white/95 text-primary rounded-xl px-5 py-3 shadow-xl backdrop-blur-sm hidden md:block">
+                  <p className="text-[10px] tracking-[0.2em] uppercase opacity-60">Parent Group</p>
+                  <p className="text-sm font-serif font-bold mt-0.5">MSC · USD 80B+ revenue</p>
                 </div>
               </div>
             </div>
@@ -57,127 +132,120 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats — tighter, no hover effects, less "dashboard" */}
-      <section className="bg-primary border-t border-primary-foreground/[0.05]">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 py-10 md:py-14 gap-y-8">
-            {[
-              { val: "3B+", label: "CHF Under Management" },
-              { val: "50+", label: "Active Projects" },
-              { val: "100+", label: "Global Partners" },
-              { val: "Geneva", label: "Headquarters" },
-            ].map((s) => (
-              <div key={s.label} className="text-center">
-                <p className="text-2xl md:text-3xl font-serif font-bold text-primary-foreground leading-none">{s.val}</p>
-                <p className="text-[10px] text-primary-foreground/30 uppercase tracking-[0.15em] mt-2.5">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services — different approach: no numbers, mixed card sizes, organic feel */}
-      <section className="pt-28 md:pt-40 pb-24 md:pb-32 relative">
+      {/* Services — premium institutional cards with numbers + meta */}
+      <section className="pt-28 md:pt-40 pb-24 md:pb-32 relative bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
-            {/* Header — left this time, simpler */}
-            <div className="mb-16 md:mb-24 max-w-lg">
-              <p className="text-muted-foreground/60 text-[11px] font-medium tracking-[0.3em] uppercase mb-4">What We Do</p>
-              <h2 className="text-[1.5rem] md:text-[2.2rem] font-serif font-bold text-foreground leading-tight">
-                Four disciplines,<br />
-                one objective.
-              </h2>
+            {/* Header — split institutional */}
+            <div className="grid lg:grid-cols-12 gap-8 mb-16 md:mb-20 items-end">
+              <div className="lg:col-span-7">
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="h-px w-8 bg-accent" />
+                  <span className="text-accent text-[10px] tracking-[0.3em] uppercase font-medium">
+                    Capabilities
+                  </span>
+                </div>
+                <h2 className="text-[1.8rem] md:text-[2.8rem] font-serif font-bold text-foreground leading-[1.05]">
+                  Four disciplines,
+                  <br />
+                  <span className="italic font-normal text-foreground/60">one objective.</span>
+                </h2>
+              </div>
+              <div className="lg:col-span-4 lg:col-start-9">
+                <p className="text-muted-foreground text-[14px] leading-[1.85] border-l-2 border-accent/40 pl-5">
+                  Each mandate is custom-built around the client's horizon, governance and
+                  liquidity needs — from discretionary portfolios to direct deployment.
+                </p>
+              </div>
             </div>
 
-            {/* 2x2 grid with first card spanning full width on mobile, varied on desktop */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5">
-              {/* Featured — wider */}
-              <Link to={services[0].path} className="group lg:col-span-7">
-                <div className="relative border border-border bg-card hover:border-accent/25 transition-colors duration-300 p-8 md:p-10 min-h-[220px] flex flex-col justify-end" style={{ borderRadius: "22px 4px 4px 22px" }}>
-                  {(() => { const Icon = services[0].icon; return (
-                    <div className="absolute top-7 right-7 w-12 h-12 rounded-2xl bg-primary/[0.05] flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-                      <Icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
+            {/* Premium card grid — uniform institutional cards */}
+            <div className="grid md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+              {services.map((s, i) => {
+                const Icon = s.icon;
+                return (
+                  <Link
+                    key={s.title}
+                    to={s.path}
+                    className="group relative bg-card hover:bg-primary transition-colors duration-500 p-8 md:p-10 flex flex-col min-h-[280px]"
+                  >
+                    {/* Top row — number + icon */}
+                    <div className="flex items-start justify-between mb-10">
+                      <span className="text-[11px] font-medium tracking-[0.28em] text-muted-foreground group-hover:text-accent transition-colors lining-nums">
+                        / {s.num}
+                      </span>
+                      <div className="w-11 h-11 rounded-full border border-border group-hover:border-accent/50 group-hover:bg-accent/10 flex items-center justify-center transition-all">
+                        <Icon className="h-4 w-4 text-foreground group-hover:text-accent transition-colors" />
+                      </div>
                     </div>
-                  ); })()}
-                  <h3 className="text-xl md:text-2xl font-serif font-bold text-foreground mb-2 group-hover:text-accent transition-colors">{services[0].title}</h3>
-                  <p className="text-muted-foreground text-[13px] mb-4 max-w-md">{services[0].desc}</p>
-                  <span className="text-accent text-[12px] font-medium inline-flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Explore <ArrowUpRight className="h-3 w-3" />
-                  </span>
-                </div>
-              </Link>
 
-              {/* Second — narrower */}
-              <Link to={services[1].path} className="group lg:col-span-5">
-                <div className="border border-border bg-card hover:border-accent/25 transition-colors duration-300 p-7 md:p-8 min-h-[220px] flex flex-col justify-end rounded-2xl">
-                  {(() => { const Icon = services[1].icon; return (
-                    <div className="w-10 h-10 rounded-xl bg-primary/[0.05] flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-300">
-                      <Icon className="h-4 w-4 text-primary group-hover:text-primary-foreground transition-colors" />
-                    </div>
-                  ); })()}
-                  <h3 className="text-lg font-serif font-semibold text-foreground mb-1.5 group-hover:text-accent transition-colors">{services[1].title}</h3>
-                  <p className="text-muted-foreground text-[13px]">{services[1].desc}</p>
-                </div>
-              </Link>
+                    {/* Title & desc — anchored bottom */}
+                    <div className="mt-auto">
+                      <h3 className="text-[1.4rem] md:text-[1.6rem] font-serif font-bold text-foreground group-hover:text-white transition-colors mb-3 leading-tight">
+                        {s.title}
+                      </h3>
+                      <p className="text-muted-foreground group-hover:text-white/70 transition-colors text-[13.5px] leading-[1.7] mb-6 max-w-md">
+                        {s.desc}
+                      </p>
 
-              {/* Third — narrow */}
-              <Link to={services[2].path} className="group lg:col-span-5">
-                <div className="border border-border bg-card hover:border-accent/25 transition-colors duration-300 p-7 md:p-8 min-h-[200px] flex flex-col justify-end rounded-2xl">
-                  {(() => { const Icon = services[2].icon; return (
-                    <div className="w-10 h-10 rounded-xl bg-primary/[0.05] flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-300">
-                      <Icon className="h-4 w-4 text-primary group-hover:text-primary-foreground transition-colors" />
+                      {/* Footer row — meta + arrow */}
+                      <div className="flex items-center justify-between pt-5 border-t border-border group-hover:border-white/15 transition-colors">
+                        <span className="text-[10px] tracking-[0.22em] uppercase text-muted-foreground/80 group-hover:text-white/55 transition-colors">
+                          {s.meta}
+                        </span>
+                        <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-foreground/[0.04] group-hover:bg-accent text-foreground group-hover:text-accent-foreground transition-all group-hover:rotate-0 -rotate-45">
+                          <ArrowRight className="h-3.5 w-3.5 transition-transform" />
+                        </span>
+                      </div>
                     </div>
-                  ); })()}
-                  <h3 className="text-lg font-serif font-semibold text-foreground mb-1.5 group-hover:text-accent transition-colors">{services[2].title}</h3>
-                  <p className="text-muted-foreground text-[13px]">{services[2].desc}</p>
-                </div>
-              </Link>
-
-              {/* Fourth — wider, different shape */}
-              <Link to={services[3].path} className="group lg:col-span-7">
-                <div className="relative border border-border bg-card hover:border-accent/25 transition-colors duration-300 p-8 md:p-10 min-h-[200px] flex flex-col justify-end" style={{ borderRadius: "4px 22px 22px 4px" }}>
-                  {(() => { const Icon = services[3].icon; return (
-                    <div className="absolute top-7 right-7 w-12 h-12 rounded-2xl bg-primary/[0.05] flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-                      <Icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
-                    </div>
-                  ); })()}
-                  <h3 className="text-xl md:text-2xl font-serif font-bold text-foreground mb-2 group-hover:text-accent transition-colors">{services[3].title}</h3>
-                  <p className="text-muted-foreground text-[13px] mb-4 max-w-md">{services[3].desc}</p>
-                  <span className="text-accent text-[12px] font-medium inline-flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Explore <ArrowUpRight className="h-3 w-3" />
-                  </span>
-                </div>
-              </Link>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values — dark, genuinely different layout: horizontal scroll-like cards on desktop */}
+      {/* Values — dark, institutional with sticky sidebar */}
       <section className="pt-24 md:pt-36 pb-28 md:pb-44 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-6 items-start">
-              {/* Left — sticky header */}
               <div className="lg:col-span-4 lg:sticky lg:top-32">
-                <p className="text-primary-foreground/35 text-[11px] font-medium tracking-[0.25em] uppercase mb-4">Our Principles</p>
-                <h2 className="text-[1.7rem] md:text-[2.3rem] font-serif font-bold text-primary-foreground leading-[1.1] mb-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="h-px w-8 bg-accent" />
+                  <span className="text-accent text-[10px] tracking-[0.3em] uppercase font-medium">
+                    Our Principles
+                  </span>
+                </div>
+                <h2 className="text-[1.8rem] md:text-[2.6rem] font-serif font-bold text-white leading-[1.08] mb-7">
                   Built on principle,
                   <br />
-                  <span className="text-accent/70 text-[0.72em] font-normal">not trends.</span>
+                  <span className="italic font-normal text-white/55">not trends.</span>
                 </h2>
-                <div className="h-px bg-primary-foreground/10 w-16 mb-6" />
-                <p className="text-primary-foreground/35 text-[13px] leading-relaxed max-w-xs">
-                  Three values that have guided the Aponte family across five decades of building.
+                <p className="text-white/55 text-[13.5px] leading-[1.85] max-w-xs">
+                  Three values that have guided the Aponte family across five decades of
+                  building enduring enterprises.
                 </p>
               </div>
 
-              {/* Right — stacked cards with varied styles */}
               <div className="lg:col-span-7 lg:col-start-6 space-y-5">
                 {[
-                  { title: "Integrity", desc: "Transparency and honesty are at the core of every client relationship. We earn trust through action, not promises.", style: "border-l-2 border-accent/50 pl-7 py-4" },
-                  { title: "Sustainability", desc: "ESG principles woven into our process — responsible investing is smart investing. We measure impact alongside returns.", style: "bg-primary-foreground/[0.04] rounded-2xl p-7" },
-                  { title: "Legacy", desc: "We think in generations, not quarters. Rooted in the Aponte family's long-term vision of building enduring value.", style: "border-l-2 border-primary-foreground/15 pl-7 py-4" },
+                  {
+                    n: "I.",
+                    title: "Integrity",
+                    desc: "Transparency and honesty are at the core of every client relationship. We earn trust through action, not promises.",
+                  },
+                  {
+                    n: "II.",
+                    title: "Sustainability",
+                    desc: "ESG principles woven into our process — responsible investing is smart investing. We measure impact alongside returns.",
+                  },
+                  {
+                    n: "III.",
+                    title: "Legacy",
+                    desc: "We think in generations, not quarters. Rooted in the Aponte family's long-term vision of building enduring value.",
+                  },
                 ].map((v, i) => (
                   <motion.div
                     key={v.title}
@@ -185,12 +253,18 @@ const Index = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-60px" }}
                     transition={{ duration: 0.5, delay: i * 0.12 }}
+                    className="border-t border-white/10 pt-7 pb-1 grid grid-cols-12 gap-5"
                   >
-                    <div className={v.style}>
-                      <h3 className={`font-serif font-semibold text-primary-foreground mb-2.5 ${
-                        i === 1 ? "text-xl" : "text-lg"
-                      }`}>{v.title}</h3>
-                      <p className="text-primary-foreground/40 text-[13.5px] leading-relaxed max-w-lg">{v.desc}</p>
+                    <div className="col-span-2 md:col-span-1">
+                      <span className="text-accent font-serif text-lg lining-nums">{v.n}</span>
+                    </div>
+                    <div className="col-span-10 md:col-span-11">
+                      <h3 className="font-serif font-semibold text-white text-xl mb-3">
+                        {v.title}
+                      </h3>
+                      <p className="text-white/55 text-[14px] leading-[1.8] max-w-lg">
+                        {v.desc}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -200,37 +274,75 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Quote — simple, editorial */}
-      <section className="py-20 md:py-28">
+      {/* Quote — editorial with attribution */}
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto flex gap-6 items-start">
-            <div className="w-10 h-px bg-accent/50 mt-4 shrink-0 hidden md:block" />
-            <blockquote className="text-lg md:text-[1.35rem] font-serif text-foreground/65 italic leading-[1.8]">
-              "We believe in long-term relationships, sustainable growth, and creating real impact through thoughtful capital deployment."
+          <div className="max-w-4xl mx-auto">
+            <p className="text-accent text-[10px] tracking-[0.3em] uppercase font-medium mb-8 text-center">
+              Investment Philosophy
+            </p>
+            <blockquote className="text-xl md:text-[1.7rem] font-serif text-foreground/80 italic leading-[1.55] text-center mb-8">
+              "We believe in long-term relationships, sustainable growth, and creating real
+              impact through thoughtful capital deployment."
             </blockquote>
+            <div className="flex items-center justify-center gap-4">
+              <span className="h-px w-10 bg-accent/50" />
+              <span className="text-muted-foreground text-[11px] tracking-[0.25em] uppercase">
+                Multi Investment Holding SA
+              </span>
+              <span className="h-px w-10 bg-accent/50" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA — image background, simple */}
-      <section className="pb-12 md:pb-16">
+      {/* CTA — cinematic */}
+      <section className="pb-16 md:pb-24 bg-background">
         <div className="container mx-auto px-6">
-          <div className="max-w-7xl mx-auto relative overflow-hidden" style={{ borderRadius: "6px 24px 24px 6px" }}>
+          <div
+            className="max-w-7xl mx-auto relative overflow-hidden"
+            style={{ borderRadius: "6px 28px 28px 6px" }}
+          >
             <DecorativeVideo
               src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4"
-              className="h-56 md:h-72"
+              className="h-72 md:h-96"
             />
-            <div className="absolute inset-0 bg-[hsl(150,15%,6%)]/75" />
-            <div className="absolute inset-0 flex items-end p-7 md:p-12">
-              <div className="max-w-sm">
-                <h2 className="text-[1.3rem] md:text-[1.8rem] font-serif font-bold text-white mb-2 leading-snug">
-                  Ready to start
-                  <span className="block font-normal italic text-white/60 text-[0.82em]">a conversation?</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
+            <div className="absolute inset-0 flex items-center p-8 md:p-16">
+              <div className="max-w-xl">
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="h-px w-8 bg-accent" />
+                  <span className="text-accent text-[10px] tracking-[0.3em] uppercase font-medium">
+                    Begin a Conversation
+                  </span>
+                </div>
+                <h2 className="text-[1.6rem] md:text-[2.4rem] font-serif font-bold text-white mb-4 leading-[1.1]">
+                  Capital deserves
+                  <span className="block italic font-normal text-white/70">
+                    a thoughtful steward.
+                  </span>
                 </h2>
-                <p className="text-white/35 mb-6 text-[13px]">Let's discuss how we can help you achieve your financial goals.</p>
-                <Link to="/contact" className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-2.5 rounded-full font-semibold text-[13px] hover:opacity-90 transition-opacity">
-                  Schedule a Consultation <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
+                <p className="text-white/65 mb-8 text-[14px] md:text-[15px] leading-[1.75] max-w-md">
+                  Our team is available for confidential introductions. We respond to every
+                  enquiry personally within two business days.
+                </p>
+                <div className="flex flex-wrap items-center gap-5">
+                  <Link
+                    to="/contact"
+                    className="group inline-flex items-center gap-3 bg-accent text-accent-foreground rounded-full pl-6 pr-2 py-2 font-semibold text-[13px] tracking-wide hover:bg-accent/90 transition-all"
+                  >
+                    Schedule a Consultation
+                    <span className="flex items-center justify-center w-9 h-9 rounded-full bg-accent-foreground/10 group-hover:bg-accent-foreground/15 transition-colors">
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
+                  </Link>
+                  <Link
+                    to="/our-approach"
+                    className="text-white/85 hover:text-white text-[13px] font-medium tracking-wide inline-flex items-center gap-2 border-b border-white/30 hover:border-white pb-1 transition-colors"
+                  >
+                    Read our approach
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
