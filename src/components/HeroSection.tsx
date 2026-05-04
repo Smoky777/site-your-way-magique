@@ -29,8 +29,9 @@ const HeroSection = () => {
           />
         </motion.div>
 
-        {/* Overlays — simpler, less layered */}
-        <div className="absolute inset-0 bg-primary/40" />
+        {/* Minimal readability treatment without muting the video */}
+        <div className="absolute inset-0 bg-primary/[0.06]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/25 via-transparent to-transparent" />
 
         <motion.div className="container mx-auto px-6 relative z-10" style={{ y: textY }}>
           <div className="flex flex-col items-center justify-center min-h-screen py-32 text-center">
@@ -49,7 +50,7 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-white/45 text-sm md:text-base tracking-[0.2em] uppercase mb-8"
+              className="text-white/75 text-sm md:text-base tracking-[0.2em] uppercase mb-8 drop-shadow-lg"
             >
               Family Office · Private Equity · Real Estate
             </motion.p>
@@ -59,7 +60,7 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-white/40 text-[15px] md:text-base max-w-lg mx-auto mb-14 leading-relaxed"
+              className="text-white/70 text-[15px] md:text-base max-w-lg mx-auto mb-14 leading-relaxed drop-shadow-lg"
             >
               A family-founded firm dedicated to building lasting wealth through private equity, real estate, and venture capital.
             </motion.p>
