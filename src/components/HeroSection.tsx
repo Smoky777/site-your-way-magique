@@ -23,7 +23,7 @@ const HeroSection = () => {
             src="/videos/jet-deau-video.mp4"
             poster={jetDeau}
             className="absolute inset-0"
-            videoClassName="object-[center_45%]"
+            videoClassName="object-[center_45%] md:object-[center_68%]"
           />
         </div>
 
