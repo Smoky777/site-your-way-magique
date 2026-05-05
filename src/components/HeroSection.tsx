@@ -12,20 +12,20 @@ const HeroSection = () => {
     target: sectionRef,
     offset: ["start start", "end start"],
   });
-  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
   const textY = useTransform(scrollYProgress, [0, 0.5], [0, 40]);
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden bg-primary">
       <div className="relative min-h-screen flex flex-col">
-        {/* Video background */}
-        <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
+        {/* Video background — fixed framing, no pan/scale */}
+        <div className="absolute inset-0">
           <DecorativeVideo
             src="/videos/jet-deau-video.mp4"
             poster={jetDeau}
             className="absolute inset-0"
+            videoClassName="object-[center_45%]"
           />
-        </motion.div>
+        </div>
 
         {/* Cinematic readability — gradient bottom + soft vignette + thin top wash */}
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-transparent to-primary/85" />
