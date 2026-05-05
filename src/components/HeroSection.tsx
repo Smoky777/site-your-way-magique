@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import heroLogo from "@/assets/logo-hero.png";
 import jetDeau from "@/assets/jet-deau-geneva.jpg";
-import jetDeauVideo from "@/assets/jet-deau-video.mp4.asset.json";
 import DecorativeVideo from "@/components/DecorativeVideo";
 
 const HeroSection = () => {
@@ -22,7 +21,7 @@ const HeroSection = () => {
         {/* Video background */}
         <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
           <DecorativeVideo
-            src={jetDeauVideo.url}
+            src="/videos/jet-deau-video.mp4"
             poster={jetDeau}
             className="absolute inset-0"
           />
